@@ -2,9 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const HsTextStatusDevice = ({ device, className }) => (
-   <span className={className} id={device.ref}>
-      {device.status}
-   </span>
+   <div id={device.ref} className={className}>
+      <span>{device.deviceName}</span>
+      <span>
+         {device.status}
+      </span>
+   </div>
 );
 HsTextStatusDevice.propTypes = {
    device: PropTypes.object.isRequired,
