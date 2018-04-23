@@ -1,4 +1,4 @@
-function getConfig() {
+exports.getConfig = function() {
    return {
       homeseerApiHost: '',
       homeseerApiPort: '',
@@ -6,4 +6,3 @@ function getConfig() {
       homeseerProxyPort: ''
    }
 };
-export { getConfig };
