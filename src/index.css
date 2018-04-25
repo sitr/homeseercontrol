@@ -8,7 +8,6 @@ body {
    display: grid;
    grid-template-columns: 1fr auto;
    grid-template-rows: 1fr auto;
-   grid-auto-flow: column; 
    grid-gap: 0px;
 }
 
@@ -40,11 +39,12 @@ body {
    border-radius: 7px;
    height: 59px;
    max-width: 126px; 
-   box-shadow: 0 1px 2px rgb(87, 97, 184), 0 -1px 1px #666, inset 0 -1px 1px rgba(0,0,0,0.5), inset 0 1px 1px rgb(87, 97, 184);
+   box-shadow: 0 1px 2px rgb(0, 153, 255), 0 -1px 1px #666, inset 0 -1px 1px rgba(0,0,0,0.5), inset 0 1px 1px rgb(0, 153, 255);
+   margin: 0 10px;
 }
 
 .button:active, button:hover {
-   background:  rgb(87, 97, 184);
+   background:  rgb(0, 153, 255);
 }
 
 .button:focus {
@@ -52,12 +52,10 @@ body {
 }
 
 .keyPanel {
-   display: flex;
-   flex-direction: column;
-   width: 376px;
-   height: 334px;
-   /* grid-row-start: 1;
-   grid-row-end: 3; */
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   grid-gap: 10px;
+   align-items: center;
 }
 
 .outdoorConditions {
@@ -101,14 +99,21 @@ body {
 
 .weather_autotext {
    margin-top: 60px;
+   padding-left: 20px;
 }
 
 .clock {
    text-align: right;
    justify-self: end;
    align-self: end;
+   margin: 10px 15px;
 }
 
 .clock span {
    font-size: 40px;
+}
+
+.clock p {
+   font-size: 20px;
+   line-height: 0;
 }

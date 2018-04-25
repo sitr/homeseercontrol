@@ -46,6 +46,37 @@ class App extends Component {
                   className="weather_autotext"
                />
             </div>
+            <div className="container_raised keyPanel">
+               <HsButton
+                  buttonText="Normal belysning"
+                  className="button"
+               />
+               <HsButton
+                  buttonText="Musikk"
+                  className="button"
+               />
+               <HsButton
+                  buttonText="Dempet belysning"
+                  className="button"
+               />
+               <HsButton
+                  buttonText="Vær"
+                  className="button"
+               />
+               <HsButton
+                  buttonText="Alt lys på"
+                  className="button"
+               />
+               <div/>
+               <HsButton
+                  buttonText="Alt lys av"
+                  className="button"
+               />
+               <HsButton
+                  buttonText="Nattmodus"
+                  className="button nightMode"
+               />
+            </div>
             <div className="container_inset indoorConditions">
                <HsTextStatusDeviceContainer
                   deviceId="60"
@@ -60,24 +91,6 @@ class App extends Component {
                      className="weather_station_value"
                   />
                </div>
-            </div>
-            <div className="container_raised keyPanel">
-               <HsButton
-                  buttonText="Normal belysning"
-                  className="button"
-               />
-               <HsButton
-                  buttonText="Dempet belysning"
-                  className="button"
-               />
-               <HsButton
-                  buttonText="Alt lys på"
-                  className="button"
-               />
-               <HsButton
-                  buttonText="Alt lys av"
-                  className="button"
-               />
             </div>
             <Clock className="clock" />
          </div>
