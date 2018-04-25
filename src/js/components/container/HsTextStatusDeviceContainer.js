@@ -10,13 +10,18 @@ class HsTextStatusDeviceContainer extends Component {
       super(props);
       this.state = {
          deviceId: this.props.deviceId,
-         device: {}
+         device: {},
+         className: this.props.className
       };
       this.config = getConfig();
    }
 
    componentDidMount() {
       var self = this;
+      getDeviceInfoFromHomeSeer(self.state.deviceId)
+         .then(result => {
+            self.setState({'device': result});
+         });
       var proxyURL = this.config.homeseerProxyUrl + ':' + this.config.homeseerProxyPort + '/faye';
       var client = new Faye.Client(proxyURL);
       client.subscribe('/homeseer/statuschange', function (message) {
@@ -32,13 +37,10 @@ class HsTextStatusDeviceContainer extends Component {
 
    render() {
       return (
-         <div>
-            <p>Heisann</p>
          <HsTextStatusDevice
             device={this.state.device}
-            className="status_message"
+            className={this.state.className}
          />
-         </div>
       );
    }
 }
