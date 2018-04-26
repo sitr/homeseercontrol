@@ -3,7 +3,7 @@ import HsButton from './components/container/HsButtonContainer';
 import Clock from './components/clock.js';
 import React, { Component } from 'react';
 
-class App extends Component {
+class Main extends Component {
    constructor(props) {
       super(props);
 
@@ -13,7 +13,7 @@ class App extends Component {
    }
    render() {
       return (
-         <div className="app">
+         <div className="main">
             <div className="container_inset outdoorConditions">
                <HsTextStatusDeviceContainer
                   deviceId="38"
@@ -103,4 +103,4 @@ class App extends Component {
    }
 }
 
-export default App;
+export default Main;
