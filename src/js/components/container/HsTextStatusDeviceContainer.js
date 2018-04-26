@@ -27,7 +27,7 @@ class HsTextStatusDeviceContainer extends Component {
       client.subscribe('/homeseer/statuschange', function (message) {
          var arr = String(message).split(",");
          if (parseInt(arr[1]) == self.state.deviceId) {
-            getDeviceInfoFromHomeSeer(self.state)
+            getDeviceInfoFromHomeSeer(self.state.deviceId)
             .then(result => {
                self.setState({'device': result});
             });

@@ -50,6 +50,7 @@ class App extends Component {
                <HsButton
                   buttonText="Normal belysning"
                   className="button"
+                  command='{"cmd": "Event", "groupName": "Lysscener", "eventName": "Stue - normal belysning"}'
                />
                <HsButton
                   buttonText="Musikk"
@@ -58,6 +59,7 @@ class App extends Component {
                <HsButton
                   buttonText="Dempet belysning"
                   className="button"
+                  command='{"cmd": "Event", "groupName": "Lysscener", "eventName": "Stue - dempet belysning"}'
                />
                <HsButton
                   buttonText="Vær"
@@ -66,15 +68,18 @@ class App extends Component {
                <HsButton
                   buttonText="Alt lys på"
                   className="button"
+                  command='{"cmd": "Event", "groupName": "Lysscener", "eventName": "Stue - full belysning"}'
                />
                <div/>
                <HsButton
                   buttonText="Alt lys av"
                   className="button"
+                  command='{"cmd": "Event", "groupName": "Lysscener", "eventName": "Stue - ingen belysning"}'
                />
                <HsButton
                   buttonText="Nattmodus"
                   className="button nightMode"
+                  command='{"cmd": "Event", "groupName": "Hus", "eventName": "Aktiver nattmodus"}'
                />
             </div>
             <div className="container_inset indoorConditions">
