@@ -89,7 +89,7 @@ class App extends Component {
             </div>
             <div className="container_inset indoorConditions">
                <HsTextStatusDeviceContainer
-                  deviceId="60"
+                  deviceId="42"
                   statusText={this.state.message}
                   className="temperature temperature_plus"
                />
