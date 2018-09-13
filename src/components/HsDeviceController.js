@@ -1,4 +1,4 @@
-import HsDevice from './HsDevice';
+import HsDevice from '../types/HsDevice';
 import { getConfig } from '../config';
 
 var config = getConfig();

@@ -1,6 +1,6 @@
 import HsTextStatusDeviceContainer from './components/container/HsTextStatusDeviceContainer';
 import HsButton from './components/container/HsButtonContainer';
-import Clock from './components/clock.js';
+import Clock from './components/clock';
 import React, { Component } from 'react';
 
 class Main extends Component {

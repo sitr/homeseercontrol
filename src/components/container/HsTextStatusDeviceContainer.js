@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import {getDeviceInfoFromHomeSeer} from '../../HsDeviceController';
+import {getDeviceInfoFromHomeSeer} from '../HsDeviceController';
 import Faye from 'faye';
 import HsTextStatusDevice from '../presentational/HsTextStatusDevice';
-import { getConfig } from '../../../config';
+import { getConfig } from '../../config';
 
 class HsTextStatusDeviceContainer extends Component {
 
