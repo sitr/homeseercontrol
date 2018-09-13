@@ -1,5 +1,6 @@
 import HsTextStatusDeviceContainer from './components/container/HsTextStatusDeviceContainer';
 import HsButton from './components/container/HsButtonContainer';
+import { Link }  from "react-router-dom";
 import Clock from './components/clock';
 import React, { Component } from 'react';
 
@@ -57,10 +58,9 @@ class App extends Component {
                   className="button"
                   command='{"cmd": "Event", "groupName": "Lysscener", "eventName": "Stue - normal belysning"}'
                />
-               <HsButton
-                  buttonText="Musikk"
-                  className="button"
-               />
+               <Link to='/music'>
+                  <button class='button'>Musikk</button>
+               </Link>
                <HsButton
                   buttonText="Dempet belysning"
                   className="button"
