@@ -13,22 +13,27 @@ class Clock extends React.Component {
         1000
       );
     }
-  
+
     componentWillUnmount() {
       clearInterval(this.timerID);
     }
-  
+
     tick() {
       this.setState({
         date: new Date()
       });
     }
 
+    getDayOfWeek = (dayNumber) => {
+       var days = ['Mandag', 'Tirsdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lørdag', 'Søndag'];
+       return days[dayNumber -1];
+    }
+
    render() {
       return (
          <div className={this.state.className}>
-            <span>{this.state.date.toLocaleTimeString()}</span>
-            <p>{this.state.date.toLocaleDateString()}</p>
+            <span>{this.state.date.toLocaleTimeString('nb-NO')}</span>
+            <p>{this.getDayOfWeek(this.state.date.getDay())} {this.state.date.toLocaleDateString('nb-NO')}</p>
          </div>
       );
    }
