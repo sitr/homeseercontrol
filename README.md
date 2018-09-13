@@ -1,5 +1,5 @@
 # Intro #
-I wanted to find a more flexible solution for my HomeSeer control panel. Previously I have been using HSTouch, but it's still a windows application from early 2000 something and it completely lack flexibility. Besides the licensing changed, and I was faced with a huge price tag if I would like to continue.
+I wanted to find a more flexible solution for my HomeSeer control panel. Previously I have been using HSTouch, but it's still a windows application from early 2000 something and it completely lacks flexibility. Besides the licensing changed, and I was faced with a huge price tag if I would like to continue to use HSTouch Designer. Time to find a new solution.
 
 Since I'm a web developer, of course the best solution would be to make a web application. I poked around, and found the ASCII interface of HomeSeer, where it's possible to make a socket connect and listen to live events. Combined with the JSON interface, it's also possible to get status and values, + controlling HomeSeer by setting values and running events. The proxy is based on the one in [https://forums.homeseer.com/forumdisplay.php?f=1279](https://forums.homeseer.com/forumdisplay.php?f=1279 "HSMetro")
 
