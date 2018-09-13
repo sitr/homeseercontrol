@@ -26,7 +26,7 @@ class HsTextStatusDeviceContainer extends Component {
       var client = new Faye.Client(proxyURL);
       client.subscribe('/homeseer/statuschange', function (message) {
          var arr = String(message).split(",");
-         if (parseInt(arr[1]) == self.state.deviceId) {
+         if (parseInt(arr[1], 10) === self.state.deviceId) {
             getDeviceInfoFromHomeSeer(self.state.deviceId)
             .then(result => {
                self.setState({'device': result});

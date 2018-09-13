@@ -24,8 +24,8 @@ body {
    border-radius: 10px;
    background-color: rgba(0, 0, 0, 0.418);
    box-shadow: 0 1px 2px silver, /*bottom external highlight*/
-      0 -1px 1px #666, /*top external shadow*/ 
-      inset 0 -1px 1px rgba(0,0,0,0.5), /*bottom internal shadow*/ 
+      0 -1px 1px #666, /*top external shadow*/
+      inset 0 -1px 1px rgba(0,0,0,0.5), /*bottom internal shadow*/
       inset 0 1px 1px rgba(192,192,192,0.8); /*top internal highlight*/
    padding: 10px;
    margin: 20px;
@@ -33,12 +33,12 @@ body {
 
 .button {
    font-size: 11px;
-   background:  linear-gradient(top, #555555 0%, #333333 100%);
+   background:  linear-gradient(to bottom, #555555 0%, #333333 100%);
    color: white;
    border: solid 3px rgba(0, 0, 0, 0.418);
    border-radius: 7px;
    height: 59px;
-   max-width: 126px; 
+   max-width: 126px;
    box-shadow: 0 1px 2px rgb(0, 153, 255), 0 -1px 1px #666, inset 0 -1px 1px rgba(0,0,0,0.5), inset 0 1px 1px rgb(0, 153, 255);
    margin: 0 10px;
 }

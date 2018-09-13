@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import {getDeviceInfoFromHomeSeer, runEvent} from '../HsDeviceController';
-import Faye from 'faye';
+import { runEvent } from '../HsDeviceController';
 import HsButton from '../presentational/HsButton';
 import { getConfig } from '../../config';
 
@@ -20,27 +19,6 @@ class HsTextStatusDeviceContainer extends Component {
       this.handleCommand = this.handleCommand.bind(this);
    }
 
-   // componentDidMount() {
-   //    var self = this;
-   //    if(self.state.deviceId) {
-   //       getDeviceInfoFromHomeSeer(self.state.deviceId)
-   //          .then(result => {
-   //             self.setState({'device': result});
-   //          });
-   //       var proxyURL = this.config.homeseerProxyUrl + ':' + this.config.homeseerProxyPort + '/faye';
-   //       var client = new Faye.Client(proxyURL);
-   //       client.subscribe('/homeseer/statuschange', function (message) {
-   //          var arr = String(message).split(",");
-   //          if (parseInt(arr[1]) == self.state.deviceId) {
-   //             getDeviceInfoFromHomeSeer(self.state)
-   //             .then(result => {
-   //                self.setState({'device': result});
-   //             });
-   //          }
-   //       });
-   //    }
-   // }
-
    handleCommand = (event) => {
       this.setState((prevState) => ({
          toggle: !prevState.toggle
@@ -50,6 +28,8 @@ class HsTextStatusDeviceContainer extends Component {
       {
          case 'Event':
             runEvent(parsedCmd.groupName, parsedCmd.eventName);
+            break;
+         default:
             break;
       }
    }

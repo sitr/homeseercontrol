@@ -3,7 +3,7 @@ import HsButton from './components/container/HsButtonContainer';
 import Clock from './components/clock';
 import React, { Component } from 'react';
 
-class Main extends Component {
+class App extends Component {
    constructor(props) {
       super(props);
 
@@ -11,6 +11,11 @@ class Main extends Component {
          message: ''
       };
    }
+
+   componentDidMount() {
+      document.title = "Hovedkontroll";
+   }
+
    render() {
       return (
          <div className="main">
@@ -103,4 +108,4 @@ class Main extends Component {
    }
 }
 
-export default Main;
+export default App;
