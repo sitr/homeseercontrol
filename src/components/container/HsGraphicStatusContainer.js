@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import {getDeviceInfoFromHomeSeer} from '../HsDeviceController';
 import Faye from 'faye';
-import HsTextStatusDevice from '../presentational/HsTextStatusDevice';
+import HsGraphicStatusDevice from '../presentational/HsGraphicStatusDevice';
 import { getConfig } from '../../config';
 
-class HsTextStatusDeviceContainer extends Component {
-
+class HsGraphicStatusContainer extends Component {
    constructor(props) {
       super(props);
       this.state = {
@@ -47,11 +46,11 @@ class HsTextStatusDeviceContainer extends Component {
 
    render() {
       return (
-         <HsTextStatusDevice
+         <HsGraphicStatusDevice
             device={this.state.device}
             className={this.state.className}
          />
       );
    }
 }
-export default HsTextStatusDeviceContainer;
+export default HsGraphicStatusContainer

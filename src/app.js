@@ -59,7 +59,7 @@ class App extends Component {
                   command='{"cmd": "Event", "groupName": "Lysscener", "eventName": "Stue - normal belysning"}'
                />
                <Link to='/music'>
-                  <button class='button'>Musikk</button>
+                  <button className='button'>Musikk</button>
                </Link>
                <HsButton
                   buttonText="Dempet belysning"

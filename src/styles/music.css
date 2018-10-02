@@ -1,0 +1,26 @@
+.music_main {
+
+}
+
+.music_art {
+   padding-right: 10px;
+   width: 150px;
+   height: 150px;
+}
+
+.music_meta, .music_art {
+   display: inline-block;
+   vertical-align: top;
+}
+
+music_info {
+
+}
+
+.radio_station {
+   font-size: 20px;
+}
+
+.artist {
+   font-size: 15px;
+}

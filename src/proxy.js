@@ -15,21 +15,25 @@ var bayeux = new faye.NodeAdapter({
 });
 
 var gracefulShutdown = function () {
-    console.log("Received kill signal, shutting down gracefully.");
-    server.close(function () {
-        console.log("Closing out open connections.");
-        // Destroy all open sockets
-        for (var socketId in sockets) {
-            console.log('socket', socketId, 'destroyed');
-            sockets[socketId].destroy();
-        }
-        process.exit()
-    });
+    //console.log("Received kill signal, shutting down gracefully.");
+    bayeux.getClient().disconnect();
+bayeux.close();
+server.close();
+   //  server.close(function () {
+   //      console.log("Closing out open connections.");
+   //      // Destroy all open sockets
+   //      for (var socketId in sockets) {
+   //          console.log('socket', socketId, 'destroyed');
+   //          sockets[socketId].destroy();
+   //      }
+   //      process.exit()
+   //  });
+
 }
 
 try {
       var serviceSocket = new net.Socket();
-      
+
       try {
          serviceSocket.connect(parseInt(REMOTE_PORT), REMOTE_ADDR);
       }
@@ -67,7 +71,10 @@ try {
          console.log('<< From remote to proxy', data.toString());
 
          bayeux.getClient().publish('/homeseer/statuschange', data.toString());
-         console.log('>> From proxy to client', data.toString());
+         if(data.toString().indexOf('461') > -1)
+            console.log('\x1b[36m%s\x1b[0m', '>> From proxy to client', data.toString());
+         else
+            console.log('>> From proxy to client', data.toString());
       });
 
       //Attach to the HTTP server instance--the proxy--and begin listening on specified local port
@@ -75,10 +82,8 @@ try {
       server.listen(LOCAL_PORT);
       console.log("Proxy server running and broadcasting on port " + LOCAL_PORT);
 
-
-      process.on('SIGTERM', gracefulShutdown);
-      // listen for INT signal e.g. Ctrl-C
       process.on('SIGINT', gracefulShutdown);
+
 } catch (err) {
     console.log(err);
 }
