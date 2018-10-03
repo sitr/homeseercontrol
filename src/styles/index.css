@@ -43,7 +43,7 @@ button {
    margin: 0 10px;
 }
 
-button:active, button:hover {
+button:hover, button:active, .buttonActive {
    background:  rgb(0, 153, 255);
 }
 
