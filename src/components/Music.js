@@ -21,11 +21,9 @@ class Music extends Component {
          <div className='container_inset music_info'>
             <HsGraphicStatusContainer deviceId='600' className='music_art' />
             <div className='music_meta'>
-               <HsTextStatusDeviceContainer deviceId='609' className='radio_station' statusText={this.state.message} />
-               <HsTextStatusDeviceContainer deviceId='596' className='artist' statusText={this.state.message} />
-               <label>Sang: </label><HsTextStatusDeviceContainer deviceId='594' className='track' statusText={this.state.message} />
-               <label>Album: </label><HsTextStatusDeviceContainer deviceId='598' className='track' statusText={this.state.message} />
-               <HsTextStatusDeviceContainer deviceId='51' className='track' statusText={this.state.message} />
+               <HsTextStatusDeviceContainer deviceId='596' className='artist' statusText={this.state.message} /><br/>
+               <label for="trackInfo">Sang:</label><HsTextStatusDeviceContainer id='trackInfo' deviceId='594' className='track' statusText={this.state.message} /><br/>
+               <label for="albumInfo">Album:</label><HsTextStatusDeviceContainer id='albumInfo' deviceId='598' className='track' statusText={this.state.message} /><br/>
             </div>
          </div>
       </div>

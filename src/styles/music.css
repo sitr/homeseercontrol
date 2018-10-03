@@ -12,15 +12,17 @@
    display: inline-block;
    vertical-align: top;
 }
-
-music_info {
-
+.music_meta label {
+   display: inline-block;
+   width: 50px;
+   color: lightslategray;
 }
 
-.radio_station {
+.music_meta .track, .music_meta .album {
+   display: inline-block;
+   margin-left: 10px;
+}
+
+.radio_station, .artist {
    font-size: 20px;
-}
-
-.artist {
-   font-size: 15px;
 }
