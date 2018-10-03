@@ -23,11 +23,7 @@ class HsGraphicStatusContainer extends Component {
    }
 
    componentWillUnmount() {
-      if (this.client != null) {
-         this.client.unsubscribe(this.homeSeerChannel);
-         this.client.disconnect();
-         this.client = null
-       }
+      clearInterval(this.interval);
    }
 
    render() {
