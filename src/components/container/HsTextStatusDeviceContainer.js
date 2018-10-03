@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import {getDeviceInfoFromHomeSeer} from '../HsDeviceController';
-import Faye from 'faye';
 import HsTextStatusDevice from '../presentational/HsTextStatusDevice';
-import { getConfig } from '../../config';
 
 class HsTextStatusDeviceContainer extends Component {
 
@@ -11,38 +9,22 @@ class HsTextStatusDeviceContainer extends Component {
       this.state = {
          deviceId: this.props.deviceId,
          device: {},
-         className: this.props.className
+         className: this.props.className,
       };
-      this.config = getConfig();
-      var proxyURL = this.config.homeseerProxyUrl + ':' + this.config.homeseerProxyPort + '/faye';
-      this.client = new Faye.Client(proxyURL);
-      this.homeSeerChannel = '/homeseer/statuschange';
    }
 
    componentDidMount() {
       var self = this;
-      getDeviceInfoFromHomeSeer(self.state.deviceId)
-         .then(result => {
-            self.setState({'device': result});
-         });
-
-      this.client.subscribe(this.homeSeerChannel, function (message) {
-         var arr = String(message).split(",");
-         if (arr[1] === self.state.deviceId) {
-            getDeviceInfoFromHomeSeer(self.state.deviceId)
+      this.interval = setInterval(() => {
+         getDeviceInfoFromHomeSeer(self.state.deviceId)
             .then(result => {
                self.setState({'device': result});
-            });
-         }
-      });
+         })}
+         , 1000);
    }
 
    componentWillUnmount() {
-      if (this.client != null) {
-         this.client.unsubscribe(this.homeSeerChannel);
-         this.client.disconnect();
-         this.client = null
-       }
+      clearInterval(this.interval);
    }
 
    render() {
