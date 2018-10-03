@@ -31,7 +31,7 @@ body {
    margin: 20px;
 }
 
-.button {
+button {
    font-size: 11px;
    background:  linear-gradient(to bottom, #555555 0%, #333333 100%);
    color: white;
@@ -43,7 +43,7 @@ body {
    margin: 0 10px;
 }
 
-.button:active, button:hover {
+button:active, button:hover {
    background:  rgb(0, 153, 255);
 }
 

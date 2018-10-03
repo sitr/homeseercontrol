@@ -3,7 +3,6 @@
 }
 
 .music_art {
-   padding-right: 10px;
    width: 150px;
    height: 150px;
 }
@@ -11,6 +10,7 @@
 .music_meta, .music_art {
    display: inline-block;
    vertical-align: top;
+   padding: 10px 10px 10px 0;
 }
 .music_meta label {
    display: inline-block;
