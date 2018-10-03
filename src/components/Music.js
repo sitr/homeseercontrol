@@ -19,12 +19,12 @@ class Music extends Component {
       return(
       <div className='music_main'>
          <div className='container_inset music_info'>
-            <HsGraphicStatusContainer deviceId='461' className='music_art' />
+            <HsGraphicStatusContainer deviceId='600' className='music_art' />
             <div className='music_meta'>
-               <HsTextStatusDeviceContainer deviceId='470' className='radio_station' statusText={this.state.message} />
-               <HsTextStatusDeviceContainer deviceId='457' className='artist' statusText={this.state.message} />
-               <label>Sang: </label><HsTextStatusDeviceContainer deviceId='455' className='track' statusText={this.state.message} />
-               <label>Album: </label><HsTextStatusDeviceContainer deviceId='421' className='track' statusText={this.state.message} />
+               <HsTextStatusDeviceContainer deviceId='609' className='radio_station' statusText={this.state.message} />
+               <HsTextStatusDeviceContainer deviceId='596' className='artist' statusText={this.state.message} />
+               <label>Sang: </label><HsTextStatusDeviceContainer deviceId='594' className='track' statusText={this.state.message} />
+               <label>Album: </label><HsTextStatusDeviceContainer deviceId='598' className='track' statusText={this.state.message} />
                <HsTextStatusDeviceContainer deviceId='51' className='track' statusText={this.state.message} />
             </div>
          </div>
