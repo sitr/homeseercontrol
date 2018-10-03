@@ -1,4 +1,5 @@
 import HsTextStatusDeviceContainer from './components/container/HsTextStatusDeviceContainer';
+import { getDeviceInfoFromHomeSeer } from './components/HsDeviceController';
 import HsButton from './components/container/HsButtonContainer';
 import { Link }  from "react-router-dom";
 import Clock from './components/clock';
@@ -82,9 +83,10 @@ class App extends Component {
                   command='{"cmd": "Event", "groupName": "Lysscener", "eventName": "Stue - ingen belysning"}'
                />
                <HsButton
+                  deviceId="87"
                   buttonText="Nattmodus"
                   className="button nightMode"
-                  command='{"cmd": "Event", "groupName": "Hus", "eventName": "Aktiver nattmodus"}'
+                  command='{"cmd": "SetValue", "value": "On"}'
                />
             </div>
             <div className="container_inset indoorConditions">
