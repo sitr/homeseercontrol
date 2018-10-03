@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { runEvent } from '../HsDeviceController';
+import { runEvent, getDeviceInfoFromHomeSeer, setDeviceValue } from '../HsDeviceController';
 import HsButton from '../presentational/HsButton';
 import { getConfig } from '../../config';
 
@@ -19,6 +19,24 @@ class HsTextStatusDeviceContainer extends Component {
       this.handleCommand = this.handleCommand.bind(this);
    }
 
+   componentDidMount() {
+      if(this.state.deviceId) {
+         var self = this;
+         this.interval = setInterval(() => {
+            getDeviceInfoFromHomeSeer(self.state.deviceId)
+               .then(result => {
+                  self.setState({'device': result});
+                  var className = result.status === 'On' ? 'buttonActive' : ''
+                  self.setState({'className': className});
+            })}
+            , 1000);
+      }
+   }
+
+   componentWillUnmount() {
+      clearInterval(this.interval);
+   }
+
    handleCommand = (event) => {
       this.setState((prevState) => ({
          toggle: !prevState.toggle
@@ -28,6 +46,9 @@ class HsTextStatusDeviceContainer extends Component {
       {
          case 'Event':
             runEvent(parsedCmd.groupName, parsedCmd.eventName);
+            break;
+         case 'SetValue':
+            setDeviceValue(this.state.deviceId, parsedCmd.value === 'On' ? '100' : '0');
             break;
          default:
             break;
