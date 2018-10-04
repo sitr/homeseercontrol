@@ -2,6 +2,10 @@
 
 }
 
+.music_control {
+
+}
+
 .music_art {
    width: 150px;
    height: 150px;
@@ -25,4 +29,53 @@
 
 .radio_station, .artist {
    font-size: 20px;
+}
+
+.volume_slider {
+   margin: 10px 0;
+   text-align: center;
+   max-width: 80px;
+   padding: 10px 0;
+   display: inline-block;
+}
+
+.volume_slider p {
+   color: lightslategray;
+}
+
+input[type="range"].volume_slider__vertical {
+   cursor: pointer;
+   -webkit-appearance: none;
+   z-index: 200;
+   width: 80px;
+   height: 8px;
+   margin: 40px 0;
+   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+   background: #3071a9;
+   -webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   border-radius: 20px;
+   -webkit-transform:rotate(270deg);
+   -moz-transform:rotate(270deg);
+   -o-transform:rotate(270deg);
+   -ms-transform:rotate(270deg);
+   transform:rotate(270deg);
+}
+
+input[type="range"].volume_slider__vertical:focus {
+   border: 0 !important;
+   outline: none !important;
+}
+
+input[type="range"].volume_slider__vertical::-webkit-slider-thumb {
+   -webkit-appearance: none;
+   border: 1px solid #000000;
+   height: 36px;
+   width: 16px;
+   margin-bottom: -14px;
+   border-radius: 3px;
+   background: slategray;
+   cursor: pointer;
+   margin-top: -14px;
+   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
 }

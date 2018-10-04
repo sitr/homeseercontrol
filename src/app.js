@@ -1,5 +1,4 @@
 import HsTextStatusDeviceContainer from './components/container/HsTextStatusDeviceContainer';
-import { getDeviceInfoFromHomeSeer } from './components/HsDeviceController';
 import HsButton from './components/container/HsButtonContainer';
 import { Link }  from "react-router-dom";
 import Clock from './components/clock';
