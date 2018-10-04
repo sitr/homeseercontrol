@@ -41,14 +41,21 @@ button {
    max-width: 126px;
    box-shadow: 0 1px 2px rgb(0, 153, 255), 0 -1px 1px #666, inset 0 -1px 1px rgba(0,0,0,0.5), inset 0 1px 1px rgb(0, 153, 255);
    margin: 0 10px;
+   outline:none;
+}
+
+
+.hide {
+   display: none;
 }
 
 button:hover, button:active, .buttonActive {
    background:  rgb(0, 153, 255);
+   outline: none;
 }
 
 .button:focus {
-   outline:none;
+   outline: none;
 }
 
 .keyPanel {

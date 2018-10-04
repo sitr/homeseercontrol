@@ -3,7 +3,7 @@ import { runEvent, getDeviceInfoFromHomeSeer, setDeviceValue } from '../HsDevice
 import HsButton from '../presentational/HsButton';
 import { getConfig } from '../../config';
 
-class HsTextStatusDeviceContainer extends Component {
+class HsButtonContainer extends Component {
 
    constructor(props) {
       super(props);
@@ -13,20 +13,20 @@ class HsTextStatusDeviceContainer extends Component {
          className: this.props.className,
          buttonText: this.props.buttonText,
          command: this.props.command,
-         toggle: true
+         isLiveButton: this.props.isLiveButton === undefined ? false : this.props.isLiveButton
       };
       this.config = getConfig();
       this.handleCommand = this.handleCommand.bind(this);
    }
 
    componentDidMount() {
-      if(this.state.deviceId) {
+      if(this.state.deviceId && this.state.isLiveButton) {
          var self = this;
          this.interval = setInterval(() => {
             getDeviceInfoFromHomeSeer(self.state.deviceId)
                .then(result => {
                   self.setState({'device': result});
-                  var className = result.status === 'On' ? 'buttonActive' : ''
+                  var className = result.status === 'On' ? 'buttonActive' : '';
                   self.setState({'className': className});
             })}
             , 1000);
@@ -38,9 +38,6 @@ class HsTextStatusDeviceContainer extends Component {
    }
 
    handleCommand = (event) => {
-      this.setState((prevState) => ({
-         toggle: !prevState.toggle
-      }));
       var parsedCmd = JSON.parse(this.state.command);
       switch(parsedCmd.cmd)
       {
@@ -48,7 +45,22 @@ class HsTextStatusDeviceContainer extends Component {
             runEvent(parsedCmd.groupName, parsedCmd.eventName);
             break;
          case 'SetValue':
-            setDeviceValue(this.state.deviceId, parsedCmd.value === 'On' ? '100' : '0');
+            var cmd = '';
+            switch (parsedCmd.value) {
+               case 'On':
+                  cmd = '100';
+                  break;
+               case 'Off':
+                  cmd = '0';
+                  break;
+               case 'Play':
+                  cmd = '1001';
+                  break;
+               case 'Pause':
+                  cmd = '1000'
+                  break;
+            }
+            setDeviceValue(this.state.deviceId, cmd);
             break;
          default:
             break;
@@ -66,4 +78,4 @@ class HsTextStatusDeviceContainer extends Component {
       );
    }
 }
-export default HsTextStatusDeviceContainer;
+export default HsButtonContainer;

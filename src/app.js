@@ -86,6 +86,7 @@ class App extends Component {
                   buttonText="Nattmodus"
                   className="button nightMode"
                   command='{"cmd": "SetValue", "value": "On"}'
+                  isLiveButton={true}
                />
             </div>
             <div className="container_inset indoorConditions">
