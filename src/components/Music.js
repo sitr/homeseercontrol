@@ -1,10 +1,9 @@
 import HsGraphicStatusContainer from './container/HsGraphicStatusContainer';
 import HsTextStatusDeviceContainer from './container/HsTextStatusDeviceContainer';
-import HsButtonContainer from './container/HsButtonContainer';
 import MediaButtonContainer from './container/MediaButtonContainer';
 import React, { Component } from 'react';
 import SliderContainer from './container/SliderContainer';
-import { getDeviceInfoFromHomeSeer } from '../components/HsDeviceController';
+import { Link }  from "react-router-dom";
 
 class Music extends Component {
    constructor(props) {
@@ -52,7 +51,7 @@ class Music extends Component {
                   deviceId="574"
                   command='{"cmd": "SetValue", "value": "Backward"}'
                   className="btnBackward"
-                  buttonText="&#8882;" />
+                  buttonText="<" />
                <MediaButtonContainer
                   id="btnPlay"
                   deviceId="572"
@@ -71,10 +70,15 @@ class Music extends Component {
                   deviceId="574"
                   command='{"cmd": "SetValue", "value": "Forward"}'
                   className="btnForward"
-                  buttonText="&#8883;" />
+                  buttonText=">" />
             </div>
          </div>
          <div className="music_system">SONOS</div>
+         <div>
+            <Link to='/'>
+                  <button className="button__navigation">Hovedside</button>
+               </Link>
+         </div>
       </div>
       )
    }

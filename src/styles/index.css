@@ -16,7 +16,7 @@ body {
    background-color: rgba(0, 0, 0, 0.418);
    box-shadow: inset 3px 3px 2px 0px #000000, inset -3px -3px 2px 0px silver;
    padding: 7px 16px;
-   margin: 20px;
+   margin: 10px;
 }
 
 .container_raised {
@@ -32,7 +32,7 @@ body {
 }
 
 button {
-   font-size: 11px;
+   font-size: 13px;
    background:  linear-gradient(to bottom, #555555 0%, #333333 100%);
    color: white;
    border: solid 3px rgba(0, 0, 0, 0.418);
@@ -44,6 +44,9 @@ button {
    outline:none;
 }
 
+.button__navigation {
+   width: 126px;
+}
 
 .hide {
    display: none;
