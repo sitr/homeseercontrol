@@ -3,7 +3,9 @@
 }
 
 .music_control {
-
+   padding: 10px;
+   margin: 20px;
+   min-width: 400px;
 }
 
 .music_art {
@@ -34,24 +36,41 @@
 .volume_slider {
    margin: 10px 0;
    text-align: center;
-   max-width: 80px;
+   max-width: 150px;
+
    padding: 10px 0;
    display: inline-block;
+   border: solid 1px black;
+   border-radius: 5px;
+   margin-right: -1px;
 }
 
 .volume_slider p {
    color: lightslategray;
+   font-size: 17px;
+}
+
+.music_system {
+   font: bold 200px arial, sans-serif;
+   background-color: #242424;
+   color: transparent;
+   text-shadow: 2px 2px 3px rgba(215,215,215,0.1);
+   -webkit-background-clip: text;
+   -moz-background-clip: text;
+   background-clip: text;
+   padding: 10px;
+   margin: 20px;
 }
 
 input[type="range"].volume_slider__vertical {
    cursor: pointer;
    -webkit-appearance: none;
    z-index: 200;
-   width: 80px;
-   height: 8px;
-   margin: 40px 0;
-   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-   background: #3071a9;
+   width: 150px;
+   height: 10px;
+   margin: 80px -40px;
+   box-shadow: inset 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+   background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, from(darkblue), to(#3071a9));
    -webkit-border-radius: 20px;
    -moz-border-radius: 20px;
    border-radius: 20px;
@@ -69,13 +88,28 @@ input[type="range"].volume_slider__vertical:focus {
 
 input[type="range"].volume_slider__vertical::-webkit-slider-thumb {
    -webkit-appearance: none;
-   border: 1px solid #000000;
    height: 36px;
    width: 16px;
    margin-bottom: -14px;
-   border-radius: 3px;
-   background: slategray;
    cursor: pointer;
    margin-top: -14px;
    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+   background-color: #434343;
+   background-image: -webkit-linear-gradient(100% 100% 90deg, #515151, #7A7A7A);
+   background-image: -moz-linear-gradient(100% 100% 90deg, #515151, #7A7A7A);
+   background-image: -o-linear-gradient(100% 100% 90deg, #515151, #7A7A7A);
+   background-image: -ms-linear-gradient(100% 100% 90deg, #515151, #7A7A7A);
+   background-image: linear-gradient(100% 100% 90deg, #515151, #7A7A7A);
+   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#7A7A7A), to(#515151));
+   border: none;
+   border-top: 3px solid #c2c2c2;
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+   padding: 10px;
+   text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+   margin-right: 10px;
+   text-decoration: none;
+   color: #242424;
+   background-image: -webkit-radial-gradient(  50%   0%,  8% 50%, hsla(0,0%,100%,.5) 0%, hsla(0,0%,100%,0) 100%), -webkit-radial-gradient(  50% 100%, 12% 50%, hsla(0,0%,100%,.6) 0%, hsla(0,0%,100%,0) 100%),                        -webkit-radial-gradient(   0%  50%, 50%  7%, hsla(0,0%,100%,.5) 0%, hsla(0,0%,100%,0) 100%),                        -webkit-radial-gradient( 100%  50%, 50%  5%, hsla(0,0%,100%,.5) 0%, hsla(0,0%,100%,0) 100%),                                                -webkit-repeating-radial-gradient(    50% 50%, 100% 100%, hsla(0,0%,  0%,0) 0%, hsla(0,0%,  0%,0)   3%, hsla(0,0%,  0%,.1) 3.5%),                        -webkit-repeating-radial-gradient(    50% 50%, 100% 100%, hsla(0,0%,100%,0) 0%, hsla(0,0%,100%,0)   6%, hsla(0,0%,100%,.1) 7.5%),                        -webkit-repeating-radial-gradient(    50% 50%, 100% 100%, hsla(0,0%,100%,0) 0%, hsla(0,0%,100%,0) 1.2%, hsla(0,0%,100%,.2) 2.2%), -webkit-radial-gradient(    50% 50%, 200% 50%, hsla(0,0%,90%,1) 5%, hsla(0,0%,85%,1) 30%, hsla(0,0%,60%,1) 100%);
 }

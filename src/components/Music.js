@@ -18,7 +18,7 @@ class Music extends Component {
 
    render() {
       return(
-      <div className='music_main'>
+      <div className='main'>
          <div className='container_inset music_info'>
             <HsGraphicStatusContainer deviceId='600' className='music_art' />
             <div className='music_meta'>
@@ -27,7 +27,7 @@ class Music extends Component {
                <label htmlFor="albumInfo">Album:</label><HsTextStatusDeviceContainer id='albumInfo' deviceId='598' className='track' statusText={this.state.message} /><br/>
             </div>
          </div>
-         <div className='container_inset music_control'>
+         <div className='music_control'>
             <div className="volume_slider">
                <SliderContainer deviceId="621" className="volume_slider__vertical"></SliderContainer>
                <p>Stue</p>
@@ -41,6 +41,7 @@ class Music extends Component {
                <p>Bad</p>
             </div>
          </div>
+         <div className="music_system">SONOS</div>
       </div>
       )
    }
