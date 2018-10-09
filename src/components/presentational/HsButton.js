@@ -2,9 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const HsButton = (props) => (
-   <button 
-      id={props.device.ref} 
-      className={props.className} 
+   <button
+      id={props.id}
+      className={props.className}
       onClick={props.onClick}>
       {props.buttonText}
    </button>

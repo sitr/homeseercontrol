@@ -52,10 +52,31 @@ button {
    display: none;
 }
 
-button:hover, button:active, .buttonActive {
-   background:  rgb(0, 153, 255);
+.button__orange {
+   background: rgb(255, 153, 51);
+   box-shadow: 0 1px 2px rgb(255, 153, 51), 0 -1px 1px #4d2600, inset 0 -1px 1px rgba(0,0,0,0.5), inset 0 1px 1px rgb(255, 153, 51);
+}
+
+.button__green {
+   background: rgb(0, 204, 102);
+   box-shadow: 0 1px 2px rgb(0, 204, 102), 0 -1px 1px #004d26, inset 0 -1px 1px rgba(0,0,0,0.5), inset 0 1px 1px rgb(0, 204, 102);
+}
+
+button:active {
+   background: rgb(51, 153, 255);
    outline: none;
 }
+
+.button__blink__orange {
+   animation: blinkOrange 1s infinite;
+}
+
+@keyframes blinkOrange {
+   from { background-color: #ff9933 }
+   50% { background-color: #4d2600  }
+   to { background-color: #ff9933 }
+}
+
 
 .button:focus {
    outline: none;
@@ -126,4 +147,41 @@ button:hover, button:active, .buttonActive {
 .clock p {
    font-size: 20px;
    line-height: 0;
+}
+
+.led__green {
+   background-image: -webkit-linear-gradient(top, #13fB04 0%, #58e343 50%, #ADED99 100%);
+}
+
+.led__orange {
+   background-image: -webkit-linear-gradient(top, #f9a004 0%, #e0ac45 50%, #ead698 100%);
+}
+
+
+.led__red {
+   background-image: -webkit-linear-gradient(top, #fb1304 0%, #e35843 50%, #edad99 100%);
+}
+
+.led {
+   border-radius: 5px;
+   width: 10px;
+   height: 10px;
+   box-shadow: 0px 0px 3px black;
+   zoom: 4;
+   margin: 0 5px;
+   display: inline-flex;
+}
+
+.led:after {
+   display: block;
+   content: '';
+   margin-left: 1px;
+   margin-right: 1px;
+   width: 8px;
+   height: 6px;
+   -webkit-border-top-right-radius: 4px 3px;
+   -webkit-border-top-left-radius: 4px 3px;
+   -webkit-border-bottom-right-radius: 4px 3px;
+   -webkit-border-bottom-left-radius: 4px 3px;
+   background-image: -webkit-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.1) 100%);
 }

@@ -1,22 +1,19 @@
 import React, { Component } from 'react';
 import { runEvent, getDeviceInfoFromHomeSeer, setDeviceValue } from '../HsDeviceController';
 import HsButton from '../presentational/HsButton';
-import { getConfig } from '../../config';
 
 class HsButtonContainer extends Component {
 
    constructor(props) {
       super(props);
       this.state = {
+         id: this.props.id,
          deviceId: this.props.deviceId,
-         device: {},
          className: this.props.className,
          buttonText: this.props.buttonText,
          command: this.props.command,
          isLiveButton: this.props.isLiveButton === undefined ? false : this.props.isLiveButton
       };
-      this.config = getConfig();
-      this.handleCommand = this.handleCommand.bind(this);
    }
 
    componentDidMount() {
@@ -25,9 +22,31 @@ class HsButtonContainer extends Component {
          this.interval = setInterval(() => {
             getDeviceInfoFromHomeSeer(self.state.deviceId)
                .then(result => {
-                  self.setState({'device': result});
-                  var className = result.status === 'On' ? 'buttonActive' : '';
-                  self.setState({'className': className});
+                  switch(result.status) {
+                     case 'On':
+                        self.setState({'className': 'button__green'});
+                        break;
+                     case 'Dagvakt':
+                        if(self.state.id === 'btnDayShift') {
+                           self.setState({'className': 'button__orange button__blink__orange'});
+                           self.setState({'command': '{"cmd": "SetValue", "value": "Ingen vakt"}'});
+                        }
+                        break;
+                     case 'Nattevakt':
+                        if(self.state.id === 'btnNightShift') {
+                           self.setState({'className': 'button__orange button__blink__orange'});
+                           self.setState({'command': '{"cmd": "SetValue", "value": "Ingen vakt"}'});
+                        }
+                        break;
+                     case 'Ingen vakt':
+                        self.setState({'className': ''});
+                        if(self.state.id === 'btnNightShift')
+                           self.setState({'command': '{"cmd": "SetValue", "value": "Nattevakt"}'});
+                        if(self.state.id === 'btnDayShift')
+                           self.setState({'command': '{"cmd": "SetValue", "value": "Dagvakt"}'});
+                        break;
+                     default: self.setState({'className': ''});
+                  }
             })}
             , 1000);
       }
@@ -57,7 +76,19 @@ class HsButtonContainer extends Component {
                   cmd = '1001';
                   break;
                case 'Pause':
-                  cmd = '1000'
+                  cmd = '1000';
+                  break;
+               case 'Dagvakt':
+                  cmd = '1';
+                  this.setState({'className': 'button__orange button__blink__orange'});
+                  break;
+               case 'Nattevakt':
+                  cmd = '2';
+                  this.setState({'className': 'button__orange button__blink__orange'});
+                  break;
+               case 'Ingen vakt':
+                  cmd = '0';
+                  this.setState({'className': ''});
                   break;
             }
             setDeviceValue(this.state.deviceId, cmd);
@@ -70,10 +101,10 @@ class HsButtonContainer extends Component {
    render() {
       return (
          <HsButton
-            device={this.state.device}
+            id={this.state.id}
             className={this.state.className}
             buttonText={this.state.buttonText}
-            onClick={this.handleCommand}
+            onClick={this.handleCommand.bind(this)}
          />
       );
    }
