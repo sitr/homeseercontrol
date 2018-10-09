@@ -53,6 +53,11 @@ class Outdoor extends Component {
                />
             </div>
             <div className="music_system">MOTORVARMER</div>
+            <div>
+               <Link to='/'>
+                     <button className="button__navigation">Hovedside</button>
+                  </Link>
+            </div>
          </div>
       );
    }
