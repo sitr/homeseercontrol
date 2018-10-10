@@ -47,7 +47,7 @@ button {
    margin: 0 10px;
 }
 
-button:active, button:hover {
+button:active {
    background:#2E5894;
 }
 
