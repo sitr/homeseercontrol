@@ -20,28 +20,18 @@ class Outdoor extends Component {
             <div className="container_raised" >
                <HsButtonContainer
                   deviceId="571"
-                  buttonText="På"
+                  toggleText={["Skru på", "Skru av"]}
                   className=""
                   command='{"cmd": "SetValue", "value": "On"}'
+                  isLiveButton={true}
                />
-               <HsLedContainer
-                  deviceId="571"
-                  className="led"
-               />
-               <HsButtonContainer
-                  deviceId="571"
-                  buttonText="Av"
-                  className=""
-                  command='{"cmd": "SetValue", "value": "Off"}'
-               />
-               <br/>
                <HsButtonContainer
                   id="btnDayShift"
                   deviceId="631"
                   buttonText="Dagvakt"
                   className=""
                   command='{"cmd": "SetValue", "value": "Dagvakt"}'
-                  isLiveButton="true"
+                  isLiveButton={true}
                />
                <HsButtonContainer
                   id="btnNightShift"
@@ -49,7 +39,7 @@ class Outdoor extends Component {
                   buttonText="Nattevakt"
                   className=""
                   command='{"cmd": "SetValue", "value": "Nattevakt"}'
-                  isLiveButton="true"
+                  isLiveButton={true}
                />
             </div>
             <div className="music_system">MOTORVARMER</div>

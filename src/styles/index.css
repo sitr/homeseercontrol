@@ -1,3 +1,6 @@
+* {
+   outline: none;
+}
 body {
    background-color: #404040;
    color: white;
@@ -29,6 +32,7 @@ body {
       inset 0 1px 1px rgba(192,192,192,0.8); /*top internal highlight*/
    padding: 10px;
    margin: 20px;
+   width: fit-content;
 }
 
 button {
@@ -41,7 +45,10 @@ button {
    max-width: 126px;
    box-shadow: 0 1px 2px rgb(0, 153, 255), 0 -1px 1px #666, inset 0 -1px 1px rgba(0,0,0,0.5), inset 0 1px 1px rgb(0, 153, 255);
    margin: 0 10px;
-   outline:none;
+}
+
+button:active, button:hover {
+   background:#2E5894;
 }
 
 .button__navigation {
@@ -52,22 +59,24 @@ button {
    display: none;
 }
 
-.button__orange {
+.button__activated--blue {
+   background: radial-gradient(rgb(179, 209, 255), rgb(0, 102, 255));
+   color: black;
+}
+
+.button__background--orange {
    background: rgb(255, 153, 51);
    box-shadow: 0 1px 2px rgb(255, 153, 51), 0 -1px 1px #4d2600, inset 0 -1px 1px rgba(0,0,0,0.5), inset 0 1px 1px rgb(255, 153, 51);
 }
 
-.button__green {
+.button__background--green {
    background: rgb(0, 204, 102);
    box-shadow: 0 1px 2px rgb(0, 204, 102), 0 -1px 1px #004d26, inset 0 -1px 1px rgba(0,0,0,0.5), inset 0 1px 1px rgb(0, 204, 102);
 }
 
-button:active {
-   background: rgb(51, 153, 255);
-   outline: none;
-}
 
-.button__blink__orange {
+
+.button__blink--orange {
    animation: blinkOrange 1s infinite;
 }
 
@@ -75,11 +84,6 @@ button:active {
    from { background-color: #ff9933 }
    50% { background-color: #4d2600  }
    to { background-color: #ff9933 }
-}
-
-
-.button:focus {
-   outline: none;
 }
 
 .keyPanel {

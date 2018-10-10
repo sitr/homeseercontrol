@@ -11,6 +11,7 @@ class HsButtonContainer extends Component {
          deviceId: this.props.deviceId,
          className: this.props.className,
          buttonText: this.props.buttonText,
+         toggleText: this.props.toggleText,
          command: this.props.command,
          isLiveButton: this.props.isLiveButton === undefined ? false : this.props.isLiveButton
       };
@@ -24,17 +25,24 @@ class HsButtonContainer extends Component {
                .then(result => {
                   switch(result.status) {
                      case 'On':
-                        self.setState({'className': 'button__green'});
+                        self.setState({'className': 'button__activated--blue'});
+                        self.setState({'command': '{"cmd": "SetValue", "value": "Off"}'});
+                        self.setState({'buttonText': self.state.toggleText[1]});
+                        break;
+                     case 'Off':
+                        self.setState({'className': ''});
+                        self.setState({'command': '{"cmd": "SetValue", "value": "On"}'});
+                        self.setState({'buttonText': self.state.toggleText[0]});
                         break;
                      case 'Dagvakt':
                         if(self.state.id === 'btnDayShift') {
-                           self.setState({'className': 'button__orange button__blink__orange'});
+                           self.setState({'className': 'button__background--orange button__blink--orange'});
                            self.setState({'command': '{"cmd": "SetValue", "value": "Ingen vakt"}'});
                         }
                         break;
                      case 'Nattevakt':
                         if(self.state.id === 'btnNightShift') {
-                           self.setState({'className': 'button__orange button__blink__orange'});
+                           self.setState({'className': 'button__background--orange button__blink--orange'});
                            self.setState({'command': '{"cmd": "SetValue", "value": "Ingen vakt"}'});
                         }
                         break;
@@ -80,11 +88,9 @@ class HsButtonContainer extends Component {
                   break;
                case 'Dagvakt':
                   cmd = '1';
-                  this.setState({'className': 'button__orange button__blink__orange'});
                   break;
                case 'Nattevakt':
                   cmd = '2';
-                  this.setState({'className': 'button__orange button__blink__orange'});
                   break;
                case 'Ingen vakt':
                   cmd = '0';
