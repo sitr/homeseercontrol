@@ -1,0 +1,46 @@
+@import './colors.scss';
+
+button {
+   font-size: 13px;
+   background:  linear-gradient(to bottom, $button-bgcolor-gray1 0%, $button-bgcolor-gray2 100%);
+   color: white;
+   border: solid 3px rgba(0, 0, 0, 0.418);
+   border-radius: 7px;
+   height: 59px;
+   max-width: 126px;
+   box-shadow: 0 1px 2px rgb(0, 153, 255), 0 -1px 1px #666, inset 0 -1px 1px rgba(0,0,0,0.5), inset 0 1px 1px rgb(0, 153, 255);
+   margin: 0 10px;
+}
+
+button:active {
+   background:#2E5894;
+}
+
+.button__navigation {
+   width: 126px;
+}
+
+.button__activated--blue {
+   background: radial-gradient(rgb(179, 209, 255), rgb(0, 102, 255));
+   color: black;
+}
+
+.button__background--orange {
+   background: rgb(255, 153, 51);
+   box-shadow: 0 1px 2px rgb(255, 153, 51), 0 -1px 1px #4d2600, inset 0 -1px 1px rgba(0,0,0,0.5), inset 0 1px 1px rgb(255, 153, 51);
+}
+
+.button__background--green {
+   background: rgb(0, 204, 102);
+   box-shadow: 0 1px 2px rgb(0, 204, 102), 0 -1px 1px #004d26, inset 0 -1px 1px rgba(0,0,0,0.5), inset 0 1px 1px rgb(0, 204, 102);
+}
+
+.button__blink--orange {
+   animation: blinkOrange 1s infinite;
+}
+
+@keyframes blinkOrange {
+   from { background-color: #ff9933 }
+   50% { background-color: #4d2600  }
+   to { background-color: #ff9933 }
+}

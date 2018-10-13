@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './styles/index.css';
-import './styles/music.css';
-import './styles/outdoor.css';
+import './styles/index.scss';
+import './styles/music.scss';
+import './styles/outdoor.scss';
+import './styles/button.scss';
+
 import App from './app';
 import Music from './components/Music';
 import Outdoor from './components/Outdoor';
