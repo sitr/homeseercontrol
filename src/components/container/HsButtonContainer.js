@@ -27,12 +27,14 @@ class HsButtonContainer extends Component {
                      case 'On':
                         self.setState({'className': 'button__activated--blue'});
                         self.setState({'command': '{"cmd": "SetValue", "value": "Off"}'});
-                        self.setState({'buttonText': self.state.toggleText[1]});
+                        if(self.state.toggleText)
+                           self.setState({'buttonText': self.state.toggleText[1]});
                         break;
                      case 'Off':
                         self.setState({'className': ''});
                         self.setState({'command': '{"cmd": "SetValue", "value": "On"}'});
-                        self.setState({'buttonText': self.state.toggleText[0]});
+                        if(self.state.toggleText)
+                           self.setState({'buttonText': self.state.toggleText[0]});
                         break;
                      case 'Dagvakt':
                         if(self.state.id === 'btnDayShift') {

@@ -73,7 +73,7 @@ body {
 }
 
 .weather_station_label, .weather_station_value {
-   font-size: 19px;
+   font-size: 1em;
    display:inline-block;
    line-height: 40px;
    padding-left: 20px;
@@ -89,6 +89,7 @@ body {
 }
 
 .weather_autotext {
+   color: whitesmoke;
    margin-top: 60px;
    padding-left: 20px;
 }
