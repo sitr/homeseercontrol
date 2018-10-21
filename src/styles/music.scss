@@ -1,3 +1,4 @@
+@import './colors.scss';
 .music_main {
 
 }
@@ -18,6 +19,7 @@
    vertical-align: top;
    padding: 10px 20px 10px 0;
 }
+
 .music_meta label {
    display: inline-block;
    width: 50px;
@@ -26,11 +28,17 @@
 
 .music_meta .track, .music_meta .album {
    display: inline-block;
-   margin-left: 10px;
+   color: $value-color;
+   margin-left: 1.5em;
 }
 
 .radio_station, .artist {
-   font-size: 20px;
+   font-size: 1em;
+   color: $value-color;
+}
+
+.track {
+
 }
 
 .media_buttons {
