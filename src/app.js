@@ -7,10 +7,6 @@ import React, { Component } from 'react';
 class App extends Component {
    constructor(props) {
       super(props);
-
-      this.state = {
-         message: ''
-      };
    }
 
    componentDidMount() {
@@ -23,32 +19,27 @@ class App extends Component {
             <div className="container_inset outdoorConditions">
                <HsTextStatusDeviceContainer
                   deviceId="38"
-                  statusText={this.state.message}
                   className="temperature temperature_plus"
                />
                <div>
                   <label className="weather_station_label">Føles som:</label>
                   <HsTextStatusDeviceContainer
-                     deviceId="478"
-                     statusText={this.state.message}
+                     deviceId="168"
                      className="weather_station_value"
                   /><br/>
                   <label className="weather_station_label">Vindhastighet:</label>
                   <HsTextStatusDeviceContainer
-                     deviceId="476"
-                     statusText={this.state.message}
+                     deviceId="473"
                      className="weather_station_value"
                   /><br/>
                   <label className="weather_station_label">Vindretning:</label>
                   <HsTextStatusDeviceContainer
-                     deviceId="477"
-                     statusText={this.state.message}
+                     deviceId="44"
                      className="weather_station_value"
                   />
                </div>
                <HsTextStatusDeviceContainer
                   deviceId="284"
-                  statusText={this.state.message}
                   className="weather_autotext"
                />
             </div>
@@ -91,14 +82,12 @@ class App extends Component {
             <div className="container_inset indoorConditions">
                <HsTextStatusDeviceContainer
                   deviceId="42"
-                  statusText={this.state.message}
                   className="temperature temperature_plus"
                />
                <div>
                   <label className="weather_station_label">Luftfuktighet:</label>
                   <HsTextStatusDeviceContainer
                      deviceId="40"
-                     statusText={this.state.message}
                      className="weather_station_value"
                   />
                </div>
