@@ -18,7 +18,7 @@ class App extends Component {
          <div className="main">
             <div className="container_inset outdoorConditions">
                <HsTextStatusDeviceContainer
-                  deviceId="38"
+                  deviceId="1117"
                   className="temperature temperature_plus"
                />
                <div>
@@ -81,13 +81,13 @@ class App extends Component {
             </div>
             <div className="container_inset indoorConditions">
                <HsTextStatusDeviceContainer
-                  deviceId="42"
+                  deviceId="1105"
                   className="temperature temperature_plus"
                />
                <div>
                   <label className="weather_station_label">Luftfuktighet:</label>
                   <HsTextStatusDeviceContainer
-                     deviceId="40"
+                     deviceId="1110"
                      className="weather_station_value"
                   />
                </div>
