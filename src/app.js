@@ -23,18 +23,28 @@ class App extends Component {
                />
                <div>
                   <label className="weather_station_label">Føles som:</label>
-                  <HsTextStatusDeviceContainer
+                  {/* <HsTextStatusDeviceContainer
                      deviceId="168"
                      className="weather_station_value"
-                  /><br/>
+                  /> */}
+                  <br/>
                   <label className="weather_station_label">Vindhastighet:</label>
                   <HsTextStatusDeviceContainer
-                     deviceId="473"
+                     deviceId="1134"
                      className="weather_station_value"
-                  /><br/>
-                  <label className="weather_station_label">Vindretning:</label>
+                  />
                   <HsTextStatusDeviceContainer
-                     deviceId="44"
+                     deviceId="1133"
+                     className="weather_station_value"
+                  />
+                  <br/>
+                  <label className="weather_station_label">Vindkast:</label>
+                  <HsTextStatusDeviceContainer
+                     deviceId="1136"
+                     className="weather_station_value"
+                  />
+                  <HsTextStatusDeviceContainer
+                     deviceId="1135"
                      className="weather_station_value"
                   />
                </div>
