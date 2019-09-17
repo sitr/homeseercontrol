@@ -23,10 +23,10 @@ class App extends Component {
                />
                <div>
                   <label className="weather_station_label">Føles som:</label>
-                  {/* <HsTextStatusDeviceContainer
-                     deviceId="168"
+                  { <HsTextStatusDeviceContainer
+                     deviceId="1163"
                      className="weather_station_value"
-                  /> */}
+                  /> }
                   <br/>
                   <label className="weather_station_label">Vindhastighet:</label>
                   <HsTextStatusDeviceContainer
@@ -99,6 +99,43 @@ class App extends Component {
                   <HsTextStatusDeviceContainer
                      deviceId="1110"
                      className="weather_station_value"
+                  />
+               </div>
+            </div>
+            <div className="container_inset garbagePlan">
+               <div>
+                  <img src="/images/vesar_epleskrott.png"/>
+                  <HsTextStatusDeviceContainer
+                     deviceId="1158"
+                     className=""
+                  />
+               </div>
+               <div>
+                  <img src="/images/vesar_glassmetall.png"/>
+                  <HsTextStatusDeviceContainer
+                     deviceId="1159"
+                     className=""
+                  />
+               </div>
+               <div>
+                  <img src="/images/vesar_plast.png"/>
+                  <HsTextStatusDeviceContainer
+                     deviceId="1160"
+                     className=""
+                  />
+               </div>
+               <div>
+                  <img src="/images/vesar_restavfall.png"/>
+                  <HsTextStatusDeviceContainer
+                     deviceId="1161"
+                     className=""
+                  />
+               </div>
+               <div>
+                  <img src="/images/vesar_papir.png"/>
+                  <HsTextStatusDeviceContainer
+                     deviceId="1162"
+                     className=""
                   />
                </div>
             </div>

@@ -11,7 +11,7 @@ body {
 
 .main {
    display: grid;
-   grid-template-columns: 1fr auto;
+   grid-template-columns: 40% 30% 30%;
    grid-template-rows: 1fr auto;
    grid-gap: 0px;
 }
@@ -49,7 +49,11 @@ body {
 }
 
 .outdoorConditions {
-   height: 334px;
+   height: 85%;
+   grid-column-start: 1;
+   grid-column-end: span 2;
+   grid-row-start: 1;
+   grid-row-end: 2;
 }
 
 .outdoorConditions:nth-child(2) {
@@ -85,7 +89,6 @@ body {
 
 .weather_station_label {
    color: $label-color;
-   width: 33%;
 }
 
 .weather_autotext {
@@ -145,5 +148,21 @@ body {
       -webkit-border-bottom-right-radius: 4px 3px;
       -webkit-border-bottom-left-radius: 4px 3px;
       background-image: -webkit-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.1) 100%);
+   }
+}
+
+.garbagePlan {
+   color: black;
+   background-color: #eeeeee;
+   font-size: 0.8em;
+
+   div {
+      line-height: 40px;
+
+   }
+
+   img {
+      width: 40px;
+      float: left;
    }
 }
