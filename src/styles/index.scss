@@ -11,7 +11,7 @@ body {
 
 .main {
    display: grid;
-   grid-template-columns: 40% 30% 30%;
+   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
    grid-template-rows: 1fr auto;
    grid-gap: 0px;
 }
@@ -38,6 +38,8 @@ body {
 }
 
 .keyPanel {
+   grid-column-start: 4;
+   grid-column-end: span 2;
    display: grid;
    grid-template-columns: 1fr 1fr;
    grid-gap: 10px;
@@ -49,9 +51,9 @@ body {
 }
 
 .outdoorConditions {
-   height: 85%;
+   height: 90%;
    grid-column-start: 1;
-   grid-column-end: span 2;
+   grid-column-end: span 3;
    grid-row-start: 1;
    grid-row-end: 2;
 }
@@ -61,7 +63,9 @@ body {
 }
 
 .indoorConditions {
-   height: 145px;
+   height: 85%;
+   grid-column-start: 1;
+   grid-column-end: span 2;
 }
 
 .temperature{
@@ -98,6 +102,8 @@ body {
 }
 
 .clock {
+   grid-column-start: 5;
+   grid-column-end: 6;
    text-align: right;
    justify-self: end;
    align-self: end;
@@ -153,8 +159,11 @@ body {
 
 .garbagePlan {
    color: black;
-   background-color: #eeeeee;
+   background-color: #b9b6b6;
    font-size: 0.8em;
+   grid-column-start: 3;
+   grid-column-end: span 2;
+   height: 85%;
 
    div {
       line-height: 40px;
