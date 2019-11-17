@@ -16,6 +16,12 @@ body {
    grid-gap: 0px;
 }
 
+@media only screen and (max-width: 600px) {
+   .main {
+     display: inline-block;
+   }
+ }
+
 .container_inset {
    border-radius: 10px;
    background-color: rgba(0, 0, 0, 0.418);
@@ -100,6 +106,7 @@ body {
    margin-top: 60px;
    padding-left: 20px;
 }
+
 
 .clock {
    grid-column-start: 5;

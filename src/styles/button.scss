@@ -1,7 +1,7 @@
 @import './colors.scss';
 
 button {
-   font-size: 0.5em;
+   font-size: 0.6em;
    background:  linear-gradient(to bottom, $button-bgcolor-gray1 0%, $button-bgcolor-gray2 100%);
    color: white;
    border: solid 3px rgba(0, 0, 0, 0.418);

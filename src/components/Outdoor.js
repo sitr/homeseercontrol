@@ -17,6 +17,12 @@ class Outdoor extends Component {
 
       return (
          <div className="outdoor_main">
+            <div className="container_inset">
+               <HsTextStatusDeviceContainer
+                     deviceId="1220"
+                     className="temperature temperature_plus"
+                  />
+            </div>
             <div className="container_raised" >
                <HsButtonContainer
                   deviceId="571"
