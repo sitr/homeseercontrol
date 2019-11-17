@@ -23,10 +23,10 @@ class App extends Component {
                />
                <div>
                   <label className="weather_station_label">Føles som:</label>
-                  { <HsTextStatusDeviceContainer
+                  <HsTextStatusDeviceContainer
                      deviceId="1163"
                      className="weather_station_value"
-                  /> }
+                  />
                   <br/>
                   <label className="weather_station_label">Vindhastighet:</label>
                   <HsTextStatusDeviceContainer
