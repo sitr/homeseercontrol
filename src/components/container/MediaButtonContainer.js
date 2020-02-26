@@ -62,6 +62,8 @@ class MediaButtonContainer extends Component {
          case 'Backward':
             cmd = '1005';
             break;
+         default:
+            cmd='';
       }
       setDeviceValue(this.state.deviceId, cmd);
    }

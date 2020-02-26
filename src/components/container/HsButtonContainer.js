@@ -98,6 +98,8 @@ class HsButtonContainer extends Component {
                   cmd = '0';
                   this.setState({'className': ''});
                   break;
+               default:
+                  break;
             }
             setDeviceValue(this.state.deviceId, cmd);
             break;

@@ -18,7 +18,18 @@ class HsLedContainer extends Component {
       this.interval = setInterval(() => {
          getDeviceInfoFromHomeSeer(self.state.deviceId)
             .then(result => {
-               self.setState({'device': result});
+               switch(result.status) {
+                  case 'On':
+                  case 'Tørker':
+                  case 'Vasker':
+                     self.setState({'className': 'led led__green'});
+                     break;
+                  case 'Off':
+                  case 'Ferdig':
+                     self.setState({'className': 'led'});
+                     break;
+                  default: self.setState({'className': 'led'});
+               }
          })}
          , 1000);
    }
@@ -27,29 +38,12 @@ class HsLedContainer extends Component {
       clearInterval(this.interval);
    }
 
-   getClassName() {
-      var ledClass = this.state.className;
-      switch(this.state.device.status) {
-         case 'On':
-            ledClass += ' led__green';
-            break;
-         case 'Dagvakt':
-         case 'Nattevakt':
-            ledClass += ' led__green'
-            break;
-         default:
-            ledClass = 'led';
-            break;
-      }
-      return ledClass;
-   }
-
    render() {
       return (
          <HsLed
             device={this.state.device}
             id={this.state.id}
-            className={this.getClassName()}
+            className={this.state.className}
          />
       );
    }

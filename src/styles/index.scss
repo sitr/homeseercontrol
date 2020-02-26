@@ -11,8 +11,8 @@ body {
 
 .main {
    display: grid;
-   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-   grid-template-rows: 1fr auto;
+   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+   grid-template-rows: 1fr 1fr 1fr;
    grid-gap: 0px;
 }
 
@@ -44,12 +44,31 @@ body {
 }
 
 .keyPanel {
-   grid-column-start: 4;
+   grid-column-start: 6;
    grid-column-end: span 2;
    display: grid;
    grid-template-columns: 1fr 1fr;
    grid-gap: 10px;
    align-items: center;
+}
+
+.ledPanel {
+   grid-column-start: 6;
+   grid-column-end: span 2;
+   text-align: right;
+
+   label {
+      font-size: 16pt;
+      color: $label-color;
+   }
+
+   .led {
+      -webkit-transform: scale(0.5); /* Saf3.1+, Chrome */
+     -moz-transform: scale(0.5); /* FF3.5+ */
+      -ms-transform: scale(0.5); /* IE9 */
+       -o-transform: scale(0.5); /* Opera 10.5+ */
+          transform: scale(0.5);
+   }
 }
 
 .hide {
@@ -104,11 +123,12 @@ body {
    color: whitesmoke;
    margin-top: 60px;
    padding-left: 20px;
+   font-size: 0.9em;
 }
 
 
 .clock {
-   grid-column-start: 5;
+   grid-column-start: 6;
    grid-column-end: 6;
    text-align: right;
    justify-self: end;
@@ -148,7 +168,7 @@ body {
    margin: 0 5px;
    display: inline-flex;
 
-   :after {
+   &:after {
       display: block;
       content: '';
       margin-left: 1px;
@@ -164,19 +184,24 @@ body {
 }
 
 .garbagePlan {
+   grid-column-start: 4;
+   grid-column-end: span 2;
    color: black;
    background-color: #b9b6b6;
    font-size: 0.8em;
-   grid-column-start: 4;
-   grid-column-end: span 2;
+
+   label {
+      font-weight: bold;
+      line-height: 40px;
+   }
 
    div {
       line-height: 40px;
-
    }
 
    img {
       width: 40px;
       float: left;
+      margin-left: 20px;
    }
 }

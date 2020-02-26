@@ -1,5 +1,6 @@
 import HsTextStatusDeviceContainer from './components/container/HsTextStatusDeviceContainer';
 import HsButton from './components/container/HsButtonContainer';
+import HsLed from './components/container/HsLedContainer';
 import { Link }  from "react-router-dom";
 import Clock from './components/clock';
 import React, { Component } from 'react';
@@ -47,11 +48,55 @@ class App extends Component {
                      deviceId="1135"
                      className="weather_station_value"
                   />
+                  <br/>
+                  <label className="weather_station_label">Nedbør:</label>
+                  <HsTextStatusDeviceContainer
+                     deviceId="1129"
+                     className="weather_station_value"
+                  />
                </div>
                <HsTextStatusDeviceContainer
                   deviceId="284"
                   className="weather_autotext"
                />
+            </div>
+            <div className="container_inset garbagePlan">
+               <label>Søppeltømming</label>
+               <div>
+                  <img alt="Recycle food waste" src="/images/vesar_epleskrott.png"/>
+                  <HsTextStatusDeviceContainer
+                     deviceId="1158"
+                     className=""
+                  />
+               </div>
+               <div>
+                  <img alt="Recycle metal and glass" src="/images/vesar_glassmetall.png"/>
+                  <HsTextStatusDeviceContainer
+                     deviceId="1159"
+                     className=""
+                  />
+               </div>
+               <div>
+                  <img alt="Recycle plastic" src="/images/vesar_plast.png"/>
+                  <HsTextStatusDeviceContainer
+                     deviceId="1160"
+                     className=""
+                  />
+               </div>
+               <div>
+                  <img alt="Recycle vaste" src="/images/vesar_restavfall.png"/>
+                  <HsTextStatusDeviceContainer
+                     deviceId="1161"
+                     className=""
+                  />
+               </div>
+               <div>
+                  <img alt="Recycle paper" src="/images/vesar_papir.png"/>
+                  <HsTextStatusDeviceContainer
+                     deviceId="1162"
+                     className=""
+                  />
+               </div>
             </div>
             <div className="container_raised keyPanel">
                <HsButton
@@ -100,44 +145,29 @@ class App extends Component {
                      deviceId="1110"
                      className="weather_station_value"
                   />
+                  <br/>
+                  <label className="weather_station_label">Lufttrykk:</label>
+                  <HsTextStatusDeviceContainer
+                     deviceId="1212"
+                     className="weather_station_value"
+                  />
                </div>
             </div>
-            <div className="container_inset garbagePlan">
-               <div>
-                  <img src="/images/vesar_epleskrott.png"/>
-                  <HsTextStatusDeviceContainer
-                     deviceId="1158"
-                     className=""
-                  />
-               </div>
-               <div>
-                  <img src="/images/vesar_glassmetall.png"/>
-                  <HsTextStatusDeviceContainer
-                     deviceId="1159"
-                     className=""
-                  />
-               </div>
-               <div>
-                  <img src="/images/vesar_plast.png"/>
-                  <HsTextStatusDeviceContainer
-                     deviceId="1160"
-                     className=""
-                  />
-               </div>
-               <div>
-                  <img src="/images/vesar_restavfall.png"/>
-                  <HsTextStatusDeviceContainer
-                     deviceId="1161"
-                     className=""
-                  />
-               </div>
-               <div>
-                  <img src="/images/vesar_papir.png"/>
-                  <HsTextStatusDeviceContainer
-                     deviceId="1162"
-                     className=""
-                  />
-               </div>
+            <div className="container_raised ledPanel">
+               <label>Motorvarmer:</label>
+               <HsLed
+                  deviceId="571"
+               />
+               <br/>
+               <label>Vaskemaskin:</label>
+               <HsLed
+                  deviceId="181"
+               />
+               <br/>
+               <label>Tørketrommel:</label>
+               <HsLed
+                  deviceId="180"
+               />
             </div>
             <Clock className="clock" />
          </div>
