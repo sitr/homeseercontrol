@@ -12,7 +12,7 @@ body {
 .main {
    display: grid;
    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-   // grid-template-rows: 1fr 1fr 1fr;
+   grid-template-rows: 1fr 1fr auto;
    grid-template-areas: 
       "outdoor outdoor outdoor garbage garbage keypanel keypanel"
       "indoor indoor indoor . . ledpanel ledpanel"
@@ -137,7 +137,6 @@ body {
    text-align: right;
    justify-self: end;
    align-self: end;
-   margin: 10px 15px;
    color: $value-color;
    height: 200px;
 
