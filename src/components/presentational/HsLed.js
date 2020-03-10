@@ -3,8 +3,7 @@ import React from "react";
 const HsLed = (props) => {
    return (
       <div
-         deviceId={props.device.ref}
-         id={props.id}
+         id={props.device.ref}
          className={props.className}>
       </div>
    );
