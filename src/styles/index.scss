@@ -12,7 +12,11 @@ body {
 .main {
    display: grid;
    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-   grid-template-rows: 1fr 1fr 1fr;
+   // grid-template-rows: 1fr 1fr 1fr;
+   grid-template-areas: 
+      "outdoor outdoor outdoor garbage garbage keypanel keypanel"
+      "indoor indoor indoor . . ledpanel ledpanel"
+      ". . . . . clock clock";
    grid-gap: 0px;
 }
 
@@ -39,13 +43,12 @@ body {
       inset 0 -1px 1px rgba(0,0,0,0.5), /*bottom internal shadow*/
       inset 0 1px 1px rgba(192,192,192,0.8); /*top internal highlight*/
    padding: 10px;
-   margin: 20px;
+   margin: 10px;
    width: fit-content;
 }
 
 .keyPanel {
-   grid-column-start: 6;
-   grid-column-end: span 2;
+   grid-area: keypanel;
    display: grid;
    grid-template-columns: 1fr 1fr;
    grid-gap: 10px;
@@ -53,21 +56,27 @@ body {
 }
 
 .ledPanel {
-   grid-column-start: 6;
-   grid-column-end: span 2;
-   text-align: right;
+   grid-area: ledpanel;
+   width: 75%;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   align-items: center;
 
    label {
       font-size: 16pt;
       color: $label-color;
+      grid-column: 1 / 2;
    }
 
    .led {
+      grid-column: 2 / 2;
       -webkit-transform: scale(0.5); /* Saf3.1+, Chrome */
      -moz-transform: scale(0.5); /* FF3.5+ */
       -ms-transform: scale(0.5); /* IE9 */
        -o-transform: scale(0.5); /* Opera 10.5+ */
           transform: scale(0.5);
+
+      margin-left: 20px;
    }
 }
 
@@ -76,11 +85,8 @@ body {
 }
 
 .outdoorConditions {
+   grid-area: outdoor;
    height: 90%;
-   grid-column-start: 1;
-   grid-column-end: span 3;
-   grid-row-start: 1;
-   grid-row-end: 2;
 }
 
 .outdoorConditions:nth-child(2) {
@@ -88,8 +94,7 @@ body {
 }
 
 .indoorConditions {
-   grid-column-start: 1;
-   grid-column-end: span 3;
+   grid-area: indoor;
 }
 
 .temperature{
@@ -128,13 +133,13 @@ body {
 
 
 .clock {
-   grid-column-start: 6;
-   grid-column-end: 6;
+   grid-area: clock;
    text-align: right;
    justify-self: end;
    align-self: end;
    margin: 10px 15px;
    color: $value-color;
+   height: 200px;
 
    span {
       font-size: 40px;
