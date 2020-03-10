@@ -1,9 +1,21 @@
 @import './colors.scss';
 .music_main {
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   grid-template-rows: 1fr auto;
 
+   .navButton {
+      grid-column: 3;
+    align-self: self-end;
+   }
+}
+
+.music_info {
+   grid-column: 1 / 2;
 }
 
 .music_control {
+   grid-column: 3 / 3;
    padding: 10px;
    margin: 0, 20px;
    min-width: 400px;

@@ -23,7 +23,7 @@ class Music extends Component {
 
    render() {
       return(
-      <div className='main'>
+      <div className='music_main'>
          <div className='container_inset music_info'>
             <HsGraphicStatusContainer deviceId='600' className='music_art' />
             <div className='music_meta'>
@@ -74,7 +74,7 @@ class Music extends Component {
             </div>
          </div>
          <div className="music_system">SONOS</div>
-         <div>
+         <div className="navButton">
             <Link to='/'>
                   <button className="button__navigation">Hovedside</button>
                </Link>

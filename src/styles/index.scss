@@ -12,7 +12,7 @@ body {
 .main {
    display: grid;
    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-   grid-template-rows: 1fr 1fr auto;
+   //grid-template-rows: 1fr 1fr auto;
    grid-template-areas: 
       "outdoor outdoor outdoor garbage garbage keypanel keypanel"
       "indoor indoor indoor . . ledpanel ledpanel"
@@ -61,6 +61,7 @@ body {
    display: grid;
    grid-template-columns: 1fr 1fr;
    align-items: center;
+   height: fit-content;
 
    label {
       font-size: 16pt;
@@ -89,12 +90,9 @@ body {
    height: 90%;
 }
 
-.outdoorConditions:nth-child(2) {
-   width: 100%;
-}
-
 .indoorConditions {
    grid-area: indoor;
+   height: fit-content;
 }
 
 .temperature{
@@ -127,6 +125,7 @@ body {
 .weather_autotext {
    color: whitesmoke;
    margin-top: 60px;
+   margin-bottom: 10px;
    padding-left: 20px;
    font-size: 0.9em;
 }
@@ -139,6 +138,7 @@ body {
    align-self: end;
    color: $value-color;
    height: 200px;
+   margin-top: 45px;
 
    span {
       font-size: 40px;
