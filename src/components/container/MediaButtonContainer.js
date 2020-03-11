@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getDeviceInfoFromHomeSeer, setDeviceValue } from '../HsDeviceController';
+import { runEvent, getDeviceInfoFromHomeSeer, setDeviceValue } from '../HsDeviceController';
 import HsButton from '../presentational/HsButton';
 import { getConfig } from '../../config';
 
@@ -26,17 +26,18 @@ class MediaButtonContainer extends Component {
       this.interval = setInterval(() => {
          getDeviceInfoFromHomeSeer(kitchenPlayer)
             .then(result => {
-               self.setState({'isPlaying': result.status === 'Playing' ? true: false});
-         })}
+               self.setState({ 'isPlaying': result.status === 'Playing' ? true : false });
+            })
+      }
          , 1000);
    }
 
    getClassName() {
       switch (this.state.buttonType) {
          case 'btnPlay':
-            return this.state.className +  (this.state.isPlaying ? ' hide' : '');
+            return this.state.className + (this.state.isPlaying ? ' hide' : '');
          case 'btnPause':
-            return this.state.className +  (this.state.isPlaying ? '' : ' hide');
+            return this.state.className + (this.state.isPlaying ? '' : ' hide');
          default:
             return this.state.className;
       }
@@ -47,23 +48,31 @@ class MediaButtonContainer extends Component {
    }
 
    handleClick = (event) => {
-      var cmd = '';
       var parsedCmd = JSON.parse(this.state.command);
-      switch (parsedCmd.value) {
-         case 'Play':
-            cmd = '1001';
+      switch (parsedCmd.cmd) {
+         case 'Event':
+            runEvent(parsedCmd.groupName, parsedCmd.eventName);
             break;
-         case 'Pause':
-            cmd = '1000';
-            break;
-         case 'Forward':
-            cmd = '1004';
-            break;
-         case 'Backward':
-            cmd = '1005';
-            break;
+         case 'SetValue':
+            var cmd = '';
+            switch (parsedCmd.value) {
+               case 'Play':
+                  cmd = '1001';
+                  break;
+               case 'Pause':
+                  cmd = '1000';
+                  break;
+               case 'Forward':
+                  cmd = '1004';
+                  break;
+               case 'Backward':
+                  cmd = '1005';
+                  break;
+               default:
+                  cmd = '';
+            }
          default:
-            cmd='';
+            break;
       }
       setDeviceValue(this.state.deviceId, cmd);
    }

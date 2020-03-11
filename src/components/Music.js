@@ -4,6 +4,7 @@ import MediaButtonContainer from './container/MediaButtonContainer';
 import React, { Component } from 'react';
 import SliderContainer from './container/SliderContainer';
 import { Link }  from "react-router-dom";
+import HsButtonContainer from './container/HsButtonContainer';
 
 class Music extends Component {
    constructor(props) {
@@ -62,7 +63,6 @@ class Music extends Component {
                   id="btnPause"
                   deviceId="572"
                   command='{"cmd": "SetValue", "value": "Pause"}'
-
                   className="btnPause"
                   buttonText="&#10074;&#10074;" />
                <MediaButtonContainer
@@ -72,6 +72,28 @@ class Music extends Component {
                   className="btnForward"
                   buttonText=">" />
             </div>
+         </div>
+         <div class="radioStations">
+            <HsButtonContainer 
+               id="radio_p1"
+               command='{"cmd": "Event", "groupName": "Sonos", "eventName": "Radiostasjon - P1"}'
+               className="btnRadioStation radio_nrkP1"
+               buttonText="" />
+            <HsButtonContainer 
+               id="radio_p3"
+               command='{"cmd": "Event", "groupName": "Sonos", "eventName": "Radiostasjon - P3"}'
+               className="btnRadioStation radio_nrkP3"
+               buttonText="" />
+            <HsButtonContainer 
+               id="radio_p13"
+               command='{"cmd": "Event", "groupName": "Sonos", "eventName": "Radiostasjon - P13"}'
+               className="btnRadioStation radio_nrkP13"
+               buttonText="" />
+            <HsButtonContainer 
+               id="radio_p4"
+               command='{"cmd": "Event", "groupName": "Sonos", "eventName": "Radiostasjon - P4"}'
+               className="btnRadioStation radio_P4"
+               buttonText="" />
          </div>
          <div className="music_system">SONOS</div>
          <div className="navButton">

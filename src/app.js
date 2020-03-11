@@ -158,17 +158,14 @@ class App extends Component {
                <HsLed
                   deviceId="571"
                />
-               <br/>
                <label>Vaskemaskin:</label>
                <HsLed
                   deviceId="181"
                />
-               <br/>
                <label>Tørketrommel:</label>
                <HsLed
                   deviceId="180"
                />
-               <br/>
                <label>Støvsuger:</label>
                <HsLed
                   deviceId="1342"

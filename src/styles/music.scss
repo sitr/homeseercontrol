@@ -171,3 +171,49 @@ input[type="range"].volume_slider__vertical::-webkit-slider-thumb {
    font-size: 72px;
    box-shadow: 3px 1px 2px rgb(0, 153, 255), 0 2px 1px #666, inset 0 2px 1px rgba(0,0,0,0.5), inset 3px 1px 1px rgb(0, 153, 255);
 }
+
+.btnRadioStation {
+   width: 200px;
+   height: 70px;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: contain;
+   background-origin: content-box;
+   background-color: dimgray;
+}
+
+.radio_nrkP13 {
+   background-image: url('/images/radio_NRK_P13.png');
+
+   &:active {
+      background-image: url('/images/radio_NRK_P13.png');
+      background-color: #2E5894;;
+   }
+}
+
+.radio_nrkP3 {
+   background-image: url('/images/radio_NRK_P3.png');
+
+   &:active {
+      background-image: url('/images/radio_NRK_P3.png');
+      background-color: #2E5894;;
+   }
+}
+
+.radio_nrkP1 {
+   background-image: url('/images/radio_NRK_P1.png');
+
+   &:active {
+      background-image: url('/images/radio_NRK_P1.png');
+      background-color: #2E5894;;
+   }
+}
+
+.radio_P4 {
+   background-image: url('/images/radio_P4.png');
+
+   &:active {
+      background-image: url('/images/radio_P4.png');
+      background-color: #2E5894;;
+   }
+}
