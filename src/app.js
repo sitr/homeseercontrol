@@ -168,6 +168,11 @@ class App extends Component {
                <HsLed
                   deviceId="180"
                />
+               <br/>
+               <label>Støvsuger:</label>
+               <HsLed
+                  deviceId="1342"
+               />
             </div>
             <Clock className="clock" />
          </div>

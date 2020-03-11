@@ -22,10 +22,12 @@ class HsLedContainer extends Component {
                   case 'On':
                   case 'Tørker':
                   case 'Vasker':
+                  case 'Ja':
                      self.setState({'className': 'led led__green'});
                      break;
                   case 'Off':
                   case 'Ferdig':
+                  case 'Nei':
                      self.setState({'className': 'led'});
                      break;
                   default: self.setState({'className': 'led'});
