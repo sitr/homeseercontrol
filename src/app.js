@@ -120,6 +120,9 @@ class App extends Component {
                   className="button"
                   command='{"cmd": "Event", "groupName": "Lysscener", "eventName": "Stue - full belysning"}'
                />
+               <Link to='/house'>
+                  <button className="button__navigation">Status</button>
+               </Link>
                <div/>
                <HsButton
                   buttonText="Alt lys av"
@@ -148,7 +151,7 @@ class App extends Component {
                   <br/>
                   <label className="weather_station_label">Lufttrykk:</label>
                   <HsTextStatusDeviceContainer
-                     deviceId="1212"
+                     deviceId="1112"
                      className="weather_station_value"
                   />
                </div>

@@ -9,6 +9,7 @@ class HsTextStatusDeviceContainer extends Component {
       this.state = {
          deviceId: this.props.deviceId,
          device: {},
+         statusType: this.props.statusType,
          className: this.props.className,
       };
    }
@@ -19,6 +20,41 @@ class HsTextStatusDeviceContainer extends Component {
          getDeviceInfoFromHomeSeer(self.state.deviceId)
             .then(result => {
                self.setState({'device': result});
+               if(self.props.statusType === 'window' || self.props.statusType === 'door')
+               {
+                  switch(result.status)
+                  {
+                     case 'Lukket':
+                        self.setState({'className': self.props.className + ' closed'});
+                        self.setState({'device': ''});
+                        break;
+                     case 'Åpent':
+                     case 'Åpen':
+                        self.setState({'className': self.props.className + ' open'});
+                        self.setState({'device': ''});
+                        break;
+                     default: self.setState({'className': ''});
+                     }
+               }
+               if (self.props.statusType === 'light')
+               {
+                  switch(true)
+                  {
+                     case result.value === 0:
+                        self.setState({'className': self.props.className + ' off'});
+                        self.setState({'device': ''});
+                        break;
+                     case result.value > 0 && result.value < 100 :
+                        self.setState({'className': self.props.className + ' dim'});
+                        self.setState({'device': ''});
+                        break;
+                        case result.value === 100 :
+                           self.setState({'className': self.props.className + ' on'});
+                           self.setState({'device': ''});
+                           break;
+                     default: self.setState({'className': self.props.className + ' off'});
+                  }
+               }
          })}
          , 1000);
    }

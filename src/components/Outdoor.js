@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link }  from "react-router-dom";
 import HsTextStatusDeviceContainer from './container/HsTextStatusDeviceContainer';
-import HsLedContainer from './container/HsLedContainer';
 import HsButtonContainer from './container/HsButtonContainer';
 
 class Outdoor extends Component {
@@ -48,7 +47,7 @@ class Outdoor extends Component {
                   isLiveButton={true}
                />
             </div>
-            <div className="music_system">MOTORVARMER</div>
+            <div className="page_logo">MOTORVARMER</div>
             <div>
                <Link to='/'>
                      <button className="button__navigation">Hovedside</button>

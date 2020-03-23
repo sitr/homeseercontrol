@@ -1,0 +1,149 @@
+.house_main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "secondfloor . keypanel"
+}
+.building {
+    grid-area: "secondfloor";
+    width: 850px;
+    height: 600px;
+    background: url(/images/Hustegning.svg);
+    background-size: 100%;
+}
+
+.keypad {
+    grid-area: "keypanel";
+}
+
+
+.window, .door, .light {
+    position: absolute;
+}
+
+.temp {
+    position: absolute;
+    font-size: 20px;
+    color: indianred;
+}
+
+.livingRoom {
+    .temp {
+        left: 558px;
+        top: 282px;
+    }
+
+    .terraceDoor {
+        width: 9px;
+        height: 55px;
+        left: 758px;
+        top: 310px;
+    }
+}
+
+.bathroom {
+    .temp {
+        left: 297px;
+        top: 472px;
+    }
+
+    .ceilingLamp {
+        left: 312px;
+        top: 447px;
+    }
+
+    .mirrorLamp {
+        left: 273px;
+        top: 410px;
+    }
+}
+
+.office {
+    .temp {
+        left: 110px;
+        top: 454px;
+    }
+
+    .window {
+        left: 170px;
+        top: 514px;
+        width: 55px;
+        height: 9px;
+    }
+
+    .ceilingLamp {
+        left: 133px;
+        top: 425px;
+    }
+}
+
+.masterBedroom {
+    .window {
+        left: 84px;
+        top: 122px;
+        width: 55px;
+        height: 9px;
+    }
+
+    .terraceDoor {
+        left: 143px;
+        top: 122px;
+        width: 55px;
+        height: 9px;
+    }
+
+    .ceilingLamp {
+        left: 134px;
+        top: 221px;
+    }
+
+    .bedLampIL {
+        left: 46px;
+        top: 157px;
+    }
+
+    .bedLampS {
+        left: 46px;
+        top: 281px;
+    }
+}
+
+.hallway {
+    .temp {
+        left: 182px;
+        top: 347px;
+    }
+
+    .ceilingLamp {
+        left: 286px;
+        top: 347px;
+    }
+}
+
+
+.closed {
+    background-color: limegreen;
+}
+
+.open {
+    background-color: red;
+}
+
+.light {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgba($color: #fff, $alpha: .4);
+    box-shadow: 0 0 3px 3px rgba($color: #fff, $alpha: .7);
+
+}
+.on {
+    background-color: yellow;
+    box-shadow: 0 0 8px 6px yellow;
+}
+
+.dim {
+    background-color: rgba($color: yellow, $alpha: .4);
+    box-shadow: 0 0 8px 6px yellow;
+}

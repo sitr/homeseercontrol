@@ -95,7 +95,7 @@ class Music extends Component {
                className="btnRadioStation radio_P4"
                buttonText="" />
          </div>
-         <div className="music_system">SONOS</div>
+         <div className="page_logo">SONOS</div>
          <div className="navButton">
             <Link to='/'>
                   <button className="button__navigation">Hovedside</button>
