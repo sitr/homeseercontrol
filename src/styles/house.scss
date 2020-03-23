@@ -40,6 +40,53 @@
         left: 758px;
         top: 310px;
     }
+    
+    .ceilingLamp {
+        left: 667px;
+        top: 457px;
+    }
+    
+    .windowLamp1 {
+        left: 741px;
+        top: 435px;
+    }
+    
+    .windowLamp2 {
+        left: 609px;
+        top: 135px;
+    }
+    
+    .floorLamp1 {
+        left: 409px;
+        top: 138px;
+    }
+    
+    .floorLamp2 {
+        left: 741px;
+        top: 138px;
+    }
+
+    .floorLamp3 {
+        left: 536px;
+        top: 493px;
+    }
+    
+    .tableLamp1 {
+        left: 520px;
+        top: 135px;
+    }
+
+    .tableLamp2 {
+        left: 409px;
+        top: 284px;
+    }
+}
+
+.stairCase {
+    .ceilingLamp {
+        left: 447px;
+        top: 444px;
+    }
 }
 
 .bathroom {
@@ -121,6 +168,22 @@
     }
 }
 
+.kitchen {
+    .ceilingLamp {
+        left: 294px;
+        top: 161px;
+    }
+
+    .stripLight1 {
+        left: 218px;
+        top: 208px;
+    }
+
+    .stripLight2 {
+        left: 286px;
+        top: 284px;
+    }
+}
 
 .closed {
     background-color: limegreen;
@@ -131,19 +194,19 @@
 }
 
 .light {
-    width: 20px;
-    height: 20px;
+    width: 13px;
+    height: 13px;
     border-radius: 50%;
-    background-color: rgba($color: #fff, $alpha: .4);
-    box-shadow: 0 0 3px 3px rgba($color: #fff, $alpha: .7);
+    background-color: #a6a6a6;
+    box-shadow: 0 0 3px 3px #a6a6a6;
 
 }
 .on {
     background-color: yellow;
-    box-shadow: 0 0 8px 6px yellow;
+    box-shadow: 0 0 8px 3px yellow;
 }
 
 .dim {
-    background-color: rgba($color: yellow, $alpha: .4);
-    box-shadow: 0 0 8px 6px yellow;
+    background-color: rgba($color: yellow, $alpha: .7);
+    box-shadow: 0 0 8px 3px yellow;
 }

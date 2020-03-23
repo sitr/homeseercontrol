@@ -27,6 +27,44 @@ class House extends Component {
                      deviceId="156"
                      className="door terraceDoor"
                      statusType="door"/>
+                  <HsTextStatusDeviceContainer
+                     deviceId="19"
+                     className="light ceilingLamp"
+                     statusType="light"/>
+                  <HsTextStatusDeviceContainer
+                     deviceId="209"
+                     className="light windowLamp1"
+                     statusType="light"/>
+                  <HsTextStatusDeviceContainer
+                     deviceId="198"
+                     className="light windowLamp2"
+                     statusType="light"/>
+                  <HsTextStatusDeviceContainer
+                     deviceId="26"
+                     className="light floorLamp1"
+                     statusType="light"/>
+                  <HsTextStatusDeviceContainer
+                     deviceId="22"
+                     className="light floorLamp2"
+                     statusType="light"/>
+                  <HsTextStatusDeviceContainer
+                     deviceId="695"
+                     className="light floorLamp3"
+                     statusType="light"/>
+                  <HsTextStatusDeviceContainer
+                     deviceId="1169"
+                     className="light tableLamp1"
+                     statusType="light"/>
+                  <HsTextStatusDeviceContainer
+                     deviceId="17"
+                     className="light tableLamp2"
+                     statusType="light"/>
+               </div>
+               <div class="stairCase">
+                  <HsTextStatusDeviceContainer
+                     deviceId="196"
+                     className="light ceilingLamp"
+                     statusType="light"/>
                </div>
                <div class="hallway">
                   <HsTextStatusDeviceContainer
@@ -83,6 +121,20 @@ class House extends Component {
                   <HsTextStatusDeviceContainer
                      deviceId="652"
                      className="light bedLampS"
+                     statusType="light"/>
+               </div>
+               <div class="kitchen">
+               <HsTextStatusDeviceContainer
+                     deviceId="76"
+                     className="light ceilingLamp"
+                     statusType="light"/>
+                  <HsTextStatusDeviceContainer
+                     deviceId="6"
+                     className="light stripLight1"
+                     statusType="light"/>
+                  <HsTextStatusDeviceContainer
+                     deviceId="6"
+                     className="light stripLight2"
                      statusType="light"/>
                </div>
             </div>
