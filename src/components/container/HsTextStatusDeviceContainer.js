@@ -44,11 +44,11 @@ class HsTextStatusDeviceContainer extends Component {
                         self.setState({'className': self.props.className + ' off'});
                         self.setState({'device': ''});
                         break;
-                     case result.value > 0 && result.value < 100 :
+                     case result.value > 0 && result.value < 99 :
                         self.setState({'className': self.props.className + ' dim'});
                         self.setState({'device': ''});
                         break;
-                        case result.value === 100 :
+                        case result.value >= 99 :
                            self.setState({'className': self.props.className + ' on'});
                            self.setState({'device': ''});
                            break;
