@@ -1,3 +1,5 @@
+@import './colors.scss';
+
 .house_main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -17,7 +19,6 @@
     grid-area: "keypanel";
 }
 
-
 .window, .door, .light {
     position: absolute;
 }
@@ -25,188 +26,79 @@
 .temp {
     position: absolute;
     font-size: 20px;
-    color: indianred;
-}
-
-.livingRoom {
-    .temp {
-        left: 558px;
-        top: 282px;
-    }
-
-    .terraceDoor {
-        width: 9px;
-        height: 55px;
-        left: 758px;
-        top: 310px;
-    }
-    
-    .ceilingLamp {
-        left: 667px;
-        top: 457px;
-    }
-    
-    .windowLamp1 {
-        left: 741px;
-        top: 435px;
-    }
-    
-    .windowLamp2 {
-        left: 609px;
-        top: 135px;
-    }
-    
-    .floorLamp1 {
-        left: 409px;
-        top: 138px;
-    }
-    
-    .floorLamp2 {
-        left: 741px;
-        top: 138px;
-    }
-
-    .floorLamp3 {
-        left: 536px;
-        top: 493px;
-    }
-    
-    .tableLamp1 {
-        left: 520px;
-        top: 135px;
-    }
-
-    .tableLamp2 {
-        left: 409px;
-        top: 284px;
-    }
-}
-
-.stairCase {
-    .ceilingLamp {
-        left: 447px;
-        top: 444px;
-    }
-}
-
-.bathroom {
-    .temp {
-        left: 297px;
-        top: 472px;
-    }
-
-    .ceilingLamp {
-        left: 312px;
-        top: 447px;
-    }
-
-    .mirrorLamp {
-        left: 273px;
-        top: 410px;
-    }
-}
-
-.office {
-    .temp {
-        left: 110px;
-        top: 454px;
-    }
-
-    .window {
-        left: 170px;
-        top: 514px;
-        width: 55px;
-        height: 9px;
-    }
-
-    .ceilingLamp {
-        left: 133px;
-        top: 425px;
-    }
-}
-
-.masterBedroom {
-    .window {
-        left: 84px;
-        top: 122px;
-        width: 55px;
-        height: 9px;
-    }
-
-    .terraceDoor {
-        left: 143px;
-        top: 122px;
-        width: 55px;
-        height: 9px;
-    }
-
-    .ceilingLamp {
-        left: 134px;
-        top: 221px;
-    }
-
-    .bedLampIL {
-        left: 46px;
-        top: 157px;
-    }
-
-    .bedLampS {
-        left: 46px;
-        top: 281px;
-    }
-}
-
-.hallway {
-    .temp {
-        left: 182px;
-        top: 347px;
-    }
-
-    .ceilingLamp {
-        left: 286px;
-        top: 347px;
-    }
-}
-
-.kitchen {
-    .ceilingLamp {
-        left: 294px;
-        top: 161px;
-    }
-
-    .stripLight1 {
-        left: 218px;
-        top: 208px;
-    }
-
-    .stripLight2 {
-        left: 286px;
-        top: 284px;
-    }
+    color: $temperature-plus-color;
 }
 
 .closed {
-    background-color: limegreen;
+    background-color: $closed-color;
 }
 
 .open {
-    background-color: red;
+    background-color: $open-color;
 }
 
 .light {
     width: 13px;
     height: 13px;
     border-radius: 50%;
-    background-color: #a6a6a6;
-    box-shadow: 0 0 3px 3px #a6a6a6;
-
+    background-color: $light-off-color;
+    box-shadow: 0 0 3px 3px $light-off-color;
 }
+
 .on {
-    background-color: yellow;
-    box-shadow: 0 0 8px 3px yellow;
+    background-color: $light-on-color;
+    box-shadow: 0 0 8px 3px $light-on-color;
 }
 
 .dim {
-    background-color: rgba($color: yellow, $alpha: .7);
-    box-shadow: 0 0 8px 3px yellow;
+    background-color: rgba($color: $light-on-color, $alpha: .7);
+    box-shadow: 0 0 8px 3px $light-on-color;
+}
+
+.livingRoom {
+    .temp { left: 558px; top: 282px; }
+    .terraceDoor { width: 9px; height: 55px; left: 758px; top: 310px; }
+    .ceilingLamp { left: 667px; top: 457px; }
+    .windowLamp1 { left: 741px; top: 435px; }
+    .windowLamp2 { left: 609px; top: 135px; }
+    .floorLamp1 { left: 409px; top: 138px; }
+    .floorLamp2 { left: 741px; top: 138px; }
+    .floorLamp3 { left: 536px; top: 493px; }
+    .tableLamp1 { left: 520px; top: 135px; }
+    .tableLamp2 { left: 409px; top: 284px; }
+}
+
+.stairCase {
+    .ceilingLamp { left: 447px; top: 444px; }
+}
+
+.bathroom {
+    .temp { left: 297px; top: 472px; }
+    .ceilingLamp { left: 312px; top: 447px; }
+    .mirrorLamp { left: 273px; top: 410px; }
+}
+
+.office {
+    .temp { left: 110px; top: 454px; }
+    .window { left: 170px; top: 514px; width: 55px; height: 9px; }
+    .ceilingLamp { left: 133px; top: 425px; }
+}
+
+.masterBedroom {
+    .window { left: 84px; top: 122px; width: 55px; height: 9px; }
+    .terraceDoor { left: 143px; top: 122px; width: 55px; height: 9px; }
+    .ceilingLamp { left: 134px; top: 221px; }
+    .bedLamp1 { left: 46px; top: 157px; }
+    .bedLamp2 { left: 46px; top: 281px; }
+}
+
+.hallway {
+    .temp { left: 182px; top: 347px; }
+    .ceilingLamp { left: 286px; top: 347px; }
+}
+
+.kitchen {
+    .ceilingLamp { left: 294px; top: 161px; }
+    .stripLight1 { left: 218px; top: 208px; }
+    .stripLight2 { left: 286px; top: 284px; }
 }

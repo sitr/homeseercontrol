@@ -98,6 +98,21 @@ class HsButtonContainer extends Component {
                   cmd = '0';
                   this.setState({'className': ''});
                   break;
+               case 'Ingen belysning':
+                  cmd='101';
+                  break;
+               case 'Normal belysning':
+                  cmd='102';
+                  break;
+               case 'Litt belysning':
+                     cmd='103';
+                     break;
+               case 'Dempet belysning':
+                  cmd='104';
+                  break;
+               case 'Full belysning':
+                  cmd='105';
+                  break;
                default:
                   break;
             }

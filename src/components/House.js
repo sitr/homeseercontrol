@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link }  from "react-router-dom";
 import HsTextStatusDeviceContainer from './container/HsTextStatusDeviceContainer';
+import HsGraphicStatusContainer from './container/HsGraphicStatusContainer';
 
 class House extends Component {
    constructor(props) {
@@ -59,6 +60,9 @@ class House extends Component {
                      deviceId="17"
                      className="light tableLamp2"
                      statusType="light"/>
+                  <HsGraphicStatusContainer
+                     deviceId="153"
+                     className="battery terraceDoor"/>
                </div>
                <div class="stairCase">
                   <HsTextStatusDeviceContainer
@@ -116,11 +120,11 @@ class House extends Component {
                      statusType="light"/>
                   <HsTextStatusDeviceContainer
                      deviceId="650"
-                     className="light bedLampIL"
+                     className="light bedLamp1"
                      statusType="light"/>
                   <HsTextStatusDeviceContainer
                      deviceId="652"
-                     className="light bedLampS"
+                     className="light bedLamp2"
                      statusType="light"/>
                </div>
                <div class="kitchen">

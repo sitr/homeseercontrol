@@ -70,7 +70,9 @@ class MediaButtonContainer extends Component {
                   break;
                default:
                   cmd = '';
+                  break;
             }
+            break;
          default:
             break;
       }

@@ -6,9 +6,9 @@ import Clock from './components/clock';
 import React, { Component } from 'react';
 
 class App extends Component {
-   constructor(props) {
-      super(props);
-   }
+   // constructor(props) {
+   //    super(props);
+   // }
 
    componentDidMount() {
       document.title = "Hovedkontroll";
@@ -100,34 +100,38 @@ class App extends Component {
             </div>
             <div className="container_raised keyPanel">
                <HsButton
+                  deviceId="130"
                   buttonText="Normal belysning"
                   className="button"
-                  command='{"cmd": "Event", "groupName": "Lysscener", "eventName": "Stue - normal belysning"}'
+                  command='{"cmd": "SetValue", "value": "Normal belysning"}'
                />
                <Link to='/music'>
                   <button className="button__navigation">Musikk</button>
                </Link>
                <HsButton
+                  deviceId="130"
                   buttonText="Dempet belysning"
                   className="button"
-                  command='{"cmd": "Event", "groupName": "Lysscener", "eventName": "Stue - dempet belysning"}'
+                  command='{"cmd": "SetValue", "value": "Dempet belysning"}'
                />
                <Link to='/outdoor'>
                   <button className="button__navigation">Garasje</button>
                </Link>
                <HsButton
+                  deviceId="130"
                   buttonText="Alt lys på"
                   className="button"
-                  command='{"cmd": "Event", "groupName": "Lysscener", "eventName": "Stue - full belysning"}'
+                  command='{"cmd": "SetValue", "value": "Full belysning"}'
                />
                <Link to='/house'>
                   <button className="button__navigation">Status</button>
                </Link>
-               <div/>
+
                <HsButton
+                  deviceId="130"
                   buttonText="Alt lys av"
                   className="button"
-                  command='{"cmd": "Event", "groupName": "Lysscener", "eventName": "Stue - ingen belysning"}'
+                  command='{"cmd": "SetValue", "value": "Ingen belysning"}'
                />
                <HsButton
                   deviceId="87"
