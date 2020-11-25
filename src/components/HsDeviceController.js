@@ -5,11 +5,11 @@ var config = getConfig();
 const HOMESEER_URL =  config.homeseerApiHost;
 
 function getDeviceInfoFromHomeSeer (deviceId) {
-   var result = fetch("http://" + HOMESEER_URL + "/JSON?request=getstatus&ref=" +deviceId)
-      .then(response => response.json())
-      .then(data => {
+   var result = fetch("http://" + HOMESEER_URL + "/JSON?request=getstatus&ref=" + deviceId)
+      .then(response => response.json(), deviceId)
+      .then(data =>   {
          return new HsDevice(data);
-   });
+   }, deviceId);
    return result;
 }
 
