@@ -1,4 +1,5 @@
 import HsTextStatusDeviceContainer from './components/container/HsTextStatusDeviceContainer';
+import HsMultiLineStatusDeviceContainer from './components/container/HSMultiLineStatusDeviceContainer';
 import HsButton from './components/container/HsButtonContainer';
 import HsLed from './components/container/HsLedContainer';
 import { Link }  from "react-router-dom";
@@ -16,6 +17,7 @@ class App extends Component {
 
    render() {
       return (
+         <React.StrictMode>
          <div className="main">
             <div className="container_inset outdoorConditions">
                <HsTextStatusDeviceContainer
@@ -160,6 +162,12 @@ class App extends Component {
                   />
                </div>
             </div>
+            <div className='container_inset garbagePlan'>
+               <label>Strømpriser i dag</label>
+               <HsMultiLineStatusDeviceContainer
+                  deviceId="2009"
+               />
+            </div>
             <div className="container_raised ledPanel">
                <label>Motorvarmer:</label>
                <HsLed
@@ -180,6 +188,7 @@ class App extends Component {
             </div>
             <Clock className="clock" />
          </div>
+         </React.StrictMode>
       );
    }
 }
