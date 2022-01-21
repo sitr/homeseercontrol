@@ -33,6 +33,7 @@ class HsMultiLineStatusDeviceContainer extends Component {
         return (
             <LineChart
                 device={this.state.device}
+                id={this.state.id}
                 className={this.state.className}
             />
         );
