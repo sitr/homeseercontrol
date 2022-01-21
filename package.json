@@ -1,6 +1,6 @@
 {
   "name": "homeseercontrol2",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^13.5.0",
     "chart.js": "^3.7.0",
     "chartjs-adapter-moment": "^1.0.0",
+    "chartjs-plugin-annotation": "^1.2.2",
     "moment": "^2.29.1",
     "react": "^17.0.2",
     "react-chartjs-2": "^4.0.1",
