@@ -51,10 +51,10 @@ const LineChart = (props) => {
         {
             label: 'øre/kWh',
             fill: false,
-            lineTension: 0.5,
-            backgroundColor: 'rgba(75,192,192,1)',
-            borderColor: 'rgba(0,0,0,1)',
-            borderWidth: 2,
+            lineTension: 0,
+            // backgroundColor: 'rgba(75,192,192,1)',
+            // borderColor: 'rgba(0,0,0,1)',
+            // borderWidth: 1,
             data: []
         }
     ]
@@ -88,18 +88,53 @@ const LineChart = (props) => {
                         text: 'Dagens strømpriser',
                         fontSize: 20
                     },
-                    legend: {
-                        display: true,
-                        position: 'right'
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            boxWidth: 3,
+                            boxHeight: 3,
+                            caretPadding: 10,
+                            callbacks: {
+                                label: function(context) {
+                                    return context.parsed.y + ' øre';
+                                }
+                            }
+                        }
                     },
                     scales: {
                         x: {
+                            title:{
+                                display: true,
+                                text: 'kl',
+                                align: 'end'
+                            },
                             type: 'time',
                             time: {
+                                tooltipFormat: 'DD.MM. HH:mm',
                                 displayFormats: {
                                     hour: 'HH'
                                 }
                             }
+                        },
+                        y: {
+                            title:{
+                                display: true,
+                                text: 'øre/kWh',
+                                align: 'end'
+                            }
+                        }
+                    },
+                    elements: {
+                        point: {
+                            radius: 1,
+                            backgroundColor: '#f00',
+                            borderColor: '#f00'
+                        },
+                        line: {
+                            borderWidth: 1,
+                            borderColor: 'rgba(0,0,0,0.5)'
                         }
                     }
                 }}
