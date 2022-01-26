@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {getDeviceInfoFromHomeSeer} from '../HsDeviceController';
-import HsTextStatusDevice from '../presentational/HsTextStatusDevice';
+import HsTextStatusDevice from './HsTextStatusDevice';
 
 class HsTextStatusDeviceContainer extends Component {
 

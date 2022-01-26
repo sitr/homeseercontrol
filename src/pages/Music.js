@@ -1,10 +1,10 @@
-import HsGraphicStatusContainer from './container/HsGraphicStatusContainer';
-import HsTextStatusDeviceContainer from './container/HsTextStatusDeviceContainer';
-import MediaButtonContainer from './container/MediaButtonContainer';
+import HsGraphicStatusContainer from '../components/Graphics/HsGraphicStatusContainer';
+import HsTextStatusDeviceContainer from '../components/Text/HsTextStatusDeviceContainer';
+import MediaButtonContainer from '../components/Buttons/MediaButtonContainer';
 import React, { Component } from 'react';
-import SliderContainer from './container/SliderContainer';
+import SliderContainer from '../components/Sliders/SliderContainer';
 import { Link }  from "react-router-dom";
-import HsButtonContainer from './container/HsButtonContainer';
+import HsButtonContainer from '../components/Buttons/HsButtonContainer';
 
 class Music extends Component {
    constructor(props) {

@@ -1,10 +1,11 @@
-import HsTextStatusDeviceContainer from './components/container/HsTextStatusDeviceContainer';
-import HsMultiLineStatusDeviceContainer from './components/container/HSMultiLineStatusDeviceContainer';
-import HsButton from './components/container/HsButtonContainer';
-import HsLed from './components/container/HsLedContainer';
+import HsTextStatusDeviceContainer from './components/Text/HsTextStatusDeviceContainer';
+import HsMultiLineStatusDeviceContainer from './components/PowerConsumption/PowerConsumption';
+import HsButton from './components/Buttons/HsButtonContainer';
+import HsLed from './components/Leds/HsLedContainer';
 import { Link }  from "react-router-dom";
 import Clock from './components/clock';
 import React, { Component } from 'react';
+import PowerConsumption from './components/PowerConsumption/PowerConsumption';
 
 class App extends Component {
    // constructor(props) {
@@ -162,12 +163,8 @@ class App extends Component {
                   />
                </div>
             </div>
-            <div className='container_inset garbagePlan'>
-               <label>Strømpriser i dag</label>
-               <HsMultiLineStatusDeviceContainer
-                  deviceId="2009"
-               />
-            </div>
+            <PowerConsumption deviceId="2009"/>
+
             <div className="container_raised ledPanel">
                <label>Motorvarmer:</label>
                <HsLed

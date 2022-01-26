@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link }  from "react-router-dom";
-import HsTextStatusDeviceContainer from './container/HsTextStatusDeviceContainer';
-import HsGraphicStatusContainer from './container/HsGraphicStatusContainer';
+import HsTextStatusDeviceContainer from '../components/Text/HsTextStatusDeviceContainer';
+import HsGraphicStatusContainer from '../components/Graphics/HsGraphicStatusContainer';
 
 class House extends Component {
    constructor(props) {

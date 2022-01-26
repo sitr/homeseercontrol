@@ -7,9 +7,9 @@ import './styles/button.scss';
 import './styles/house.scss';
 
 import App from './app';
-import Music from './components/Music';
-import Outdoor from './components/Outdoor';
-import House from './components/House';
+import Music from './pages/Music';
+import Outdoor from './pages/Outdoor';
+import House from './pages/House';
 import { Router, Route } from "react-router-dom";
 import { configureHistory } from './configureHistory.js'
 import registerServiceWorker from './registerServiceWorker';

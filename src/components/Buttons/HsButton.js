@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const HsButton = (props) => (
+const HsButton_old = (props) => (
    <button
       id={props.id}
       className={props.className}
@@ -9,9 +9,9 @@ const HsButton = (props) => (
       {props.buttonText}
    </button>
 );
-HsButton.propTypes = {
+HsButton_old.propTypes = {
    className: PropTypes.string.isRequired,
    onClick: PropTypes.func,
    buttonText: PropTypes.string.isRequired
 };
-export default HsButton;
+export default HsButton_old;

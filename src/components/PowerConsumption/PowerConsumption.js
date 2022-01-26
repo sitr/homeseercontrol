@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { getDeviceInfoFromHomeSeer } from '../HsDeviceController';
-import LineChart from '../presentational/LineChart';
+import LineChart from './LineChart';
 
-class HsMultiLineStatusDeviceContainer extends Component {
+class PowerConsumption extends Component {
 
     constructor(props) {
         super(props);
@@ -31,12 +31,15 @@ class HsMultiLineStatusDeviceContainer extends Component {
 
     render() {
         return (
-            <LineChart
-                device={this.state.device}
-                id={this.state.id}
-                className={this.state.className}
-            />
+            <div className='container_inset garbagePlan'>
+                <label>Strømpriser i dag</label>
+                <LineChart
+                    device={this.state.device}
+                    id={this.state.id}
+                    className={this.state.className}
+                />
+            </div>
         );
     }
 }
-export default HsMultiLineStatusDeviceContainer;
+export default PowerConsumption;

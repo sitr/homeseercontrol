@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { runEvent, getDeviceInfoFromHomeSeer, setDeviceValue } from '../HsDeviceController';
-import HsButton from '../presentational/HsButton';
+import HsButton from './HsButton';
 
 class HsButtonContainer extends Component {
 

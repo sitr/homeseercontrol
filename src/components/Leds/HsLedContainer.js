@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {getDeviceInfoFromHomeSeer} from '../HsDeviceController';
-import HsLed from '../presentational/HsLed';
+import HsLed from './HsLed';
 
 class HsLedContainer extends Component {
    constructor(props) {

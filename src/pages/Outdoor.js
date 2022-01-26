@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link }  from "react-router-dom";
-import HsTextStatusDeviceContainer from './container/HsTextStatusDeviceContainer';
-import HsButtonContainer from './container/HsButtonContainer';
+import HsTextStatusDeviceContainer from '../components/Text/HsTextStatusDeviceContainer';
+import HsButtonContainer from '../components/Buttons/HsButtonContainer';
 
 class Outdoor extends Component {
    constructor(props) {

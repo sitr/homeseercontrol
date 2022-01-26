@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { getDeviceInfoFromHomeSeer, setDeviceValue } from '../HsDeviceController';
-import Slider from '../presentational/Slider';
+import Slider from './Slider';
 import { getConfig } from '../../config';
 
 class SliderContainer extends Component {
