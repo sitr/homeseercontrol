@@ -5,6 +5,7 @@ import './styles/music.scss';
 import './styles/outdoor.scss';
 import './styles/button.scss';
 import './styles/house.scss';
+import './styles/panels.scss';
 
 import App from './app';
 import Music from './pages/Music';

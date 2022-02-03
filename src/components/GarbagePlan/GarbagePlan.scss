@@ -1,0 +1,28 @@
+div.garbagePlanContainer {
+    grid-area: garbagePlan;
+ 
+    .garbagePlan {
+       color: black;
+       background-color: #b9b6b6;
+    
+       label {
+          font-weight: bold;
+          font-size: 1.4em;
+          line-height: 40px;
+       }
+    
+       div {
+          line-height: 40px;
+       }
+
+       span {
+           font-size: 1.2em;
+       }
+    
+       img {
+          width: 40px;
+          float: left;
+          margin-left: 20px;
+       }
+    }
+ }

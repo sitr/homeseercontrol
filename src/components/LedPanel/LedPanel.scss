@@ -1,0 +1,26 @@
+div.ledPanelContainer {
+    grid-area: ledpanel;
+ 
+    .ledPanel {
+       display: grid;
+       grid-template-columns: 1fr 1fr;
+       align-items: center;
+    
+       label {
+          font-size: 1.2em;
+          color:$label-color-invert;
+          grid-column: 1 / 2;
+       }
+    
+       .led {
+          grid-column: 2 / 2;
+          -webkit-transform: scale(0.5); /* Saf3.1+, Chrome */
+         -moz-transform: scale(0.5); /* FF3.5+ */
+          -ms-transform: scale(0.5); /* IE9 */
+           -o-transform: scale(0.5); /* Opera 10.5+ */
+              transform: scale(0.5);
+    
+          margin-left: 20px;
+       }
+    }
+ }

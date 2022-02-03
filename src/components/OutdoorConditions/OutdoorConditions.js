@@ -5,7 +5,12 @@ class OutdoorConditions extends React.Component {
 
     render() {
         return (
-            <div className="container_inset outdoorConditions">
+         <div className="panel raised_outer outdoorConditions">
+            <img src="images/bolt1.png" className="bolt" />
+            <img src="images/bolt1.png" className="bolt" />
+            <img src="images/bolt1.png" className="bolt" />
+            <img src="images/bolt1.png" className="bolt" />
+            <div className="panel sunken">
                <HsTextStatusDeviceContainer
                   deviceId="1117"
                   className="temperature temperature_plus"
@@ -17,7 +22,7 @@ class OutdoorConditions extends React.Component {
                      className="weather_station_value"
                   />
                   <br/>
-                  <label className="weather_station_label">Vindhastighet:</label>
+                  <label className="weather_station_label">Vind:</label>
                   <HsTextStatusDeviceContainer
                      deviceId="1134"
                      className="weather_station_value"
@@ -48,6 +53,7 @@ class OutdoorConditions extends React.Component {
                   className="weather_autotext"
                />
             </div>
+         </div>
         )
     }
 }

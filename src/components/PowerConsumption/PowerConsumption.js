@@ -31,13 +31,19 @@ class PowerConsumption extends Component {
 
     render() {
         return (
-            <div className='container_inset garbagePlan'>
-                <label>Strømpriser i dag</label>
-                <LineChart
-                    device={this.state.device}
-                    id={this.state.id}
-                    className={this.state.className}
-                />
+            <div className="panel raised_outer powerConsumptionContainer">
+                <img src="images/bolt1.png" className="bolt" />
+                <img src="images/bolt1.png" className="bolt" />
+                <img src="images/bolt1.png" className="bolt" />
+                <img src="images/bolt1.png" className="bolt" />
+                <div className="panel sunken">
+                    <label>Strømpriser i dag</label>
+                    <LineChart
+                        device={this.state.device}
+                        id={this.state.id}
+                        className={this.state.className}
+                    />
+                </div>
             </div>
         );
     }

@@ -5,7 +5,12 @@ class IndoorConditions extends React.Component {
 
     render() {
         return(
-            <div className="container_inset indoorConditions">
+         <div className="panel raised_outer indoorConditions">
+            <img src="images/bolt1.png" className="bolt"/>
+            <img src="images/bolt1.png" className="bolt" />
+            <img src="images/bolt1.png" className="bolt" />
+            <img src="images/bolt1.png" className="bolt" />
+            <div className="panel sunken">
                <HsTextStatusDeviceContainer
                   deviceId="1105"
                   className="temperature temperature_plus"
@@ -24,6 +29,7 @@ class IndoorConditions extends React.Component {
                   />
                </div>
             </div>
+         </div>
         )
     };
 }

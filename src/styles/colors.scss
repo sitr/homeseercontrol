@@ -1,13 +1,15 @@
 $app-bgcolor: #404040;
 
-$label-color: darkgray;
-$value-color: white;
+$label-color: black;
+$value-color: #3c3c3c;
+
+$label-color-invert: #d3cbcb;
 
 $button-bgcolor-gray1: #555555;
 $button-bgcolor-gray2: #333333;
 
-$temperature-plus-color: coral;
-$temperature-minus-color: #B0E0E6;
+$temperature-plus-color: rgb(201, 13, 13);;
+$temperature-minus-color: #085df6;
 
 $closed-color: lime;
 $open-color: red;
