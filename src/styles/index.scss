@@ -4,6 +4,7 @@
 @import '../components/Leds/Led.scss';
 @import '../components/GarbagePlan/GarbagePlan.scss';
 @import '../components/PowerConsumption/PowerConsumption.scss';
+@import '../components/BottomPanel/BottomPanel.scss';
 
 * {
    outline: none;
@@ -19,7 +20,7 @@ body {
    grid-template-areas: 
       "outdoor outdoor outdoor garbagePlan garbagePlan garbagePlan keypanel"
       "indoor indoor indoor powerConsumption powerConsumption powerConsumption ledpanel"
-      ". . . . . clock clock";
+      "bottomPanel bottomPanel bottomPanel bottomPanel bottomPanel bottomPanel bottomPanel";
    grid-gap: 0px;
 }
 
@@ -33,13 +34,24 @@ body {
    display: none;
 }
 
-div.outdoorConditions {
+div.outdoorConditionsContainer {
    grid-area: outdoor;
+
+   .outdoorConditions {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+   }
 }
 
-div.indoorConditions {
+div.indoorConditionsContainer {
    grid-area: indoor;
+
+   .indoorConditions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+   }
 }
+
 
 .temperature{
    font-size: 3.6em;
@@ -55,9 +67,10 @@ div.indoorConditions {
 
 .weather_station_label, .weather_station_value {
    display:inline-block;
-   line-height: 40px;
-   padding-left: 20px;
+   line-height: 35px;
+   padding-left: 5px;
    font-size: 1.4em;
+   white-space: nowrap;
 }
 .weather_station_value {
    color: $value-color;
@@ -70,29 +83,8 @@ div.indoorConditions {
 
 .weather_autotext {
    color: $value-color;
-   margin-top: 60px;
-   margin-bottom: 10px;
-   padding-left: 20px;
+   margin-top: 10px;
+   padding-left: 5px;
    font-size: 1.2em;
 }
 
-
-div.clock {
-   grid-area: clock;
-   text-align: right;
-   justify-self: end;
-   align-self: end;
-   color: $value-color;
-   height: 200px;
-   margin-top: 13px;
-   margin-right: 10px;
-
-   span {
-      font-size: 40px;
-   }
-
-   p {
-      font-size: 20px;
-      line-height: 0;
-   }
-}

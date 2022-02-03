@@ -36,6 +36,13 @@ class HsTextStatusDeviceContainer extends Component {
                      default: self.setState({'className': ''});
                      }
                }
+               if(self.props.statusType === 'temperature')
+               {
+                  if (result.value > 0)
+                     self.setState({'className': self.props.className + ' temperature_plus'});
+                  else
+                     self.setState({'className': self.props.className + ' temperature_minus'})
+               }
                if (self.props.statusType === 'light')
                {
                   switch(true)

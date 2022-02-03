@@ -1,0 +1,30 @@
+div.bottomPanelContainer {
+    grid-area: bottomPanel;
+
+    .bottomPanel {
+        display: flex;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 10px;
+        align-items: center;
+        margin-left: 17px;
+        padding: 0 11px;
+
+        .nightMode {
+            margin-left: auto;
+            margin-right: 10px;
+        }
+
+        .clock {
+            color: $value-color;
+            margin-right: 10px;
+         
+            span {
+               font-size: 2em;
+            }
+         
+            p {
+               margin: 0;
+            }
+         }
+    }
+}
