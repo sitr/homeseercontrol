@@ -126,7 +126,7 @@ class HsButtonContainer extends Component {
    render() {
       return (
          <HsButton
-            id={this.state.id}
+            id={this.state.deviceId}
             className={this.state.className}
             buttonText={this.state.buttonText}
             onClick={this.handleCommand.bind(this)}

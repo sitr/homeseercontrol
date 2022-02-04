@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import HsButton from '../Buttons/HsButton';
+import HsButton from '../Buttons/HsButtonContainer';
 
 class KeyPanel extends React.Component {
 
