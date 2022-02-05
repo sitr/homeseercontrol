@@ -1,7 +1,7 @@
 import React from 'react';
 import Clock from './clock';
 import { Link } from "react-router-dom";
-import HsButton from '../Buttons/HsButton';
+import HsButton from '../Buttons/HsButtonContainer';
 
 class BottomPanel extends React.Component {
     render() {
@@ -18,7 +18,7 @@ class BottomPanel extends React.Component {
                             <button className="button__navigation">Status</button>
                         </Link>
                         <Link to='/outdoor'>
-                            <button className="button__navigation">Garasje</button>
+                            <button className="button__navigation">Bil</button>
                         </Link>
                         <Link to='/music'>
                             <button className="button__navigation">Musikk</button>
