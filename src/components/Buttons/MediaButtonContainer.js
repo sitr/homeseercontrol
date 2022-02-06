@@ -22,7 +22,7 @@ class MediaButtonContainer extends Component {
 
    componentDidMount() {
       var self = this;
-      var kitchenPlayer = 602;
+      var kitchenPlayer = 1468;
       this.interval = setInterval(() => {
          getDeviceInfoFromHomeSeer(kitchenPlayer)
             .then(result => {
@@ -60,7 +60,7 @@ class MediaButtonContainer extends Component {
                   cmd = '1001';
                   break;
                case 'Pause':
-                  cmd = '1000';
+                  cmd = '1003';
                   break;
                case 'Forward':
                   cmd = '1004';
