@@ -11,14 +11,11 @@ import App from './app';
 import Music from './pages/Music';
 import Outdoor from './pages/Outdoor';
 import House from './pages/House';
-import { Router, Route } from "react-router-dom";
-import { configureHistory } from './configureHistory.js'
+import {  BrowserRouter as Router, Route } from "react-router-dom";
 import registerServiceWorker from './registerServiceWorker';
 
-const history = configureHistory()
-
 ReactDOM.render(
-   <Router history={history}>
+   <Router>
       <div>
          <Route exact path="/" component={App} />
          <Route path="/music" component={Music} />
