@@ -14,6 +14,9 @@ class BottomPanel extends React.Component {
                 <div className=" bottomPanel">
                     <Clock className="clock sunken" />
                     <div>
+                        <Link to='/'>
+                            <button className="button__navigation">Hovedside</button>
+                        </Link>
                         <Link to='/house'>
                             <button className="button__navigation">Status</button>
                         </Link>
