@@ -33,7 +33,7 @@ class Clock extends React.Component {
       return (
          <div className={this.state.className}>
             <span>{this.state.date.toLocaleTimeString('nb-NO')}</span>
-            <p>{this.getDayOfWeek(this.state.date.getDay())} {this.state.date.toLocaleDateString('nb-NO')}</p>
+            {/* <p>{this.getDayOfWeek(this.state.date.getDay())} {this.state.date.toLocaleDateString('nb-NO')}</p> */}
          </div>
       );
    }

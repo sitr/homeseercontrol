@@ -1,3 +1,5 @@
+@import url('http://fonts.cdnfonts.com/css/new-x-digital-tfb');
+
 div.bottomPanelContainer {
     grid-area: bottomPanel;
 
@@ -15,11 +17,15 @@ div.bottomPanelContainer {
         }
 
         .clock {
-            color: $value-color;
+            font-family: 'New X Digital tfb', sans-serif;
+            color: $clock-color;
+            background-color: black;
             margin-right: 10px;
+            width: 255px;
+            padding: 0 10px;
          
             span {
-               font-size: 2em;
+               font-size: 2.5em;
             }
          
             p {
