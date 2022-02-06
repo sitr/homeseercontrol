@@ -14,6 +14,11 @@ class House extends Component {
 
    componentDidMount() {
       document.title = "Hovedkontroll - status";
+      this._isMounted = true;
+   }
+
+   componentWillUnmount() {
+      this._isMounted = false;
    }
 
    render() {

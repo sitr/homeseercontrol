@@ -7,7 +7,7 @@ import './styles/button.scss';
 import './styles/house.scss';
 import './styles/panels.scss';
 
-import Main from './pages/main';
+import Main from './pages/Main';
 import Music from './pages/Music';
 import Outdoor from './pages/Outdoor';
 import House from './pages/House';

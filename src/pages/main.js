@@ -11,6 +11,11 @@ class Main extends Component {
 
    componentDidMount() {
       document.title = "Hovedkontroll";
+      this._isMounted = true;
+   }
+
+   componentWillUnmount() {
+      this._isMounted = false;
    }
 
    render() {

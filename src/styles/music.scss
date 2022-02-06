@@ -146,8 +146,8 @@ input[type="range"].volume_slider__vertical::-webkit-slider-thumb {
 
 .btnPlay, .btnPause, .btnForward, .btnBackward {
    border-radius: 50%;
-   font: bold 75px arial, sans-serif;
-   line-height: 75px;
+   font: bold 56px arial, sans-serif;
+   line-height: 56px;
    background-color: #242424;
    color: rgba(0, 153, 255, 1);
    text-shadow: -1px -1px 2px rgba(0,0,0,1);
@@ -184,15 +184,14 @@ input[type="range"].volume_slider__vertical::-webkit-slider-thumb {
    background-repeat: no-repeat;
    background-size: contain;
    background-origin: content-box;
-   background-color: dimgray;
 }
 
 .radio_nrkP13 {
    background-image: url('/images/radio_NRK_P13.png');
 
    &:active {
-      background-image: url('/images/radio_NRK_P13.png');
       background-color: #2E5894;;
+      background-image: url('/images/radio_NRK_P13.png');
    }
 }
 
@@ -200,8 +199,8 @@ input[type="range"].volume_slider__vertical::-webkit-slider-thumb {
    background-image: url('/images/radio_NRK_P3.png');
 
    &:active {
-      background-image: url('/images/radio_NRK_P3.png');
       background-color: #2E5894;;
+      background-image: url('/images/radio_NRK_P3.png');
    }
 }
 
@@ -209,8 +208,8 @@ input[type="range"].volume_slider__vertical::-webkit-slider-thumb {
    background-image: url('/images/radio_NRK_P1.png');
 
    &:active {
-      background-image: url('/images/radio_NRK_P1.png');
       background-color: #2E5894;;
+      background-image: url('/images/radio_NRK_P1.png');
    }
 }
 
@@ -218,7 +217,7 @@ input[type="range"].volume_slider__vertical::-webkit-slider-thumb {
    background-image: url('/images/radio_P4.png');
 
    &:active {
-      background-image: url('/images/radio_P4.png');
       background-color: #2E5894;;
+      background-image: url('/images/radio_P4.png');
    }
 }

@@ -28,8 +28,14 @@ class MediaButtonContainer extends Component {
             .then(result => {
                self.setState({ 'isPlaying': result.status === 'Playing' ? true : false });
             })
-      }
-         , 1000);
+      }, 
+      1000);
+      this._isMounted = true;
+   }
+
+   componentWillUnmount() {
+      clearInterval(this.interval);
+      this._isMounted = false;
    }
 
    getClassName() {
