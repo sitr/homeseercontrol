@@ -26,10 +26,12 @@ class SliderContainer extends Component {
              });
       //       , 500);
        }
+       this._isMounted = true;
    }
 
    componentWillUnmount() {
-      //clearInterval(this.interval);
+      clearInterval(this.interval);
+      this._isMounted = false;
    }
 
    onChange = (e) => {

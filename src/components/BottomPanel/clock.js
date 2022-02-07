@@ -8,15 +8,17 @@ class Clock extends React.Component {
    }
 
    componentDidMount() {
-      this.timerID = setInterval(
+      this.interval = setInterval(
         () => this.tick(),
         1000
       );
+      this._isMounted = true;
     }
 
     componentWillUnmount() {
-      clearInterval(this.timerID);
-    }
+      clearInterval(this.interval);
+      this._isMounted = false;
+   }
 
     tick() {
       this.setState({
@@ -33,7 +35,7 @@ class Clock extends React.Component {
       return (
          <div className={this.state.className}>
             <span>{this.state.date.toLocaleTimeString('nb-NO')}</span>
-            <p>{this.getDayOfWeek(this.state.date.getDay())} {this.state.date.toLocaleDateString('nb-NO')}</p>
+            {/* <p>{this.getDayOfWeek(this.state.date.getDay())} {this.state.date.toLocaleDateString('nb-NO')}</p> */}
          </div>
       );
    }

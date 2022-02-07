@@ -12,6 +12,15 @@ class Outdoor extends Component {
       };
    }
 
+   componentDidMount() {
+      document.title = "Hovedkontroll - Bil";
+      this._isMounted = true;
+   }
+
+   componentWillUnmount() {
+      this._isMounted = false;
+   }
+
    render() {
 
       return (

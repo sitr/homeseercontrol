@@ -20,10 +20,12 @@ class HsGraphicStatusContainer extends Component {
                self.setState({'device': result});
          })}
          , 1000);
+      this._isMounted = true;
    }
 
    componentWillUnmount() {
       clearInterval(this.interval);
+      this._isMounted = false;
    }
 
    render() {

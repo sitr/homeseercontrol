@@ -17,9 +17,11 @@ class Music extends Component {
 
    componentDidMount() {
       document.title = "Hovedkontroll - musikk";
+      this._isMounted = true;
    }
 
    componentWillUnmount() {
+      this._isMounted = false;
    }
 
    render() {

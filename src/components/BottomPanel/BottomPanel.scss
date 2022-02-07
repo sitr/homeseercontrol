@@ -1,3 +1,5 @@
+@import url('http://fonts.cdnfonts.com/css/digital-7-mono');
+
 div.bottomPanelContainer {
     grid-area: bottomPanel;
 
@@ -15,11 +17,18 @@ div.bottomPanelContainer {
         }
 
         .clock {
-            color: $value-color;
+            font-family: 'Digital-7 Mono', sans-serif;
+            color: $clock-color;
+            background-color: black;
             margin-right: 10px;
+            width: 240px;
+            padding: 5px 10px;
+            text-align: center;
+            height: 70px;
+            line-height: 70px;
          
             span {
-               font-size: 2em;
+               font-size: 3.5em;
             }
          
             p {
