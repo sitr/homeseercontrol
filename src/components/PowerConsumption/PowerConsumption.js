@@ -36,8 +36,8 @@ class PowerConsumption extends Component {
                 <img src="images/bolt1.png" className="bolt" />
                 <img src="images/bolt1.png" className="bolt" />
                 <img src="images/bolt1.png" className="bolt" />
+                <p class="panel_title">Strømpriser i dag</p>
                 <div className="panel sunken">
-                    <label>Strømpriser i dag</label>
                     <LineChart
                         device={this.state.device}
                         id={this.state.id}

@@ -9,6 +9,7 @@ class LedPanel extends React.Component {
             <img src="images/bolt1.png" className="bolt" />
             <img src="images/bolt1.png" className="bolt" />
             <img src="images/bolt1.png" className="bolt" />
+            <p class="panel_title">Husholdningsmaskiner</p>
             <div className="raised_inner ledPanel">
                   <label>Motorvarmer:</label>
                   <HsLedContainer

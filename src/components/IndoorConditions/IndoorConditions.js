@@ -10,6 +10,7 @@ class IndoorConditions extends React.Component {
             <img src="images/bolt1.png" className="bolt" />
             <img src="images/bolt1.png" className="bolt" />
             <img src="images/bolt1.png" className="bolt" />
+            <p class="panel_title">Innendørs</p>
             <div className="panel sunken">
                <HsTextStatusDeviceContainer
                   deviceId="1105"

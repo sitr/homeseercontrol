@@ -17,10 +17,10 @@ body {
 .main {
    display: grid;
    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-   grid-template-rows: 1fr 1fr auto;
+   grid-template-rows: 1fr auto auto;
    grid-template-areas: 
-      "outdoor outdoor outdoor garbagePlan garbagePlan garbagePlan keypanel"
-      "indoor indoor indoor powerConsumption powerConsumption powerConsumption ledpanel"
+      "outdoor outdoor outdoor powerConsumption powerConsumption powerConsumption keypanel"
+      "indoor indoor indoor garbagePlan garbagePlan garbagePlan ledpanel"
       "bottomPanel bottomPanel bottomPanel bottomPanel bottomPanel bottomPanel bottomPanel";
    grid-gap: 0px;
    height: 100vh;

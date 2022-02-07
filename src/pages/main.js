@@ -23,10 +23,10 @@ class Main extends Component {
          <React.StrictMode>
             <div className="main">
                <OutdoorConditions />
-               <GarbagePlan />
+               <PowerConsumption deviceId="2009"/>
                <KeyPanel />
                <IndoorConditions />
-               <PowerConsumption deviceId="2009"/>
+               <GarbagePlan />
                <LedPanel />
                <BottomPanel />
             </div>

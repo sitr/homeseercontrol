@@ -21,11 +21,11 @@ div.bottomPanelContainer {
             color: $clock-color;
             background-color: black;
             margin-right: 10px;
+            margin-top: auto;
+            margin-bottom: auto;
             width: 240px;
             padding: 5px 10px;
             text-align: center;
-            height: 70px;
-            line-height: 70px;
          
             span {
                font-size: 3.5em;

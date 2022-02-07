@@ -11,6 +11,7 @@ class KeyPanel extends React.Component {
             <img src="images/bolt1.png" className="bolt" />
             <img src="images/bolt1.png" className="bolt" />
             <img src="images/bolt1.png" className="bolt" />
+            <p class="panel_title">Lysmodus</p>
             <div className="raised_inner keyPanel">
                   <HsButton
                      deviceId="130"
