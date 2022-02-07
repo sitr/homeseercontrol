@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Link }  from "react-router-dom";
-import HsTextStatusDeviceContainer from '../components/Text/HsTextStatusDeviceContainer';
+import BottomPanel from '../components/BottomPanel/BottomPanel';
 import HsButtonContainer from '../components/Buttons/HsButtonContainer';
 
 class Outdoor extends Component {
@@ -24,45 +23,44 @@ class Outdoor extends Component {
    render() {
 
       return (
-         <div className="outdoor_main">
-            <div className="container_inset">
-               <HsTextStatusDeviceContainer
-                     deviceId="1220"
-                     className="temperature temperature_plus"
-                  />
+         <React.StrictMode>
+            <div className="outdoor_main">
+               <div className="panel raised_outer">
+                  <img src="images/bolt1.png" className="bolt" />
+                  <img src="images/bolt1.png" className="bolt" />
+                  <img src="images/bolt1.png" className="bolt" />
+                  <img src="images/bolt1.png" className="bolt" />
+                  <div className="panel raised_inner car1">
+                     <p>Oppvarming Kia</p>
+                     <HsButtonContainer
+                        deviceId="571"
+                        toggleText={["Skru på", "Skru av"]}
+                        className=""
+                        command='{"cmd": "SetValue", "value": "On"}'
+                        isLiveButton={true}
+                     />
+                     <HsButtonContainer
+                        id="btnDayShift"
+                        deviceId="631"
+                        buttonText="Dagvakt"
+                        className=""
+                        command='{"cmd": "SetValue", "value": "Dagvakt"}'
+                        isLiveButton={true}
+                     />
+                     <HsButtonContainer
+                        id="btnNightShift"
+                        deviceId="631"
+                        buttonText="Nattevakt"
+                        className=""
+                        command='{"cmd": "SetValue", "value": "Nattevakt"}'
+                        isLiveButton={true}
+                     />
+                  </div>
+               </div>
+               <div></div>
+               <BottomPanel />
             </div>
-            <div className="container_raised" >
-               <HsButtonContainer
-                  deviceId="571"
-                  toggleText={["Skru på", "Skru av"]}
-                  className=""
-                  command='{"cmd": "SetValue", "value": "On"}'
-                  isLiveButton={true}
-               />
-               <HsButtonContainer
-                  id="btnDayShift"
-                  deviceId="631"
-                  buttonText="Dagvakt"
-                  className=""
-                  command='{"cmd": "SetValue", "value": "Dagvakt"}'
-                  isLiveButton={true}
-               />
-               <HsButtonContainer
-                  id="btnNightShift"
-                  deviceId="631"
-                  buttonText="Nattevakt"
-                  className=""
-                  command='{"cmd": "SetValue", "value": "Nattevakt"}'
-                  isLiveButton={true}
-               />
-            </div>
-            <div className="page_logo">MOTORVARMER</div>
-            <div>
-               <Link to='/'>
-                     <button className="button__navigation">Hovedside</button>
-                  </Link>
-            </div>
-         </div>
+         </React.StrictMode>
       );
    }
 }
