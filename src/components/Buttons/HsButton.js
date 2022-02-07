@@ -12,6 +12,6 @@ const HsButton = (props) => (
 HsButton.propTypes = {
    className: PropTypes.string.isRequired,
    onClick: PropTypes.func,
-   buttonText: PropTypes.string.isRequired
+   buttonText: PropTypes.string
 };
 export default HsButton;
