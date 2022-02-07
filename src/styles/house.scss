@@ -2,22 +2,22 @@
 
 .house_main {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
     grid-template-areas: 
-        "secondfloor . keypanel"
-}
-.building {
-    grid-area: "secondfloor";
-    width: 850px;
-    height: 600px;
-    background: url(/images/Hustegning.svg);
-    background-size: 100%;
+        "secondfloor"
+        "bottomPanel";
+    height: 100vh;
+
+    .building {
+        grid-area: "secondfloor";
+        width: 850px;
+        height: 600px;
+        background: url("../images/Hustegning.svg"), #b9b6b6;;
+        background-size: 100%;
+    }
 }
 
-.keypad {
-    grid-area: "keypanel";
-}
 
 .window, .door, .light {
     position: absolute;
