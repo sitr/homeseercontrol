@@ -1,4 +1,5 @@
 @import './colors.scss';
+@import './dimensions.scss';
 
 .house_main {
     display: grid;
@@ -7,7 +8,7 @@
     grid-template-areas: 
         "secondfloor"
         "bottomPanel";
-    height: 100vh;
+        height: $window-height;
 
     .building {
         grid-area: "secondfloor";

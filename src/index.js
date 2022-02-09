@@ -6,6 +6,8 @@ import './styles/outdoor.scss';
 import './styles/button.scss';
 import './styles/house.scss';
 import './styles/panels.scss';
+import './styles/colors.scss';
+import './styles/dimensions.scss'
 
 import Main from './pages/Main';
 import Music from './pages/Music';

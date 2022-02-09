@@ -1,4 +1,5 @@
 @import './colors.scss';
+@import './dimensions.scss';
 @import '../components/LedPanel/LedPanel.scss';
 @import '../components/KeyPanel/KeyPanel.scss';
 @import '../components/Leds/Led.scss';
@@ -23,7 +24,7 @@ body {
       "indoor indoor indoor garbagePlan garbagePlan garbagePlan ledpanel"
       "bottomPanel bottomPanel bottomPanel bottomPanel bottomPanel bottomPanel bottomPanel";
    grid-gap: 0px;
-   height: 100vh;
+   height: $window-height;
 }
 
 @media only screen and (max-width: 600px) {

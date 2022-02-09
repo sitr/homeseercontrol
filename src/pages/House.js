@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import HsTextStatusDeviceContainer from '../components/Text/HsTextStatusDeviceContainer';
-import HsGraphicStatusContainer from '../components/Graphics/HsGraphicStatusContainer';
 import BottomPanel from '../components/BottomPanel/BottomPanel';
 
 class House extends Component {
