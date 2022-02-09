@@ -61,7 +61,7 @@ class House extends Component {
                            className="light floorLamp2"
                            statusType="light" />
                         <HsTextStatusDeviceContainer
-                           deviceId="695"
+                           deviceId="2169"
                            className="light floorLamp3"
                            statusType="light" />
                         <HsTextStatusDeviceContainer
@@ -69,7 +69,7 @@ class House extends Component {
                            className="light tableLamp1"
                            statusType="light" />
                         <HsTextStatusDeviceContainer
-                           deviceId="17"
+                           deviceId="2102"
                            className="light tableLamp2"
                            statusType="light" />
                      </div>
