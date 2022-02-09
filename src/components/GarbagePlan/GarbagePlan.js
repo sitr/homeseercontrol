@@ -11,7 +11,7 @@ class GarbagePlan extends React.Component {
             <img src="images/bolt1.png" className="bolt" />
             <img src="images/bolt1.png" className="bolt" />
             <img src="images/bolt1.png" className="bolt" />
-            <p class="panel_title">Søppelhenting</p>
+            <p className="panel_title">Søppelhenting</p>
             <div className="panel sunken garbagePlan">
                   <div>
                      <img alt="Recycle food waste" src="/images/vesar_epleskrott.png"/>
