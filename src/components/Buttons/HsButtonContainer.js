@@ -3,7 +3,7 @@ import { runEvent, getDeviceInfoFromHomeSeer, setDeviceValue } from '../HsDevice
 import HsButton from './HsButton';
 
 class HsButtonContainer extends Component {
-
+   _isMounted = false;
    constructor(props) {
       super(props);
       this.state = {
@@ -18,49 +18,57 @@ class HsButtonContainer extends Component {
    }
 
    componentDidMount() {
-      if(this.state.deviceId && this.state.isLiveButton) {
-         var self = this;
+      var self = this;
+      self._isMounted = true;
+      if(self.state.deviceId && self.state.isLiveButton) {
+         
          this.interval = setInterval(() => {
             getDeviceInfoFromHomeSeer(self.state.deviceId)
                .then(result => {
-                  switch(result.status) {
-                     case 'On':
-                        self.setState({'className': 'button__activated--blue'});
-                        self.setState({'command': '{"cmd": "SetValue", "value": "Off"}'});
-                        if(self.state.toggleText)
-                           self.setState({'buttonText': self.state.toggleText[1]});
-                        break;
-                     case 'Off':
-                        self.setState({'className': ''});
-                        self.setState({'command': '{"cmd": "SetValue", "value": "On"}'});
-                        if(self.state.toggleText)
-                           self.setState({'buttonText': self.state.toggleText[0]});
-                        break;
-                     case 'Dagvakt':
-                        if(self.state.id === 'btnDayShift') {
-                           self.setState({'className': 'button__background--orange button__blink--orange'});
-                           self.setState({'command': '{"cmd": "SetValue", "value": "Ingen vakt"}'});
-                        }
-                        break;
-                     case 'Nattevakt':
-                        if(self.state.id === 'btnNightShift') {
-                           self.setState({'className': 'button__background--orange button__blink--orange'});
-                           self.setState({'command': '{"cmd": "SetValue", "value": "Ingen vakt"}'});
-                        }
-                        break;
-                     case 'Ingen vakt':
-                        self.setState({'className': ''});
-                        if(self.state.id === 'btnNightShift')
-                           self.setState({'command': '{"cmd": "SetValue", "value": "Nattevakt"}'});
-                        if(self.state.id === 'btnDayShift')
-                           self.setState({'command': '{"cmd": "SetValue", "value": "Dagvakt"}'});
-                        break;
-                     default: self.setState({'className': ''});
+                  if(this._isMounted)
+                  {
+                     switch(result.status) {
+                        case 'On':
+                           self.setState({'className': 'button__activated--blue'});
+                           self.setState({'command': '{"cmd": "SetValue", "value": "Off"}'});
+                           if(result.ref === 2197)
+                              self.setState({'command': '{"cmd": "SetValue", "value": "Motorvarmer av"}'});
+                           if(self.state.toggleText)
+                              self.setState({'buttonText': self.state.toggleText[1]});
+                           break;
+                        case 'Off':
+                           self.setState({'className': ''});
+                           self.setState({'command': '{"cmd": "SetValue", "value": "On"}'});
+                           if(result.ref === 2197)
+                              self.setState({'command': '{"cmd": "SetValue", "value": "Motorvarmer på"}'});
+                           if(self.state.toggleText)
+                              self.setState({'buttonText': self.state.toggleText[0]});
+                           break;
+                        case 'Dagvakt':
+                           if(self.state.id === 'btnDayShift') {
+                              self.setState({'className': 'button__background--orange button__blink--orange'});
+                              self.setState({'command': '{"cmd": "SetValue", "value": "Ingen vakt"}'});
+                           }
+                           break;
+                        case 'Nattevakt':
+                           if(self.state.id === 'btnNightShift') {
+                              self.setState({'className': 'button__background--orange button__blink--orange'});
+                              self.setState({'command': '{"cmd": "SetValue", "value": "Ingen vakt"}'});
+                           }
+                           break;
+                        case 'Ingen vakt':
+                           self.setState({'className': ''});
+                           if(self.state.id === 'btnNightShift')
+                              self.setState({'command': '{"cmd": "SetValue", "value": "Nattevakt"}'});
+                           if(self.state.id === 'btnDayShift')
+                              self.setState({'command': '{"cmd": "SetValue", "value": "Dagvakt"}'});
+                           break;
+                        default: self.setState({'className': ''});
+                     }
                   }
             })}
             , 1000);
       }
-      this._isMounted = true;
    }
 
    componentWillUnmount() {
@@ -99,6 +107,12 @@ class HsButtonContainer extends Component {
                case 'Ingen vakt':
                   cmd = '0';
                   this.setState({'className': ''});
+                  break;
+               case 'Motorvarmer på':
+                  cmd='255'
+                  break;
+               case 'Motorvarmer av':
+                  cmd='0';
                   break;
                case 'Ingen belysning':
                   cmd='101';

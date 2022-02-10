@@ -3,6 +3,7 @@ import {getDeviceInfoFromHomeSeer} from '../HsDeviceController';
 import HsGraphicStatusDevice from './HsGraphicStatusDevice';
 
 class HsGraphicStatusContainer extends Component {
+   _isMounted = false;
    constructor(props) {
       super(props);
       this.state = {
@@ -14,13 +15,14 @@ class HsGraphicStatusContainer extends Component {
 
    componentDidMount() {
       var self = this;
+      self._isMounted = true;
       this.interval = setInterval(() => {
          getDeviceInfoFromHomeSeer(self.state.deviceId)
             .then(result => {
-               self.setState({'device': result});
+               if(self._isMounted)
+                  self.setState({'device': result});
          })}
          , 1000);
-      this._isMounted = true;
    }
 
    componentWillUnmount() {

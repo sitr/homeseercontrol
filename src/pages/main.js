@@ -6,16 +6,32 @@ import BottomPanel from '../components/BottomPanel/BottomPanel';
 import React, { Component } from 'react';
 import PowerConsumption from '../components/PowerConsumption/PowerConsumption';
 import IndoorConditions from '../components/IndoorConditions/IndoorConditions';
+import { Dimensions } from 'react-native';
+
+const window = Dimensions.get("window");
+const screen = Dimensions.get("screen");
 
 class Main extends Component {
+   state = {
+      dimensions: {
+        window,
+        screen
+      }
+    };
+
+    onChange = ({ window, screen }) => {
+      this.setState({ dimensions: { window, screen } });
+    };
 
    componentDidMount() {
       document.title = "Hovedkontroll";
-      this._isMounted = true;
+      this.dimensionsSubscription = Dimensions.addEventListener("change", this.onChange);
+      //this._isMounted = true;
    }
 
    componentWillUnmount() {
-      this._isMounted = false;
+      this.dimensionsSubscription?.remove();
+      //this._isMounted = false;
    }
 
    render() {

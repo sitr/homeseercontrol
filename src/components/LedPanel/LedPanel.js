@@ -13,7 +13,7 @@ class LedPanel extends React.Component {
             <div className="raised_inner ledPanel">
                   <label>Motorvarmer:</label>
                   <HsLedContainer
-                     deviceId="571"
+                     deviceId="2197"
                   />
                   <label>Vaskemaskin:</label>
                   <HsLedContainer

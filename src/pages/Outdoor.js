@@ -33,10 +33,10 @@ class Outdoor extends Component {
                   <div className="panel raised_inner car1">
                      <p>Oppvarming Kia</p>
                      <HsButtonContainer
-                        deviceId="571"
+                        deviceId="2197"
                         toggleText={["Skru på", "Skru av"]}
                         className=""
-                        command='{"cmd": "SetValue", "value": "On"}'
+                        command='{"cmd": "SetValue", "value": "Motorvarmer på"}'
                         isLiveButton={true}
                      />
                      <HsButtonContainer

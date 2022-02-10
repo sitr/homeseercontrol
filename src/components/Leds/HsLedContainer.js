@@ -3,6 +3,7 @@ import {getDeviceInfoFromHomeSeer} from '../HsDeviceController';
 import HsLed from './HsLed';
 
 class HsLedContainer extends Component {
+   _isMounted = false;
    constructor(props) {
       super(props);
       this.state = {
@@ -15,26 +16,29 @@ class HsLedContainer extends Component {
 
    componentDidMount() {
       var self = this;
+      self._isMounted = true;
       this.interval = setInterval(() => {
          getDeviceInfoFromHomeSeer(self.state.deviceId)
             .then(result => {
-               switch(result.status) {
-                  case 'On':
-                  case 'Tørker':
-                  case 'Vasker':
-                  case 'Ja':
-                     self.setState({'className': 'led led__green'});
-                     break;
-                  case 'Off':
-                  case 'Ferdig':
-                  case 'Nei':
-                     self.setState({'className': 'led'});
-                     break;
-                  default: self.setState({'className': 'led'});
+               if(self._isMounted)
+               {
+                  switch(result.status) {
+                     case 'On':
+                     case 'Tørker':
+                     case 'Vasker':
+                     case 'Ja':
+                        self.setState({'className': 'led led__green'});
+                        break;
+                     case 'Off':
+                     case 'Ferdig':
+                     case 'Nei':
+                        self.setState({'className': 'led'});
+                        break;
+                     default: self.setState({'className': 'led'});
+                  }
                }
          })}
          , 1000);
-      this._isMounted = true;
    }
 
    componentWillUnmount() {

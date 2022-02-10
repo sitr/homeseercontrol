@@ -3,7 +3,7 @@ import {getDeviceInfoFromHomeSeer} from '../HsDeviceController';
 import HsTextStatusDevice from './HsTextStatusDevice';
 
 class HsTextStatusDeviceContainer extends Component {
-
+   _isMounted = false;
    constructor(props) {
       super(props);
       this.state = {
@@ -16,55 +16,57 @@ class HsTextStatusDeviceContainer extends Component {
 
    componentDidMount() {
       var self = this;
+      self._isMounted = true;
       this.interval = setInterval(() => {
          getDeviceInfoFromHomeSeer(self.state.deviceId)
             .then(result => {
-               self.setState({'device': result});
-               if(self.props.statusType === 'window' || self.props.statusType === 'door')
-               {
-                  switch(result.status)
+               if(self._isMounted) {
+                  self.setState({'device': result});
+                  if(self.props.statusType === 'window' || self.props.statusType === 'door')
                   {
-                     case 'Lukket':
-                        self.setState({'className': self.props.className + ' closed'});
-                        self.setState({'device': ''});
-                        break;
-                     case 'Åpent':
-                     case 'Åpen':
-                        self.setState({'className': self.props.className + ' open'});
-                        self.setState({'device': ''});
-                        break;
-                     default: self.setState({'className': ''});
-                     }
-               }
-               if(self.props.statusType === 'temperature')
-               {
-                  if (result.value > 0)
-                     self.setState({'className': self.props.className + ' temperature_plus'});
-                  else
-                     self.setState({'className': self.props.className + ' temperature_minus'})
-               }
-               if (self.props.statusType === 'light')
-               {
-                  switch(true)
-                  {
-                     case result.value === 0:
-                        self.setState({'className': self.props.className + ' off'});
-                        self.setState({'device': ''});
-                        break;
-                     case result.value > 0 && result.value < 99 :
-                        self.setState({'className': self.props.className + ' dim'});
-                        self.setState({'device': ''});
-                        break;
-                        case result.value >= 99 :
-                           self.setState({'className': self.props.className + ' on'});
+                     switch(result.status)
+                     {
+                        case 'Lukket':
+                           self.setState({'className': self.props.className + ' closed'});
                            self.setState({'device': ''});
                            break;
-                     default: self.setState({'className': self.props.className + ' off'});
+                        case 'Åpent':
+                        case 'Åpen':
+                           self.setState({'className': self.props.className + ' open'});
+                           self.setState({'device': ''});
+                           break;
+                        default: self.setState({'className': ''});
+                        }
+                  }
+                  if(self.props.statusType === 'temperature')
+                  {
+                     if (result.value > 0)
+                        self.setState({'className': self.props.className + ' temperature_plus'});
+                     else
+                        self.setState({'className': self.props.className + ' temperature_minus'})
+                  }
+                  if (self.props.statusType === 'light')
+                  {
+                     switch(true)
+                     {
+                        case result.value === 0:
+                           self.setState({'className': self.props.className + ' off'});
+                           self.setState({'device': ''});
+                           break;
+                        case result.value > 0 && result.value < 99 :
+                           self.setState({'className': self.props.className + ' dim'});
+                           self.setState({'device': ''});
+                           break;
+                           case result.value >= 99 :
+                              self.setState({'className': self.props.className + ' on'});
+                              self.setState({'device': ''});
+                              break;
+                        default: self.setState({'className': self.props.className + ' off'});
+                     }
                   }
                }
          })}
          , 1000);
-         this._isMounted = true;
    }
 
    componentWillUnmount() {

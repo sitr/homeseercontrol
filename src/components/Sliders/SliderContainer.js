@@ -4,7 +4,7 @@ import Slider from './Slider';
 import { getConfig } from '../../config';
 
 class SliderContainer extends Component {
-
+   _isMounted = false;
    constructor(props) {
       super(props);
       this.state = {
@@ -17,16 +17,15 @@ class SliderContainer extends Component {
    }
 
    componentDidMount() {
-       if(this.state.deviceId) {
-          var self = this;
-      //    this.interval = setInterval(() => {
-             getDeviceInfoFromHomeSeer(self.state.deviceId)
-                .then(result => {
-                   self.setState({'sliderValue': result.value});
-             });
-      //       , 500);
+      var self = this;
+      self._isMounted = true;
+      if(self.state.deviceId) {
+         getDeviceInfoFromHomeSeer(self.state.deviceId)
+            .then(result => {
+               if(self._isMounted)
+                  self.setState({'sliderValue': result.value});
+         });
        }
-       this._isMounted = true;
    }
 
    componentWillUnmount() {

@@ -4,7 +4,7 @@ import HsButton from './HsButton';
 import { getConfig } from '../../config';
 
 class MediaButtonContainer extends Component {
-
+   _isMounted = false;
    constructor(props) {
       super(props);
       this.state = {
@@ -22,15 +22,16 @@ class MediaButtonContainer extends Component {
 
    componentDidMount() {
       var self = this;
+      self._isMounted = true
       var kitchenPlayer = 1468;
       this.interval = setInterval(() => {
          getDeviceInfoFromHomeSeer(kitchenPlayer)
             .then(result => {
-               self.setState({ 'isPlaying': result.status === 'Playing' ? true : false });
+               if(this._isMounted)
+                  self.setState({ 'isPlaying': result.status === 'Playing' ? true : false });
             })
       }, 
       1000);
-      this._isMounted = true;
    }
 
    componentWillUnmount() {
