@@ -35,10 +35,10 @@ class PowerConsumption extends Component {
     render() {
         return (
             <div className="panel raised_outer powerConsumptionContainer">
-                <img src="images/bolt1.png" className="bolt" />
-                <img src="images/bolt1.png" className="bolt" />
-                <img src="images/bolt1.png" className="bolt" />
-                <img src="images/bolt1.png" className="bolt" />
+                <img src="images/bolt1.png" alt="decorative_bolt" className="bolt" />
+                <img src="images/bolt1.png" alt="decorative_bolt" className="bolt" />
+                <img src="images/bolt1.png" alt="decorative_bolt" className="bolt" />
+                <img src="images/bolt1.png" alt="decorative_bolt" className="bolt" />
                 <p className="panel_title">Strømpriser i dag</p>
                 <div className="panel sunken">
                     <LineChart

@@ -6,10 +6,10 @@ class IndoorConditions extends React.Component {
     render() {
         return(
          <div className="panel raised_outer indoorConditionsContainer">
-            <img src="images/bolt1.png" className="bolt"/>
-            <img src="images/bolt1.png" className="bolt" />
-            <img src="images/bolt1.png" className="bolt" />
-            <img src="images/bolt1.png" className="bolt" />
+            <img src="images/bolt1.png" alt="decorative_bolt" className="bolt"/>
+            <img src="images/bolt1.png" alt="decorative_bolt" className="bolt" />
+            <img src="images/bolt1.png" alt="decorative_bolt" className="bolt" />
+            <img src="images/bolt1.png" alt="decorative_bolt" className="bolt" />
             <p className="panel_title">Innendørs</p>
             <div className="panel sunken">
                <HsTextStatusDeviceContainer

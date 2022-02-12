@@ -7,10 +7,10 @@ class GarbagePlan extends React.Component {
     render() {
         return (
          <div className="panel raised_outer garbagePlanContainer">
-            <img src="images/bolt1.png" className="bolt" />
-            <img src="images/bolt1.png" className="bolt" />
-            <img src="images/bolt1.png" className="bolt" />
-            <img src="images/bolt1.png" className="bolt" />
+            <img src="images/bolt1.png" alt="decorative_bolt" className="bolt" />
+            <img src="images/bolt1.png" alt="decorative_bolt" className="bolt" />
+            <img src="images/bolt1.png" alt="decorative_bolt" className="bolt" />
+            <img src="images/bolt1.png" alt="decorative_bolt" className="bolt" />
             <p className="panel_title">Søppelhenting</p>
             <div className="panel sunken garbagePlan">
                   <div>

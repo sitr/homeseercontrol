@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import HsButton from '../Buttons/HsButtonContainer';
 
 class KeyPanel extends React.Component {
@@ -7,10 +6,10 @@ class KeyPanel extends React.Component {
     render() {
         return(
          <div className="panel raised_outer keyPanelContainer">
-            <img src="images/bolt1.png" className="bolt" />
-            <img src="images/bolt1.png" className="bolt" />
-            <img src="images/bolt1.png" className="bolt" />
-            <img src="images/bolt1.png" className="bolt" />
+            <img src="images/bolt1.png" alt="decorative_bolt" className="bolt" />
+            <img src="images/bolt1.png" alt="decorative_bolt" className="bolt" />
+            <img src="images/bolt1.png" alt="decorative_bolt" className="bolt" />
+            <img src="images/bolt1.png" alt="decorative_bolt" className="bolt" />
             <p className="panel_title">Lysmodus</p>
             <div className="raised_inner keyPanel">
                   <HsButton

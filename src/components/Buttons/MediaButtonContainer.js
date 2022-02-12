@@ -50,10 +50,6 @@ class MediaButtonContainer extends Component {
       }
    }
 
-   componentWillUnmount() {
-      clearInterval(this.interval);
-   }
-
    handleClick = (event) => {
       var parsedCmd = JSON.parse(this.state.command);
       switch (parsedCmd.cmd) {

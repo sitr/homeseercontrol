@@ -7,10 +7,10 @@ class BottomPanel extends React.Component {
     render() {
         return(
             <div className="panel raised_outer bottomPanelContainer">
-                <img src="images/bolt1.png" className="bolt" />
-                <img src="images/bolt1.png" className="bolt" />
-                <img src="images/bolt1.png" className="bolt" />
-                <img src="images/bolt1.png" className="bolt" />
+                <img src="images/bolt1.png" alt="decorative_bolt" className="bolt" />
+                <img src="images/bolt1.png" alt="decorative_bolt" className="bolt" />
+                <img src="images/bolt1.png" alt="decorative_bolt" className="bolt" />
+                <img src="images/bolt1.png" alt="decorative_bolt" className="bolt" />
                 <div className=" bottomPanel">
                     <Clock className="clock sunken" />
                     <div>

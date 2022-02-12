@@ -26,10 +26,10 @@ class Outdoor extends Component {
          <React.StrictMode>
             <div className="outdoor_main">
                <div className="panel raised_outer">
-                  <img src="images/bolt1.png" className="bolt" />
-                  <img src="images/bolt1.png" className="bolt" />
-                  <img src="images/bolt1.png" className="bolt" />
-                  <img src="images/bolt1.png" className="bolt" />
+                  <img src="images/bolt1.png" alt="decorative_bolt" className="bolt" />
+                  <img src="images/bolt1.png" alt="decorative_bolt" className="bolt" />
+                  <img src="images/bolt1.png" alt="decorative_bolt" className="bolt" />
+                  <img src="images/bolt1.png" alt="decorative_bolt" className="bolt" />
                   <div className="panel raised_inner car1">
                      <p>Oppvarming Kia</p>
                      <HsButtonContainer

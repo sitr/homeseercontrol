@@ -29,10 +29,10 @@ class Music extends Component {
          <React.StrictMode>
             <div className='music_main'>
                <div className="panel raised_outer music_info">
-                  <img src="images/bolt1.png" className="bolt" />
-                  <img src="images/bolt1.png" className="bolt" />
-                  <img src="images/bolt1.png" className="bolt" />
-                  <img src="images/bolt1.png" className="bolt" />
+                  <img src="images/bolt1.png" alt="decorative_bolt" className="bolt" />
+                  <img src="images/bolt1.png" alt="decorative_bolt" className="bolt" />
+                  <img src="images/bolt1.png" alt="decorative_bolt" className="bolt" />
+                  <img src="images/bolt1.png" alt="decorative_bolt" className="bolt" />
                   <div className="panel sunken">
                      <HsGraphicStatusContainer deviceId='1531' className='music_art' />
                      <div className='music_meta'>
@@ -65,10 +65,10 @@ class Music extends Component {
                </div>
                </div>
                <div className="panel raised_outer music_control">
-                  <img src="images/bolt1.png" className="bolt" />
-                  <img src="images/bolt1.png" className="bolt" />
-                  <img src="images/bolt1.png" className="bolt" />
-                  <img src="images/bolt1.png" className="bolt" />
+                  <img src="images/bolt1.png" alt="decorative_bolt" className="bolt" />
+                  <img src="images/bolt1.png" alt="decorative_bolt" className="bolt" />
+                  <img src="images/bolt1.png" alt="decorative_bolt" className="bolt" />
+                  <img src="images/bolt1.png" alt="decorative_bolt" className="bolt" />
                   <div className="panel raised_inner">
                      <div className="volume_slider">
                         <SliderContainer deviceId="1534" className="volume_slider__vertical"></SliderContainer>

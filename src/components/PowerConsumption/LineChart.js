@@ -62,8 +62,8 @@ const LineChart = (props) => {
     
     if (props.device.status != null) {
         var stripped = props.device.status.replace(/\søre/g, ";").replace(/\s/g, "");
-        var stripped = stripped.substring(0, stripped.length - 1);
-        var listOfPrices = stringTo2dArray(stripped, ";", ":").sort();
+        stripped = stripped.substring(0, stripped.length - 1);
+        listOfPrices = stringTo2dArray(stripped, ";", ":").sort();
         chartData.datasets[0].data = [];
         chartData.labels = [];
         listOfPrices.forEach(element => {
@@ -71,7 +71,7 @@ const LineChart = (props) => {
             currentTime.setHours(parseInt(element[0].substring(0, element[0].indexOf("."))));
             currentTime.setMinutes(0);
             currentTime.setSeconds(0);
-            chartData.datasets[0].data.push({ x: currentTime, y: parseFloat(element[1].replace(/\,/g, ".")) });
+            chartData.datasets[0].data.push({ x: currentTime, y: parseFloat(element[1].replace(/,/g, ".")) });
             chartData.labels.push(currentTime);
         });
         

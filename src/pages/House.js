@@ -25,10 +25,10 @@ class House extends Component {
          <React.StrictMode>
             <div className="house_main">
             <div className="panel raised_outer">
-                  <img src="images/bolt1.png" className="bolt" />
-                  <img src="images/bolt1.png" className="bolt" />
-                  <img src="images/bolt1.png" className="bolt" />
-                  <img src="images/bolt1.png" className="bolt" />
+                  <img src="images/bolt1.png" alt="decorative_bolt" className="bolt" />
+                  <img src="images/bolt1.png" alt="decorative_bolt" className="bolt" />
+                  <img src="images/bolt1.png" alt="decorative_bolt" className="bolt" />
+                  <img src="images/bolt1.png" alt="decorative_bolt" className="bolt" />
                   <p className='panel_title'>2. etasje</p>
                   <div className="panel sunken building">
                      <div className="livingRoom">
