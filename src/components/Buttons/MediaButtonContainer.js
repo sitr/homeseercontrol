@@ -14,7 +14,9 @@ class MediaButtonContainer extends Component {
          buttonText: this.props.buttonText,
          command: this.props.command,
          isPlaying: this.props.isPlaying,
-         buttonType: this.props.className
+         buttonType: this.props.className,
+         deviceInterval: this.props.deviceInterval === undefined ? 1000 : eval(this.props.deviceInterval),
+         updateInterval: 1000
       };
       this.config = getConfig();
       this.handleClick = this.handleClick.bind(this);
@@ -31,7 +33,7 @@ class MediaButtonContainer extends Component {
                   self.setState({ 'isPlaying': result.status === 'Playing' ? true : false });
             })
       }, 
-      1000);
+      self.state.updateInterval);
    }
 
    componentWillUnmount() {

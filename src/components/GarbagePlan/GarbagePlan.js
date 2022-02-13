@@ -18,6 +18,7 @@ class GarbagePlan extends React.Component {
                      <HsTextStatusDeviceContainer
                         deviceId="1158"
                         className=""
+                        deviceInterval = "60 * 60 * 1000"
                      />
                   </div>
                   <div>
@@ -25,6 +26,7 @@ class GarbagePlan extends React.Component {
                      <HsTextStatusDeviceContainer
                         deviceId="1159"
                         className=""
+                        deviceInterval = "60 * 60 * 1000"
                      />
                   </div>
                   <div>
@@ -32,6 +34,7 @@ class GarbagePlan extends React.Component {
                      <HsTextStatusDeviceContainer
                         deviceId="1160"
                         className=""
+                        deviceInterval = "60 * 60 * 1000"
                      />
                   </div>
                   <div>
@@ -39,6 +42,7 @@ class GarbagePlan extends React.Component {
                      <HsTextStatusDeviceContainer
                         deviceId="1161"
                         className=""
+                        deviceInterval = "60 * 60 * 1000"
                      />
                   </div>
                   <div>
@@ -46,6 +50,7 @@ class GarbagePlan extends React.Component {
                      <HsTextStatusDeviceContainer
                         deviceId="1162"
                         className=""
+                        deviceInterval = "60 * 60 * 1000"
                      />
                   </div>
                </div>

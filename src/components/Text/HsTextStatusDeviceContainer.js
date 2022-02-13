@@ -11,6 +11,8 @@ class HsTextStatusDeviceContainer extends Component {
          device: {},
          statusType: this.props.statusType,
          className: this.props.className,
+         deviceInterval: this.props.deviceInterval === undefined ? 1000 : eval(this.props.deviceInterval),
+         updateInterval: 1000
       };
    }
 
@@ -22,6 +24,7 @@ class HsTextStatusDeviceContainer extends Component {
             .then(result => {
                if(self._isMounted) {
                   self.setState({'device': result});
+                  self.setState({'updateInterval': self.state.deviceInterval})
                   if(self.props.statusType === 'window' || self.props.statusType === 'door')
                   {
                      switch(result.status)
@@ -66,7 +69,7 @@ class HsTextStatusDeviceContainer extends Component {
                   }
                }
          })}
-         , 1000);
+         , self.state.updateInterval);
    }
 
    componentWillUnmount() {

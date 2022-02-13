@@ -45,6 +45,7 @@ class PowerConsumption extends Component {
                         device={this.state.device}
                         id={this.state.id}
                         className={this.state.className}
+                        deviceInterval = "60 * 60 * 1000"
                     />
                 </div>
             </div>

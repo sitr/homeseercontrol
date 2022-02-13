@@ -14,18 +14,22 @@ class LedPanel extends React.Component {
                   <label>Motorvarmer:</label>
                   <HsLedContainer
                      deviceId="2197"
+                     deviceInterval = "5 * 60 * 1000"
                   />
                   <label>Vaskemaskin:</label>
                   <HsLedContainer
                      deviceId="181"
+                     deviceInterval = "5* 60 * 1000"
                   />
                   <label>Tørketrommel:</label>
                   <HsLedContainer
                      deviceId="180"
+                     deviceInterval = "5* 60 * 1000"
                   />
                   <label>Støvsuger:</label>
                   <HsLedContainer
                      deviceId="1342"
+                     deviceInterval = "5* 60 * 1000"
                   />
                </div>
             </div>

@@ -9,7 +9,9 @@ class HsGraphicStatusContainer extends Component {
       this.state = {
          deviceId: this.props.deviceId,
          device: {},
-         className: this.props.className
+         className: this.props.className,
+         deviceInterval: this.props.deviceInterval === undefined ? 1000 : eval(this.props.deviceInterval),
+         updateInterval: 1000
       };
    }
 
@@ -22,7 +24,7 @@ class HsGraphicStatusContainer extends Component {
                if(self._isMounted)
                   self.setState({'device': result});
          })}
-         , 1000);
+         , self.state.updateInterval);
    }
 
    componentWillUnmount() {

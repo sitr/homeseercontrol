@@ -16,22 +16,26 @@ class OutdoorConditions extends React.Component {
                   deviceId="1117"
                   className="temperature"
                   statusType="temperature"
+                  deviceInterval = "60 * 1000"
                />
                <div className="outdoorConditions">
                   <label className="weather_station_label">Føles som:</label>
                   <HsTextStatusDeviceContainer
                      deviceId="1163"
                      className="weather_station_value"
+                     deviceInterval = "60 * 1000"
                   />
                   <br/>
                   <label className="weather_station_label">Vind:</label>
                   <HsTextStatusDeviceContainer
                      deviceId="1134"
                      className="weather_station_value"
+                     deviceInterval = "1000"
                   />
                   <HsTextStatusDeviceContainer
                      deviceId="1133"
                      className="weather_station_value"
+                     deviceInterval = "1000"
                   />
                   <label className="weather_station_label">Vindkast:</label>
                   <HsTextStatusDeviceContainer
@@ -46,11 +50,13 @@ class OutdoorConditions extends React.Component {
                   <HsTextStatusDeviceContainer
                      deviceId="1129"
                      className="weather_station_value"
+                     deviceInterval = "60 * 1000"
                   />
                </div>
                <HsTextStatusDeviceContainer
                   deviceId="284"
                   className="weather_autotext"
+                  deviceInterval = "60 * 60 * 1000"
                />
             </div>
          </div>

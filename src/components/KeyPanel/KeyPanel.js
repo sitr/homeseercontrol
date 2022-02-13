@@ -17,24 +17,28 @@ class KeyPanel extends React.Component {
                      buttonText="Normal belysning"
                      className="button"
                      command='{"cmd": "SetValue", "value": "Normal belysning"}'
+                     deviceInterval = "60 * 1000"
                   />
                   <HsButton
                      deviceId="130"
                      buttonText="Dempet belysning"
                      className="button"
                      command='{"cmd": "SetValue", "value": "Dempet belysning"}'
+                     deviceInterval = "60 * 1000"
                   />
                   <HsButton
                      deviceId="130"
                      buttonText="Alt lys på"
                      className="button"
                      command='{"cmd": "SetValue", "value": "Full belysning"}'
+                     deviceInterval = "60 * 1000"
                   />
                   <HsButton
                      deviceId="130"
                      buttonText="Alt lys av"
                      className="button"
                      command='{"cmd": "SetValue", "value": "Ingen belysning"}'
+                     deviceInterval = "60 * 1000"
                   />
                </div>
             </div>

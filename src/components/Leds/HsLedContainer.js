@@ -10,7 +10,9 @@ class HsLedContainer extends Component {
          deviceId: this.props.deviceId,
          device: {},
          id: this.props.id,
-         className: this.props.className
+         className: this.props.className,
+         deviceInterval: this.props.deviceInterval === undefined ? 1000 : eval(this.props.deviceInterval),
+         updateInterval: 1000
       };
    }
 
@@ -38,7 +40,7 @@ class HsLedContainer extends Component {
                   }
                }
          })}
-         , 1000);
+         , self.state.updateInterval);
    }
 
    componentWillUnmount() {

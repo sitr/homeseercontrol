@@ -13,7 +13,9 @@ class HsButtonContainer extends Component {
          buttonText: this.props.buttonText,
          toggleText: this.props.toggleText,
          command: this.props.command,
-         isLiveButton: this.props.isLiveButton === undefined ? false : this.props.isLiveButton
+         isLiveButton: this.props.isLiveButton === undefined ? false : this.props.isLiveButton,
+         deviceInterval: this.props.deviceInterval === undefined ? 1000 : eval(this.props.deviceInterval),
+         updateInterval: 1000
       };
    }
 
@@ -67,7 +69,7 @@ class HsButtonContainer extends Component {
                      }
                   }
             })}
-            , 1000);
+            , self.state.updateInterval);
       }
    }
 
