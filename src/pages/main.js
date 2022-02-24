@@ -26,12 +26,10 @@ class Main extends Component {
    componentDidMount() {
       document.title = "Hovedkontroll";
       this.dimensionsSubscription = Dimensions.addEventListener("change", this.onChange);
-      //this._isMounted = true;
    }
 
    componentWillUnmount() {
       this.dimensionsSubscription?.remove();
-      //this._isMounted = false;
    }
 
    render() {
