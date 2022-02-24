@@ -16,6 +16,7 @@
         height: 600px;
         background: url("../images/Hustegning.svg"), #b9b6b6;;
         background-size: 100%;
+        position:relative;
     }
 }
 
@@ -59,12 +60,13 @@
 .livingRoom {
     .temp { left: 558px; top: 282px; }
     .terraceDoor { width: 9px; height: 55px; left: 758px; top: 310px; }
-    .ceilingLamp { left: 667px; top: 457px; }
+    .ceilingLamp1 { left: 667px; top: 440px; }
+    .ceilingLamp2 { left: 560px; top: 200px; }
     .windowLamp1 { left: 741px; top: 435px; }
     .windowLamp2 { left: 609px; top: 135px; }
     .floorLamp1 { left: 409px; top: 138px; }
     .floorLamp2 { left: 741px; top: 138px; }
-    .floorLamp3 { left: 536px; top: 493px; }
+    .floorLamp3 { left: 741px; top: 493px; }
     .tableLamp1 { left: 520px; top: 135px; }
     .tableLamp2 { left: 409px; top: 284px; }
 }
@@ -81,13 +83,13 @@
 
 .office {
     .temp { left: 110px; top: 454px; }
-    .window { left: 170px; top: 514px; width: 55px; height: 9px; }
+    .window { left: 164px; top: 514px; width: 55px; height: 9px; }
     .ceilingLamp { left: 133px; top: 425px; }
 }
 
 .masterBedroom {
-    .window { left: 84px; top: 122px; width: 55px; height: 9px; }
-    .terraceDoor { left: 143px; top: 122px; width: 55px; height: 9px; }
+    .window { left: 77px; top: 117px; width: 55px; height: 9px; }
+    .terraceDoor { left: 140px; top: 117px; width: 55px; height: 9px; }
     .ceilingLamp { left: 134px; top: 221px; }
     .bedLamp1 { left: 46px; top: 157px; }
     .bedLamp2 { left: 46px; top: 281px; }
