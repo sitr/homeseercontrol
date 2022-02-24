@@ -29,7 +29,7 @@ class LedPanel extends React.Component {
                   <label>Støvsuger:</label>
                   <HsLedContainer
                      deviceId="1336"
-                     deviceInterval = "5* 60 * 1000"
+                     deviceInterval = "10 * 1000"
                   />
                </div>
             </div>

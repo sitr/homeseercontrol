@@ -1,0 +1,17 @@
+Another fix for mem leaks + statuses for robovac
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch feature/redesign
+# Your branch is up to date with 'origin/feature/redesign'.
+#
+# Changes to be committed:
+#	modified:   src/components/Buttons/HsButtonContainer.js
+#	modified:   src/components/Buttons/MediaButtonContainer.js
+#	modified:   src/components/HsDeviceController.js
+#	modified:   src/components/LedPanel/LedPanel.js
+#	modified:   src/components/Leds/HsLedContainer.js
+#	modified:   src/components/PowerConsumption/PowerConsumption.js
+#	modified:   src/components/Text/HsTextStatusDeviceContainer.js
+#
