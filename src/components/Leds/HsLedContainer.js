@@ -3,7 +3,7 @@ import {getDeviceInfoFromHomeSeer} from '../HsDeviceController';
 import HsLed from './HsLed';
 
 class HsLedContainer extends Component {
-   _isMounted = false;
+   controller = new AbortController();
    constructor(props) {
       super(props);
       this.state = {
@@ -18,34 +18,50 @@ class HsLedContainer extends Component {
 
    componentDidMount() {
       var self = this;
-      self._isMounted = true;
       this.interval = setInterval(() => {
-         getDeviceInfoFromHomeSeer(self.state.deviceId)
+         getDeviceInfoFromHomeSeer(self.state.deviceId, self.controller)
             .then(result => {
-               if(self._isMounted)
-               {
-                  switch(result.status) {
-                     case 'On':
-                     case 'Tørker':
-                     case 'Vasker':
-                     case 'Ja':
-                        self.setState({'className': 'led led__green'});
-                        break;
-                     case 'Off':
-                     case 'Ferdig':
-                     case 'Nei':
-                        self.setState({'className': 'led'});
-                        break;
-                     default: self.setState({'className': 'led'});
-                  }
+               switch(result.status) {
+                  case 'On':
+                  case 'Tørker':
+                  case 'Vasker':
+                  case 'Rengjør':
+                  case 'Segmentrengjøring':
+                  case 'Sonerengjøring':
+                  case 'Punktrengjøring':
+                     self.setState({'className': 'led led__green'});
+                     break;
+
+                  case 'Frakoblet lader':
+                  case 'Ladeproblem':
+                  case 'Feil':
+                     self.setState({'className': 'led led__red'});
+                     break;
+
+                  case 'Starter opp':
+                  case 'Går til ladestasjon':
+                  case 'Satt på pause':
+                  case 'Oppdaterer firmware':
+                  case 'Parkerer i ladestasjon':
+                  case 'Går til område':
+                     self.setState({'className': 'led led__orange'});
+                     break;
+
+                  case 'Off':
+                  case 'Ferdig':
+                  case 'Lader':
+                     self.setState({'className': 'led'});
+                     break;
+                  default: self.setState({'className': 'led'});
                }
-         })}
+            }
+         )}
          , self.state.updateInterval);
+         return () => this.controller.abort;
    }
 
    componentWillUnmount() {
       clearInterval(this.interval);
-      this._isMounted = false;
    }
 
    render() {

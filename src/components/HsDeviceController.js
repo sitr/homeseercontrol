@@ -4,8 +4,8 @@ import { getConfig } from '../config';
 var config = getConfig();
 const HOMESEER_URL =  config.homeseerApiHost;
 
-function getDeviceInfoFromHomeSeer (deviceId) {
-   var result = fetch("http://" + HOMESEER_URL + "/JSON?request=getstatus&ref=" + deviceId)
+function getDeviceInfoFromHomeSeer (deviceId, controller) {
+   var result = fetch("http://" + HOMESEER_URL + "/JSON?request=getstatus&ref=" + deviceId, {signal: controller.signal})
       .then(response => response.json())
       .then(data =>   {
          return new HsDevice(data);

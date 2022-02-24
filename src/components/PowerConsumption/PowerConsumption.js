@@ -3,7 +3,7 @@ import { getDeviceInfoFromHomeSeer } from '../HsDeviceController';
 import LineChart from './LineChart';
 
 class PowerConsumption extends Component {
-    _isMounted = false;
+    controller = new AbortController();
     constructor(props) {
         super(props);
         this.state = {
@@ -16,20 +16,18 @@ class PowerConsumption extends Component {
 
     componentDidMount() {
         var self = this;
-        self._isMounted = true;
         this.interval = setInterval(() => {
-            getDeviceInfoFromHomeSeer(self.state.deviceId)
+            getDeviceInfoFromHomeSeer(self.state.deviceId, self.controller)
                 .then(result => {
-                    if(self._isMounted)
-                        self.setState({'device': result});
+                    self.setState({'device': result});
                 })
         }
         , 1000);
+        return () => self.controller.abort;
     }
 
     componentWillUnmount() {
         clearInterval(this.interval);
-        this._isMounted = false;
     }
 
     render() {
