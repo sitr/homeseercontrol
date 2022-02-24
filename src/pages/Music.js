@@ -34,11 +34,11 @@ class Music extends Component {
                   <img src="images/bolt1.png" alt="decorative_bolt" className="bolt" />
                   <img src="images/bolt1.png" alt="decorative_bolt" className="bolt" />
                   <div className="panel sunken">
-                     <HsGraphicStatusContainer deviceId='1531' className='music_art' />
+                     <HsGraphicStatusContainer deviceId='1531' className='music_art' deviceInterval = "10 * 1000" />
                      <div className='music_meta'>
-                        <HsTextStatusDeviceContainer deviceId='1527' className='artist' statusText={this.state.message} /><br/>
-                        <label htmlFor="trackInfo">Sang:</label><HsTextStatusDeviceContainer id='trackInfo' deviceId='1525' className='track' statusText={this.state.message} /><br/>
-                        <label htmlFor="albumInfo">Album:</label><HsTextStatusDeviceContainer id='albumInfo' deviceId='1529' className='track' statusText={this.state.message} /><br/>
+                        <HsTextStatusDeviceContainer deviceId='1527' className='artist' statusText={this.state.message} deviceInterval = "10 * 1000" /><br/>
+                        <label htmlFor="trackInfo">Sang:</label><HsTextStatusDeviceContainer id='trackInfo' deviceId='1525' className='track' statusText={this.state.message} deviceInterval = "10 * 1000" /><br/>
+                        <label htmlFor="albumInfo">Album:</label><HsTextStatusDeviceContainer id='albumInfo' deviceId='1529' className='track' statusText={this.state.message} deviceInterval = "10 * 1000" /><br/>
                      </div>
                   </div>
                   <div className="radioStations raised_inner">

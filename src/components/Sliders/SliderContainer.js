@@ -4,7 +4,7 @@ import Slider from './Slider';
 import { getConfig } from '../../config';
 
 class SliderContainer extends Component {
-   _isMounted = false;
+   controller = new AbortController();
    constructor(props) {
       super(props);
       this.state = {
@@ -20,19 +20,18 @@ class SliderContainer extends Component {
 
    componentDidMount() {
       var self = this;
-      self._isMounted = true;
-      if(self.state.deviceId) {
-         getDeviceInfoFromHomeSeer(self.state.deviceId)
+      this.interval = setInterval(() => {
+         getDeviceInfoFromHomeSeer(self.state.deviceId, self.controller)
             .then(result => {
-               if(self._isMounted)
-                  self.setState({'sliderValue': result.value});
-         });
-       }
+               self.setState({'sliderValue': result.value});
+         })
+       },
+      self.state.updateInterval);
+      return () => this.controller.abort;
    }
 
    componentWillUnmount() {
       clearInterval(this.interval);
-      this._isMounted = false;
    }
 
    onChange = (e) => {
