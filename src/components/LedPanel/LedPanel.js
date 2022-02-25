@@ -1,5 +1,6 @@
 import React from "react";
 import HsLedContainer from "../Leds/HsLedContainer";
+import HsTextStatusDeviceContainer from '../Text/HsTextStatusDeviceContainer';
 
 class LedPanel extends React.Component {
     render() {
@@ -25,7 +26,12 @@ class LedPanel extends React.Component {
                      deviceId="180"
                      deviceInterval = "5* 60 * 1000"
                   />
-                  <label>Støvsuger:</label>
+                  <label className="vacuum">Støvsuger:(
+                  <HsTextStatusDeviceContainer
+                     deviceId="1347"
+                     className=""
+                     deviceInterval = "60 * 1000"
+                  />)</label>
                   <HsLedContainer
                      deviceId="1336"
                      deviceInterval = "10 * 1000"

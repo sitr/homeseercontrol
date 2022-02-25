@@ -10,6 +10,14 @@ div.ledPanelContainer {
           font-size: 1.2em;
           color:$label-color-invert;
           grid-column: 1 / 2;
+
+          &.vacuum {
+            white-space: nowrap;
+          }
+
+          div {
+            display: inline;
+          }
        }
     
        .led {

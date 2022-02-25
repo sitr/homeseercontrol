@@ -44,7 +44,7 @@ class HsLedContainer extends Component {
                   case 'Oppdaterer firmware':
                   case 'Parkerer i ladestasjon':
                   case 'Går til område':
-                     self.setState({'className': 'led led__orange'});
+                     self.setState({'className': 'led led__yellow'});
                      break;
 
                   case 'Off':
