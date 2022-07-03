@@ -34,120 +34,152 @@ class House extends Component {
                      <div className="livingRoom">
                         <HsTextStatusDeviceContainer
                            deviceId="1105"
-                           className="temp" />
+                           className="temp"
+                           deviceInterval = "20 * 1000" />
                         <HsTextStatusDeviceContainer
                            deviceId="156"
                            className="door terraceDoor"
-                           statusType="door" />
+                           statusType="door"
+                           deviceInterval = "20 * 1000" />
                         <HsTextStatusDeviceContainer
                            deviceId="19"
-                           className="light ceilingLamp"
-                           statusType="light" />
+                           className="light ceilingLamp1"
+                           statusType="light"
+                           deviceInterval = "20 * 1000" />
+                        <HsTextStatusDeviceContainer
+                           deviceId="19"
+                           className="light ceilingLamp2"
+                           statusType="light"
+                           deviceInterval = "20 * 1000" />
                         <HsTextStatusDeviceContainer
                            deviceId="209"
                            className="light windowLamp1"
-                           statusType="light" />
+                           statusType="light"
+                           deviceInterval = "20 * 1000" />
                         <HsTextStatusDeviceContainer
                            deviceId="198"
                            className="light windowLamp2"
-                           statusType="light" />
+                           statusType="light"
+                           deviceInterval = "20 * 1000" />
                         <HsTextStatusDeviceContainer
                            deviceId="1170"
                            className="light floorLamp1"
-                           statusType="light" />
+                           statusType="light"
+                           deviceInterval = "20 * 1000" />
                         <HsTextStatusDeviceContainer
                            deviceId="22"
                            className="light floorLamp2"
-                           statusType="light" />
+                           statusType="light"
+                           deviceInterval = "20 * 1000" />
                         <HsTextStatusDeviceContainer
                            deviceId="2169"
                            className="light floorLamp3"
-                           statusType="light" />
+                           statusType="light"
+                           deviceInterval = "20 * 1000" />
                         <HsTextStatusDeviceContainer
                            deviceId="1818"
                            className="light tableLamp1"
-                           statusType="light" />
+                           statusType="light"
+                           deviceInterval = "20 * 1000" />
                         <HsTextStatusDeviceContainer
                            deviceId="2102"
                            className="light tableLamp2"
-                           statusType="light" />
+                           statusType="light"
+                           deviceInterval = "20 * 1000" />
                      </div>
                      <div className="stairCase">
                         <HsTextStatusDeviceContainer
                            deviceId="196"
                            className="light ceilingLamp"
-                           statusType="light" />
+                           statusType="light"
+                           deviceInterval = "20 * 1000" />
                      </div>
                      <div className="hallway">
                         <HsTextStatusDeviceContainer
                            deviceId="1387"
-                           className="temp" />
+                           className="temp"
+                           deviceInterval = "20 * 1000" />
                         <HsTextStatusDeviceContainer
                            deviceId="25"
                            className="light ceilingLamp"
-                           statusType="light" />
+                           statusType="light"
+                           deviceInterval = "20 * 1000" />
                      </div>
                      <div className="bathroom">
                         <HsTextStatusDeviceContainer
                            deviceId="553"
-                           className="temp" />
+                           className="temp"
+                           deviceInterval = "20 * 1000" />
                         <HsTextStatusDeviceContainer
                            deviceId="86"
                            className="light ceilingLamp"
-                           statusType="light" />
+                           statusType="light"
+                           deviceInterval = "20 * 1000" />
                         <HsTextStatusDeviceContainer
                            deviceId="10"
                            className="light mirrorLamp"
-                           statusType="light" />
+                           statusType="light"
+                           deviceInterval = "20 * 1000" />
                      </div>
                      <div className="office">
                         <HsTextStatusDeviceContainer
                            deviceId="1770"
-                           className="temp" />
+                           className="temp"
+                           deviceInterval = "20 * 1000" />
                         <HsTextStatusDeviceContainer
                            deviceId="474"
                            className="window"
-                           statusType="window" />
+                           statusType="window"
+                           deviceInterval = "20 * 1000" />
                         <HsTextStatusDeviceContainer
                            deviceId="1455"
                            className="light ceilingLamp"
-                           statusType="light" />
+                           statusType="light"
+                           deviceInterval = "20 * 1000" />
                      </div>
                      <div className="masterBedroom">
                         <HsTextStatusDeviceContainer
                            deviceId="141"
                            className="window"
-                           statusType="window" />
+                           statusType="window"
+                           deviceInterval = "20 * 1000" />
                         <HsTextStatusDeviceContainer
                            deviceId="139"
                            className="door terraceDoor"
-                           statusType="door" />
+                           statusType="door"
+                           deviceInterval = "20 * 1000" />
                         <HsTextStatusDeviceContainer
                            deviceId="646"
                            className="light ceilingLamp"
-                           statusType="light" />
+                           statusType="light"
+                           deviceInterval = "20 * 1000" />
                         <HsTextStatusDeviceContainer
                            deviceId="1441"
                            className="light bedLamp1"
-                           statusType="light" />
+                           statusType="light"
+                           deviceInterval = "20 * 1000" />
                         <HsTextStatusDeviceContainer
                            deviceId="1444"
                            className="light bedLamp2"
-                           statusType="light" />
+                           statusType="light"
+                           deviceInterval = "20 * 1000" />
                      </div>
                      <div className="kitchen">
                         <HsTextStatusDeviceContainer
                            deviceId="76"
                            className="light ceilingLamp"
-                           statusType="light" />
+                           statusType="light"
+                           deviceInterval = "20 * 1000" />
                         <HsTextStatusDeviceContainer
                            deviceId="6"
                            className="light stripLight1"
-                           statusType="light" />
+                           statusType="light"
+                           deviceInterval = "20 * 1000" />
                         <HsTextStatusDeviceContainer
                            deviceId="6"
                            className="light stripLight2"
-                           statusType="light" />
+                           statusType="light"
+                           deviceInterval = "20 * 1000" />
                      </div>
                   </div>
                   </div>
