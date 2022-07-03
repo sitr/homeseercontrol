@@ -46,10 +46,12 @@ class HsLedContainer extends Component {
                   case 'Går til område':
                      self.setState({'className': 'led led__yellow'});
                      break;
-
+                  
+                  case 'Lader':
+                     self.setState({'className': 'led led__blue'});
+                     break;
                   case 'Off':
                   case 'Ferdig':
-                  case 'Lader':
                      self.setState({'className': 'led'});
                      break;
                   default: self.setState({'className': 'led'});
