@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { getDeviceInfoFromHomeSeer } from '../HsDeviceController';
+import HsTextStatusDeviceContainer from '../Text/HsTextStatusDeviceContainer';
 import LineChart from './LineChart';
 
-class PowerConsumption extends Component {
+class PowerPrices extends Component {
     controller = new AbortController();
     constructor(props) {
         super(props);
@@ -46,8 +47,15 @@ class PowerConsumption extends Component {
                         deviceInterval = "60 * 60 * 1000"
                     />
                 </div>
+                <div className="panel sunken">
+                    <label>Strømforbruk nå: </label>
+                    <HsTextStatusDeviceContainer
+                        deviceId="1985"
+                        className="value"
+                        statusType="powerConsumption"/>
+                </div>
             </div>
         );
     }
 }
-export default PowerConsumption;
+export default PowerPrices;

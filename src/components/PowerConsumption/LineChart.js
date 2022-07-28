@@ -1,7 +1,7 @@
 import React from "react";
 import { Line } from 'react-chartjs-2';
 import 'chartjs-adapter-moment';
-//import annotationPlugin from 'chartjs-plugin-annotation';
+
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -15,27 +15,6 @@ import {
     TimeSeriesScale
 } from "chart.js";
 
-// var ann = [];
-// var ann_labels = ["Nå"];
-
-// var annotations_array = ann.map(function (value, index) {
-//     return {
-//         type: 'line',
-//         id: 'vline' + index,
-//         mode: 'vertical',
-//         scaleID: 'x',
-//         value: value,
-//         endValue: 200,
-//         borderColor: 'red',
-//         borderWidth: 2,
-//         label: {
-//             enabled: true,
-//             position: "center",
-//             content: ann_labels[index]
-//         }
-//     }
-// });
-
 const LineChart = (props) => {
     
     ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, TimeScale, TimeSeriesScale);
@@ -46,19 +25,16 @@ const LineChart = (props) => {
 
     var listOfPrices;
     const chartData = {
-    labels: [],
-    datasets: [
-        {
-            label: 'øre/kWh',
-            fill: false,
-            lineTension: 0,
-            // backgroundColor: 'rgba(75,192,192,1)',
-            // borderColor: 'rgba(0,0,0,1)',
-            // borderWidth: 1,
-            data: []
-        }
-    ]
-}
+        labels: [],
+        datasets: [
+            {
+                label: 'øre/kWh',
+                fill: false,
+                lineTension: 0,
+                data: []
+            }
+        ]
+    }
     
     if (props.device.status != null) {
         var stripped = props.device.status.replace(/øre/g, ";");
@@ -74,7 +50,6 @@ const LineChart = (props) => {
             chartData.datasets[0].data.push({ x: currentTime, y: parseFloat(element[1].replace(/,/g, ".")) });
             chartData.labels.push(currentTime);
         });
-        
     }
 
     return (

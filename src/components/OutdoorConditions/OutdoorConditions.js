@@ -19,38 +19,38 @@ class OutdoorConditions extends React.Component {
                   deviceInterval = "10 * 60 * 1000"
                />
                <div className="outdoorConditions">
-                  <label className="weather_station_label">Føles som:</label>
+                  <label>Føles som:</label>
                   <HsTextStatusDeviceContainer
                      deviceId="1163"
-                     className="weather_station_value"
+                     className="value"
                      deviceInterval = "60 * 1000"
                   />
                   <br/>
-                  <label className="weather_station_label">Vind:</label>
+                  <label>Vind:</label>
                   <HsTextStatusDeviceContainer
                      deviceId="1134"
-                     className="weather_station_value"
+                     className="value"
                      deviceInterval = "60 * 1000"
                   />
                   <HsTextStatusDeviceContainer
                      deviceId="1133"
-                     className="weather_station_value"
+                     className="value"
                      deviceInterval = "60 * 1000"
                   />
-                  <label className="weather_station_label">Vindkast:</label>
+                  <label>Vindkast:</label>
                   <HsTextStatusDeviceContainer
                      deviceId="1136"
-                     className="weather_station_value"
+                     className="value"
                   />
                   <HsTextStatusDeviceContainer
                      deviceId="1135"
-                     className="weather_station_value"
+                     className="value"
                      deviceInterval = "5 * 1000"
                   />
-                  <label className="weather_station_label">Nedbør:</label>
+                  <label>Nedbør:</label>
                   <HsTextStatusDeviceContainer
                      deviceId="1129"
-                     className="weather_station_value"
+                     className="value"
                      deviceInterval = "60 * 1000"
                   />
                </div>

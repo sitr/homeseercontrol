@@ -4,7 +4,7 @@ import KeyPanel from '../components/KeyPanel/KeyPanel';
 import LedPanel from '../components/LedPanel/LedPanel';
 import BottomPanel from '../components/BottomPanel/BottomPanel';
 import React, { Component } from 'react';
-import PowerConsumption from '../components/PowerConsumption/PowerConsumption';
+import PowerPrices from '../components/PowerConsumption/PowerPrices';
 import IndoorConditions from '../components/IndoorConditions/IndoorConditions';
 import { Dimensions } from 'react-native';
 
@@ -37,7 +37,7 @@ class Main extends Component {
          <React.StrictMode>
             <div className="main">
                <OutdoorConditions />
-               <PowerConsumption deviceId="2009"/>
+               <PowerPrices deviceId="2009"/>
                <KeyPanel />
                <IndoorConditions />
                <GarbagePlan />

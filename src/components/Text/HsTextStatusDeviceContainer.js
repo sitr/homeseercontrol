@@ -46,6 +46,13 @@ class HsTextStatusDeviceContainer extends Component {
                   else
                      self.setState({'className': self.props.className + ' temperature_minus'})
                }
+               if(self.props.statusType === 'powerConsumption')
+               {
+                  if(result.value > 5)
+                     self.setState({'className': self.props.className + ' powerConsumptionHigh'});
+                  else
+                     self.setState({'className': self.props.className + ' powerConsumptionNormal'})
+               }
                if (self.props.statusType === 'light')
                {
                   switch(true)

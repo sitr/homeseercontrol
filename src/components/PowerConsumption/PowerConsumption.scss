@@ -1,3 +1,11 @@
 div.powerConsumptionContainer {
     grid-area: powerConsumption;
  }
+
+div.powerConsumptionHigh {
+    color: $alarm-color;
+}
+
+div.powerConsumptionNormal {
+    color: $value-color;
+}

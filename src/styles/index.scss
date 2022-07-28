@@ -68,19 +68,19 @@ div.indoorConditionsContainer {
    color: $temperature-minus-color;
 }
 
-.weather_station_label, .weather_station_value {
+label, .value, label {
    display:inline-block;
    line-height: 35px;
    padding-left: 5px;
    font-size: 1.3em;
    white-space: nowrap;
 }
-.weather_station_value {
+.value {
    color: $value-color;
    text-align: left;
 }
 
-.weather_station_label {
+label {
    color: $label-color;
 }
 
