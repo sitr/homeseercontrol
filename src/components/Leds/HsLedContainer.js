@@ -21,6 +21,8 @@ class HsLedContainer extends Component {
       this.interval = setInterval(() => {
          getDeviceInfoFromHomeSeer(self.state.deviceId, self.controller)
             .then(result => {
+               var mowerCharging = /Charging \(\d{1,}%\)/
+
                switch(result.status) {
                   case 'On':
                   case 'Tørker':
@@ -29,6 +31,7 @@ class HsLedContainer extends Component {
                   case 'Segmentrengjøring':
                   case 'Sonerengjøring':
                   case 'Punktrengjøring':
+                  case 'Mowing':
                      self.setState({'className': 'led led__green'});
                      break;
 
@@ -48,6 +51,7 @@ class HsLedContainer extends Component {
                      break;
                   
                   case 'Lader':
+                  case mowerCharging.test(result.status):
                      self.setState({'className': 'led led__blue'});
                      break;
                   case 'Off':

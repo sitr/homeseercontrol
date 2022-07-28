@@ -36,6 +36,16 @@ class LedPanel extends React.Component {
                      deviceId="1336"
                      deviceInterval = "10 * 1000"
                   />
+                  <label>
+                     Robotklipper (
+                        <HsTextStatusDeviceContainer
+                           deviceId="1577"
+                           deviceInterval = "60 * 1000" />):
+                  </label>
+                  <HsLedContainer
+                     deviceId="1570"
+                     deviceInterval = "60 * 1000"
+                  />
                </div>
             </div>
         );
