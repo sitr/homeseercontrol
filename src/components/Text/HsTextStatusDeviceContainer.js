@@ -11,7 +11,7 @@ class HsTextStatusDeviceContainer extends Component {
          device: {},
          statusType: this.props.statusType,
          className: this.props.className,
-         deviceInterval: this.props.deviceInterval === undefined ? 1000 : eval(this.props.deviceInterval),
+         deviceInterval: this.props.deviceInterval === undefined ? 1000 : Function(this.props.deviceInterval),
          updateInterval: 1000
       };
    }

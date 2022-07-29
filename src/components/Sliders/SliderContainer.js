@@ -11,7 +11,7 @@ class SliderContainer extends Component {
          deviceId: this.props.deviceId,
          className: this.props.className,
          sliderValue: 0,
-         deviceInterval: this.props.deviceInterval === undefined ? 1000 : eval(this.props.deviceInterval),
+         deviceInterval: this.props.deviceInterval === undefined ? 1000 : Function(this.props.deviceInterval),
          updateInterval: 1000
       };
       this.config = getConfig();

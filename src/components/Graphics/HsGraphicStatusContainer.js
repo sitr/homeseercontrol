@@ -10,7 +10,7 @@ class HsGraphicStatusContainer extends Component {
          deviceId: this.props.deviceId,
          device: {},
          className: this.props.className,
-         deviceInterval: this.props.deviceInterval === undefined ? 1000 : eval(this.props.deviceInterval),
+         deviceInterval: this.props.deviceInterval === undefined ? 1000 : Function(this.props.deviceInterval),
          updateInterval: 1000
       };
    }

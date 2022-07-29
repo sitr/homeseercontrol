@@ -15,7 +15,7 @@ class MediaButtonContainer extends Component {
          command: this.props.command,
          isPlaying: this.props.isPlaying,
          buttonType: this.props.className,
-         deviceInterval: this.props.deviceInterval === undefined ? 1000 : eval(this.props.deviceInterval),
+         deviceInterval: this.props.deviceInterval === undefined ? 1000 : Function(this.props.deviceInterval),
          updateInterval: 1000
       };
       this.config = getConfig();
