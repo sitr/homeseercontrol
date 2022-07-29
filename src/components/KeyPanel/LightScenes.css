@@ -1,0 +1,27 @@
+div.lightScenes {
+    position: absolute;
+    top: -350px;
+    background-color: rgba(85, 90, 93, 1);
+    right: 126px;
+    overflow-y: hidden;
+	transition: all .8s ease-out;
+    
+}
+
+div.lightScenes .raised_inner {
+    display: grid;
+}
+
+div.lightScenes.hidden {
+    top: 100%;
+    animation: hideAnimation 0s ease-in 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes hideAnimation {
+    to {
+      visibility: hidden;
+      width: 0;
+      height: 0;
+    }
+  }

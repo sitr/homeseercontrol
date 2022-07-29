@@ -2,9 +2,22 @@ import React from 'react';
 import Clock from './clock';
 import { Link } from "react-router-dom";
 import HsButton from '../Buttons/HsButtonContainer';
+import LightScenes from '../KeyPanel/LightScenes';
 
 class BottomPanel extends React.Component {
-    render() {
+    constructor() {
+        super();
+        this.state = {
+            showPopup: false
+          };
+    }
+
+    togglePopup() {
+        this.setState({
+          showPopup: !this.state.showPopup
+        });
+    }
+     render() {
         return(
             <div className="panel raised_outer bottomPanelContainer">
                 <img src="images/bolt1.png" alt="decorative_bolt" className="bolt" />
@@ -28,6 +41,7 @@ class BottomPanel extends React.Component {
                         </Link>
                   </div>
                   <div className="nightMode">
+                    <button className='button' onClick={this.togglePopup.bind(this)} >Lysscene</button>
                     <HsButton
                         deviceId="87"
                         buttonText="Nattmodus"
@@ -37,6 +51,10 @@ class BottomPanel extends React.Component {
                     />
                   </div>
                 </div>
+                <LightScenes 
+                    closePopup={this.togglePopup.bind(this)}
+                    className = {this.state.showPopup ? 'visible' : 'hidden'}
+                    />
             </div>
         )
     }
