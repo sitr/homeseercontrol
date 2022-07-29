@@ -11,7 +11,7 @@ class HsLedContainer extends Component {
          device: {},
          id: this.props.id,
          className: this.props.className,
-         deviceInterval: this.props.deviceInterval === undefined ? 1000 : eval(this.props.deviceInterval),
+         deviceInterval: this.props.deviceInterval === undefined ? 1000 : Function(this.props.deviceInterval),
          updateInterval: 1000
       };
    }
@@ -21,9 +21,9 @@ class HsLedContainer extends Component {
       this.interval = setInterval(() => {
          getDeviceInfoFromHomeSeer(self.state.deviceId, self.controller)
             .then(result => {
-               var mowerCharging = /Charging \(\d{1,}%\)/
+               var withNoDigits = result.status.replace(/[0-9,%,(,)]/g, '').trimEnd();
 
-               switch(result.status) {
+               switch(withNoDigits) {
                   case 'On':
                   case 'Tørker':
                   case 'Vasker':
@@ -47,11 +47,13 @@ class HsLedContainer extends Component {
                   case 'Oppdaterer firmware':
                   case 'Parkerer i ladestasjon':
                   case 'Går til område':
+                  case 'Way home':
                      self.setState({'className': 'led led__yellow'});
                      break;
-                  
+                  case 'Charging':
+                     self.setState({'className': 'led led__blue'});
+                     break;
                   case 'Lader':
-                  case mowerCharging.test(result.status):
                      self.setState({'className': 'led led__blue'});
                      break;
                   case 'Off':
