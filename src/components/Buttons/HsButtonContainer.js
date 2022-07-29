@@ -6,6 +6,7 @@ class HsButtonContainer extends Component {
    controller = new AbortController();
    constructor(props) {
       super(props);
+      let interval = Function("return " + this.props.deviceInterval)();
       this.state = {
          id: this.props.id,
          deviceId: this.props.deviceId,
@@ -14,7 +15,7 @@ class HsButtonContainer extends Component {
          toggleText: this.props.toggleText,
          command: this.props.command,
          isLiveButton: this.props.isLiveButton === undefined ? false : this.props.isLiveButton,
-         deviceInterval: this.props.deviceInterval === undefined ? 1000 : Function(this.props.deviceInterval),
+         deviceInterval: this.props.deviceInterval === undefined ? 1000 : interval,
          updateInterval: 1000
       };
    }

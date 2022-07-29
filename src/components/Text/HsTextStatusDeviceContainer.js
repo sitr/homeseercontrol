@@ -6,12 +6,13 @@ class HsTextStatusDeviceContainer extends Component {
    controller = new AbortController();
    constructor(props) {
       super(props);
+      let interval = Function("return " + this.props.deviceInterval)();
       this.state = {
          deviceId: this.props.deviceId,
          device: {},
          statusType: this.props.statusType,
          className: this.props.className,
-         deviceInterval: this.props.deviceInterval === undefined ? 1000 : Function(this.props.deviceInterval),
+         deviceInterval: this.props.deviceInterval === undefined ? 1000 :  interval,
          updateInterval: 1000
       };
    }
