@@ -18,16 +18,16 @@ class IndoorConditions extends React.Component {
                   deviceInterval = "10 * 60 * 1000"
                />
                <div className="indoorConditions">
-                  <label className="weather_station_label">Luftfuktighet:</label>
+                  <label>Luftfuktighet:</label>
                   <HsTextStatusDeviceContainer
                      deviceId="1110"
-                     className="weather_station_value"
+                     className="value"
                      deviceInterval = "10 * 60 * 1000"
                   />
-                  <label className="weather_station_label">Lufttrykk:</label>
+                  <label>Lufttrykk:</label>
                   <HsTextStatusDeviceContainer
                      deviceId="1112"
-                     className="weather_station_value"
+                     className="value"
                      deviceInterval = "10 * 60 * 1000"
                   />
                </div>

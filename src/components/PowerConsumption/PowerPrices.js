@@ -48,11 +48,26 @@ class PowerPrices extends Component {
                     />
                 </div>
                 <div className="panel sunken">
-                    <label>Strømforbruk nå: </label>
-                    <HsTextStatusDeviceContainer
+                    <table>
+                        <tr>
+                            <td>Strømforbruk nå:</td>
+                            <td><HsTextStatusDeviceContainer
                         deviceId="1985"
-                        className="value"
-                        statusType="powerConsumption"/>
+                        statusType="powerConsumption"/></td>
+                        </tr>
+                        <tr>
+                            <td>Strømpris nå:</td>
+                            <td><HsTextStatusDeviceContainer
+                        deviceId="2000"
+                        statusType="powerPrice"/></td>
+                        </tr>
+                        <tr>
+                            <td>Kost hittil i dag:</td>
+                            <td><HsTextStatusDeviceContainer
+                        deviceId="1988"
+                        statusType="powerCost"/></td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         );
