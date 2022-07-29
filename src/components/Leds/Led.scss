@@ -26,34 +26,46 @@
 .led__green {
 background-color: #ABFF00;
 box-shadow: 
-rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, 
-black 0 0 3px, 
-#89FF00 0 0 8px;
+  rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, 
+  black 0 0 3px, 
+  #89FF00 0 0 8px;
 }
 
 .led__orange {
    background-color: #f9a004;
    box-shadow: 
-   rgba(0, 0, 0, 0.2) 0 -1px 7px 1px,
-   black 0 0px 3px, 
-   rgba(249, 160, 4, 0.5) 0 0 8px;
+    rgba(0, 0, 0, 0.2) 0 -1px 7px 1px,
+    black 0 0px 3px, 
+    rgba(249, 160, 4, 0.5) 0 0 8px;
 }
 
 .led__yellow {
    background-color: #FF0;
    box-shadow: 
-   rgba(0, 0, 0, 0.2) 0 -1px 7px 1px,
-   black 0 0px 3px, 
-   #FF0 0 0 8px;
+    rgba(0, 0, 0, 0.2) 0 -1px 7px 1px,
+    black 0 0 3px, 
+    #FF0 0 0 8px;
 }
 
+.led__yellow__blink {
+  background-color: #FF0;
+  box-shadow: 
+    rgba(0, 0, 0, 0.2) 0 -1px 7px 1px,
+    black 0 0 3px, 
+    rgba(255, 255, 0, 0.5) 0 0 8px;
+  -webkit-animation: blinkYellow 0.5s infinite;
+  -moz-animation: blinkYellow 0.5s infinite;
+  -ms-animation: blinkYellow 0.5s infinite;
+  -o-animation: blinkYellow 0.5s infinite;
+  animation: blinkYellow 0.5s infinite;
+}
 
 .led__red {
 background-color: #F00;
 box-shadow: 
-rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, 
-black 0 0 3px, 
-rgba(255, 0, 0, 0.5) 0 0px 8px;
+  rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, 
+  black 0 0 3px, 
+  rgba(255, 0, 0, 0.5) 0 0 8px;
 -webkit-animation: blinkRed 0.5s infinite;
 -moz-animation: blinkRed 0.5s infinite;
 -ms-animation: blinkRed 0.5s infinite;
@@ -75,7 +87,10 @@ box-shadow:
   height: 24px;
   background-color: #F00;
   border-radius: 50%;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, black 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 0 8px;
+  box-shadow: 
+    rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, 
+    black 0 -1px 9px, 
+    rgba(255, 0, 0, 0.5) 0 0 8px;
   -webkit-animation: blinkRed 0.5s infinite;
   -moz-animation: blinkRed 0.5s infinite;
   -ms-animation: blinkRed 0.5s infinite;
@@ -125,27 +140,27 @@ box-shadow:
 
 @-webkit-keyframes blinkYellow {
     from { background-color: #FF0; }
-    50% { background-color: #AA0; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #808002 0 -1px 9px, #FF0 0 2px 0; }
+    50% { background-color: #AA0; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, black 0 0 -3px, rgba(255, 255, 0, 0.5) 0 2px 0; }
     to { background-color: #FF0; }
 }
 @-moz-keyframes blinkYellow {
     from { background-color: #FF0; }
-    50% { background-color: #AA0; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #808002 0 -1px 9px, #FF0 0 2px 0; }
+    50% { background-color: #AA0; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, black 0 0 -3px, rgba(255, 255, 0, 0.5) 0 2px 0; }
     to { background-color: #FF0; }
 }
 @-ms-keyframes blinkYellow {
     from { background-color: #FF0; }
-    50% { background-color: #AA0; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #808002 0 -1px 9px, #FF0 0 2px 0; }
+    50% { background-color: #AA0; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, black 0 0 -3px, rgba(255, 255, 0, 0.5) 0 2px 0; }
     to { background-color: #FF0; }
 }
 @-o-keyframes blinkYellow {
     from { background-color: #FF0; }
-    50% { background-color: #AA0; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #808002 0 -1px 9px, #FF0 0 2px 0; }
+    50% { background-color: #AA0; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, black 0 0 -3px, rgba(255, 255, 0, 0.5) 0 2px 0; }
     to { background-color: #FF0; }
 }
 @keyframes blinkYellow {
     from { background-color: #FF0; }
-    50% { background-color: #AA0; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #808002 0 -1px 9px, #FF0 0 2px 0; }
+    50% { background-color: #AA0; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, black 0 0 -3px, rgba(255, 255, 0, 0.5) 0 2px 0; }
     to { background-color: #FF0; }
 }
 
@@ -155,7 +170,10 @@ box-shadow:
   height: 24px;
   background-color: #ABFF00;
   border-radius: 50%;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #304701 0 -1px 9px, #89FF00 0 2px 12px;
+  box-shadow: 
+    rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, 
+    inset #304701 0 -1px 9px, 
+    #89FF00 0 2px 12px;
 }
 
 .led-blue {
@@ -164,5 +182,8 @@ box-shadow:
   height: 24px;
   background-color: #24E0FF;
   border-radius: 50%;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #006 0 -1px 9px, #3F8CFF 0 2px 14px;
+  box-shadow: 
+    rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, 
+    inset #006 0 -1px 9px, 
+    #3F8CFF 0 2px 14px;
 }

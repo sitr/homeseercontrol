@@ -6,6 +6,7 @@ class HsLedContainer extends Component {
    controller = new AbortController();
    constructor(props) {
       super(props);
+      this._isMounted = false;
       let interval = Function("return " + this.props.deviceInterval)();
       this.state = {
          deviceId: this.props.deviceId,
@@ -18,11 +19,12 @@ class HsLedContainer extends Component {
    }
 
    componentDidMount() {
+      this._isMounted = true
       var self = this;
-      this.interval = setInterval(() => {
+      this.interval = self._isMounted && setInterval(() => {
          getDeviceInfoFromHomeSeer(self.state.deviceId, self.controller)
             .then(result => {
-               var withNoDigits = result.status.replace(/[0-9,%,(,)]/g, '').trimEnd();
+               var withNoDigits = result.status.replace(/\(\d.\s[m,%]\)/g, '').trimEnd();
 
                switch(withNoDigits) {
                   case 'On':
@@ -44,19 +46,24 @@ class HsLedContainer extends Component {
 
                   case 'Starter opp':
                   case 'Går til ladestasjon':
-                  case 'Satt på pause':
-                  case 'Oppdaterer firmware':
                   case 'Parkerer i ladestasjon':
                   case 'Går til område':
                   case 'Way home':
+                  case 'Searching':
+                     self.setState({'className': 'led led__yellow__blink'});
+                     break;
+                  
+                  case 'Parked':
+                  case 'Satt på pause':
                      self.setState({'className': 'led led__yellow'});
                      break;
+
                   case 'Charging':
-                     self.setState({'className': 'led led__blue'});
-                     break;
                   case 'Lader':
+                  case 'Oppdaterer firmware':
                      self.setState({'className': 'led led__blue'});
                      break;
+
                   case 'Off':
                   case 'Ferdig':
                      self.setState({'className': 'led'});
@@ -70,6 +77,7 @@ class HsLedContainer extends Component {
    }
 
    componentWillUnmount() {
+      this._isMounted = false
       clearInterval(this.interval);
    }
 
