@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { getDeviceInfoFromHomeSeer } from '../HsDeviceController';
-import HsTextStatusDeviceContainer from '../Text/HsTextStatusDeviceContainer';
 import LineChart from './LineChart';
 
 class PowerPrices extends Component {
@@ -33,7 +32,7 @@ class PowerPrices extends Component {
 
     render() {
         return (
-            <div className="panel raised_outer powerConsumptionContainer">
+            <div className="panel raised_outer powerPriceContainer">
                 <img src="images/bolt1.png" alt="decorative_bolt" className="bolt" />
                 <img src="images/bolt1.png" alt="decorative_bolt" className="bolt" />
                 <img src="images/bolt1.png" alt="decorative_bolt" className="bolt" />
@@ -43,39 +42,9 @@ class PowerPrices extends Component {
                     <LineChart
                         device={this.state.device}
                         id={this.state.id}
-                        className={this.state.className}
+                        className="priceChart"
                         deviceInterval = "60 * 60 * 1000"
                     />
-                </div>
-                <div className="panel sunken">
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td>Strømforbruk nå:</td>
-                                <td>
-                                    <HsTextStatusDeviceContainer
-                                        deviceId="1985"
-                                        statusType="powerConsumption"/>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Strømpris nå:</td>
-                                <td>
-                                    <HsTextStatusDeviceContainer
-                                        deviceId="2000"
-                                        statusType="powerPrice"/>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Kost hittil i dag:</td>
-                                <td>
-                                    <HsTextStatusDeviceContainer
-                                        deviceId="1988"
-                                        statusType="powerCost"/>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
             </div>
         );

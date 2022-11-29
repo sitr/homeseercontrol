@@ -14,23 +14,33 @@
 body {
    background-color: $app-bgcolor;
    font-family: Consolas, monaco, monospace;
+   overflow: hidden;
 }
 
 .main {
    display: grid;
-   grid-template-columns: 1fr 1fr 1fr 1fr;
-   grid-template-rows: 1fr auto auto;
-   grid-template-areas:
-         "outdoor powerConsumption powerConsumption keypanel"
-         "indoor garbagePlan garbagePlan ledpanel"
-         "bottomPanel bottomPanel bottomPanel bottomPanel";
    grid-gap: 0px;
    height: $window-height;
 }
 
-@media only screen and (max-width: 600px) {
-   .main {
-     display: inline-block;
+@media (max-width: 899px) {
+   .main { 
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+         "outdoor powerConsumption"
+         "indoor  keypanel"
+         "garbagePlan ledpanel"
+         "bottomPanel bottomPanel";
+   }
+ }
+
+@media (min-width: 900px) {
+   .main { 
+      grid-template-columns: 10% 20% 20% 20% 30%;
+      grid-template-areas:
+         "outdoor outdoor powerPrice powerPrice powerConsumption"
+         "indoor indoor garbagePlan garbagePlan ledpanel"
+         "bottomPanel bottomPanel bottomPanel bottomPanel bottomPanel";
    }
  }
 

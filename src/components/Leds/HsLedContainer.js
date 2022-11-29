@@ -41,6 +41,7 @@ class HsLedContainer extends Component {
                   case 'Frakoblet lader':
                   case 'Ladeproblem':
                   case 'Feil':
+                  case 'Fault':
                      self.setState({'className': 'led led__red'});
                      break;
 

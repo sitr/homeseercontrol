@@ -1,6 +1,15 @@
-div.powerConsumptionContainer {
-    grid-area: powerConsumption;
+div.powerPriceContainer {
+    grid-area: powerPrice;
+
+
+    .panel {
+        max-width: 90%;
+    }
+    .priceChart {
+        position: relative;
+    }
 }
+
 
 div.powerConsumptionHigh, div.powerPricesHigh {
     color: $alarm-color;
@@ -10,10 +19,14 @@ div.powerConsumptionNormal, div.powerPricesNormal {
     color: $value-color;
 }
 
-div.powerConsumptionContainer table {
-    width: 100%;
-}
-div.powerConsumptionContainer td {
-    font-size: 1.1em;
-    line-height: 1.3em;
+div.powerConsumptionContainer {
+    grid-area: powerConsumption;
+    table {
+        width: 100%;
+
+        td {
+            font-size: 1.2em;
+            line-height: 1.3em;
+        }
+    }
 }

@@ -13,6 +13,26 @@ button {
    max-width: 126px;
 }
 
+@media (max-width: 1699px) {
+   button {
+      max-width: 60px;
+      font-size: 0.7em;
+   }
+}
+
+@media (max-width: 1800px) {
+   button {
+      max-width: 98px;
+      font-size: 0.9em;
+   }
+}
+
+@media (min-width: 1800px) {
+   button {
+      max-width: 126px;
+      font-size: 1em;
+   }
+}
 
 button:active {
    box-shadow: 0 1px 11px #09f, 0 1px 4px;

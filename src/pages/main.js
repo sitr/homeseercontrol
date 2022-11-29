@@ -6,6 +6,7 @@ import BottomPanel from '../components/BottomPanel/BottomPanel';
 import React, { Component } from 'react';
 import PowerPrices from '../components/PowerConsumption/PowerPrices';
 import IndoorConditions from '../components/IndoorConditions/IndoorConditions';
+import PowerConumption from '../components/PowerConsumption/PowerConsumption';
 import { Dimensions } from 'react-native';
 
 const window = Dimensions.get("window");
@@ -38,7 +39,7 @@ class Main extends Component {
             <div className="main">
                <OutdoorConditions />
                <PowerPrices deviceId="2009"/>
-               <KeyPanel />
+               <PowerConumption />
                <IndoorConditions />
                <GarbagePlan />
                <LedPanel />

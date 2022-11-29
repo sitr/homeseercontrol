@@ -68,12 +68,12 @@ class House extends Component {
                            deviceInterval = "20 * 1000" />
                         <HsTextStatusDeviceContainer
                            deviceId="22"
-                           className="light floorLamp2"
+                           className="light tableLamp1"
                            statusType="light"
                            deviceInterval = "20 * 1000" />
                         <HsTextStatusDeviceContainer
                            deviceId="2169"
-                           className="light floorLamp3"
+                           className="light wallLamp1"
                            statusType="light"
                            deviceInterval = "20 * 1000" />
                         <HsTextStatusDeviceContainer
@@ -83,7 +83,7 @@ class House extends Component {
                            deviceInterval = "20 * 1000" />
                         <HsTextStatusDeviceContainer
                            deviceId="2102"
-                           className="light tableLamp2"
+                           className="light wallLamp2"
                            statusType="light"
                            deviceInterval = "20 * 1000" />
                      </div>
@@ -127,12 +127,12 @@ class House extends Component {
                            className="temp"
                            deviceInterval = "20 * 1000" />
                         <HsTextStatusDeviceContainer
-                           deviceId="474"
+                           deviceId="2460"
                            className="window"
                            statusType="window"
                            deviceInterval = "20 * 1000" />
                         <HsTextStatusDeviceContainer
-                           deviceId="1455"
+                           deviceId="2250"
                            className="light ceilingLamp"
                            statusType="light"
                            deviceInterval = "20 * 1000" />
@@ -144,22 +144,22 @@ class House extends Component {
                            statusType="window"
                            deviceInterval = "20 * 1000" />
                         <HsTextStatusDeviceContainer
-                           deviceId="139"
+                           deviceId="2550"
                            className="door terraceDoor"
                            statusType="door"
                            deviceInterval = "20 * 1000" />
                         <HsTextStatusDeviceContainer
-                           deviceId="646"
+                           deviceId="2237"
                            className="light ceilingLamp"
                            statusType="light"
                            deviceInterval = "20 * 1000" />
                         <HsTextStatusDeviceContainer
-                           deviceId="1441"
+                           deviceId="2247"
                            className="light bedLamp1"
                            statusType="light"
                            deviceInterval = "20 * 1000" />
                         <HsTextStatusDeviceContainer
-                           deviceId="1444"
+                           deviceId="2244"
                            className="light bedLamp2"
                            statusType="light"
                            deviceInterval = "20 * 1000" />

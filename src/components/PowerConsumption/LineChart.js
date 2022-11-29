@@ -58,6 +58,8 @@ const LineChart = (props) => {
                 type="line"
                 data={chartData}
                 options={{
+                    responsive: true,
+                    maintainAspectRatio: true,
                     title: {
                         display: true,
                         text: 'Dagens strømpriser',

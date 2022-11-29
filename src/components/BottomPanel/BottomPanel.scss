@@ -2,6 +2,7 @@
 
 div.bottomPanelContainer {
     grid-area: bottomPanel;
+    max-height: 90px;
 
     .bottomPanel {
         display: flex;

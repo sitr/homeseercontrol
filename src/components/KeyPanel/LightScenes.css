@@ -1,11 +1,13 @@
 div.lightScenes {
     position: absolute;
-    top: -350px;
-    background-color: rgba(85, 90, 93, 1);
+    top: -246px;
     right: 126px;
     overflow-y: hidden;
 	transition: all .8s ease-out;
-    
+}
+
+div.lightScenes .panel {
+    background-color: rgba(85, 90, 93, 1);
 }
 
 div.lightScenes .raised_inner {
@@ -13,7 +15,7 @@ div.lightScenes .raised_inner {
 }
 
 div.lightScenes.hidden {
-    top: 100%;
+    top: 150%;
     animation: hideAnimation 0s ease-in 1s;
     animation-fill-mode: forwards;
 }
@@ -24,4 +26,16 @@ div.lightScenes.hidden {
       width: 0;
       height: 0;
     }
-  }
+}
+
+.closePopupPanel {
+    width: 0; 
+    height: 0; 
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #f00;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    filter: drop-shadow(0 1px 3px black);
+}

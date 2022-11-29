@@ -10,9 +10,8 @@ class LightScenes extends React.Component {
                     <img src="images/bolt1.png" alt="decorative_bolt" className="bolt" />
                     <img src="images/bolt1.png" alt="decorative_bolt" className="bolt" />
                     <img src="images/bolt1.png" alt="decorative_bolt" className="bolt" />
-                    <p className="panel_title">Lysmodus</p>
+                    <p className="panel_title">Lysscene</p>
                     <div className="raised_inner">
-                        <button onClick={this.props.closePopup}>Close</button>
                         <HsButton
                             deviceId="130"
                             buttonText="Normal belysning"
@@ -42,6 +41,7 @@ class LightScenes extends React.Component {
                             deviceInterval = "60 * 1000"
                         />
                     </div>
+                    <span onClick={this.props.closePopup} className="closePopupPanel"></span>
                 </div>
             </div>
         );
